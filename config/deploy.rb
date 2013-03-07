@@ -2,7 +2,6 @@
 set :stages, %w{ staging production }
 set :default_stage, 'production'
 require 'capistrano/ext/multistage'
-
 require "bundler/capistrano"
 
 set :application, "owc"
@@ -16,8 +15,14 @@ set :keep_releases, 5
 set :user, "deploy"
 
 default_run_options[:pty]   = true
-default_run_options[:shell] = false
 ssh_options[:forward_agent] = true
+default_run_options[:shell] = '/bin/bash'
+set :ruby_version, "ruby-1.9.3-p392"
+set :chruby_config, "/etc/profile.d/chruby.sh"
+set :set_ruby_cmd, "source #{chruby_config} && chruby #{ruby_version}"
+set(:bundle_cmd) {
+  "#{set_ruby_cmd} && exec bundle"
+}
 
 namespace :owc do
   desc 'Update the symlinks'
