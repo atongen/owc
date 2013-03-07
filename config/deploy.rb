@@ -1,6 +1,6 @@
 # setup the deployment stages
 set :stages, %w{ staging production }
-set :default_stage, 'staging'
+set :default_stage, 'production'
 require 'capistrano/ext/multistage'
 
 require "bundler/capistrano"
@@ -9,7 +9,7 @@ set :application, "owc"
 
 # git
 set :scm, "git"
-set :repository, "git@github.com:atongen/owc.git"
+set :repository, "git://github.com/atongen/owc.git"
 
 set :deploy_via, :remote_cache
 set :keep_releases, 5
