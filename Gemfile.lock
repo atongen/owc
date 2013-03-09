@@ -2,6 +2,7 @@ PATH
   remote: vendor/extensions
   specs:
     refinerycms-waiting_families (1.0)
+      refinerycms-core (~> 2.0.9)
     refinerycms-waiting_kids (1.0)
       refinerycms-core (~> 2.0.9)
 
@@ -240,11 +241,8 @@ DEPENDENCIES
   refinerycms-inquiries (~> 2.0.0)
   refinerycms-page-images (~> 2.0.0)
   refinerycms-search (~> 2.0.0)
-<<<<<<< HEAD
   refinerycms-waiting_families!
-=======
   refinerycms-waiting_kids!
->>>>>>> commit to add the engine
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)
   unicorn
