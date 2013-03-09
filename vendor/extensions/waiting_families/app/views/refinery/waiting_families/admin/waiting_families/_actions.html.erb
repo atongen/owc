@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::WaitingFamilies::Admin::WaitingFamiliesController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.waiting_families_admin_waiting_families_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_waiting_families_admin_waiting_family_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::WaitingFamilies::Admin::WaitingFamiliesController.sortable? && ::Refinery::WaitingFamilies::WaitingFamily.any? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Waiting Families"),
+                 refinery.waiting_families_admin_waiting_families_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Waiting Families"),
+                 refinery.waiting_families_admin_waiting_families_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

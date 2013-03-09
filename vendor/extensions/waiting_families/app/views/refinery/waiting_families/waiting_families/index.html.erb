@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="waiting_families">
+    <% @waiting_families.each do |waiting_family| %>
+      <li>
+        <%= link_to waiting_family, refinery.waiting_families_waiting_family_path(waiting_family) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

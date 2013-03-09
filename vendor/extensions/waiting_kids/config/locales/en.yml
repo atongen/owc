@@ -1,0 +1,30 @@
+en:
+  refinery:
+    plugins:
+      waiting_kids:
+        title: Waiting Kids
+    waiting_kids:
+      admin:
+        waiting_kids:
+          actions:
+            create_new: Add New Waiting Kid
+            reorder: Reorder Waiting Kids
+            reorder_done: Done Reordering Waiting Kids
+          records:
+            title: Waiting Kids
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Waiting Kids yet. Click "Add New Waiting Kid" to add your first waiting kid.
+          waiting_kid:
+            view_live_html: View this waiting kid live <br/><em>(opens in a new window)</em>
+            edit: Edit this waiting kid
+            delete: Remove this waiting kid forever
+      waiting_kids:
+        show:
+          other: Other Waiting Kids
+  activerecord:
+    attributes:
+      'refinery/waiting_kids/waiting_kid':
+        title: Title
+        summary: Summary
+        body: Body
+        picture: Picture

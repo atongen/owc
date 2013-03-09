@@ -23,5 +23,4 @@ Refinery::Resources.configure do |config|
   # config.dragonfly_secret = "e4a8ef2ebcd46913548504b5af4749da0ff56b149402b540"
   # config.dragonfly_url_format = "/system/resources/:job/:basename.:format"
   # config.datastore_root_path = "/home/atongen/Workspace/owc/owc/public/system/refinery/resources"
-
 end
