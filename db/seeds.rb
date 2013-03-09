@@ -22,3 +22,6 @@ Refinery::Search::Engine.load_seed
 Refinery::WaitingFamilies::Engine.load_seed
 # Added by Refinery CMS Waiting Kids extension
 Refinery::WaitingKids::Engine.load_seed
+
+# Added by Refinery CMS Events extension
+Refinery::Events::Engine.load_seed
