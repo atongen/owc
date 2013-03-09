@@ -124,7 +124,7 @@ body {
 }
 
 body {
-    font: normal 14px/1.28571429 ;
+    font: normal 14px/1.28571429 Georgia, serif;
     color: ;
 }
 
@@ -146,20 +146,7 @@ small {
     font-size: inherit;
 }
 
-/* ---------------------------------------------------------------------
- Style Guide
------------------------------------------------------------------------- */
-.styleguideSection {
-    margin-bottom: 50px;
-}
 
-.styleguideSection-hd {
-    padding: 10px 0;
-    margin-bottom: 20px;
-    border-top: 1px solid #cccccc;
-    border-bottom: 1px solid #cccccc;
-
-}
 
 /* ---------------------------------------------------------------------
  Utility Classes
@@ -306,6 +293,35 @@ small {
 .blocks_5up > * { width: 20%; }
 .blocks_6up > * { width: 16.66666%; }
 
+/* ---------------------------------------------------------------------
+ Feature
+------------------------------------------------------------------------ */
+img {
+max-width: 100%;
+height: auto !important;
+}
+.feature {
+    overflow: hidden;
+    *zoom: 1; /* clearfix for lte IE7 */
+}
+
+.feature-img {
+    display: block;
+    text-align: center;
+}
+
+.feature-img > * {
+    display: inline-block;
+}
+
+.feature-hd {
+    padding: 10px;
+    background: #ccc;
+}
+
+.feature-bd {
+    padding: 10px;
+}
 
 /* ---------------------------------------------------------------------
  Media
@@ -339,13 +355,22 @@ small {
  Horizontal List
 ------------------------------------------------------------------------ */
 .hList {
-    overflow: hidden;
     *zoom: 1; /* clearfix for lte IE7 */
+}
+
+.hList:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
 }
 
 .hList > * {
     float: left;
 }
+
 
 /* ---------------------------------------------------------------------
  Vertical List
@@ -410,6 +435,10 @@ small {
     vertical-align: middle;
 }
 
+.hdg_center {
+    text-align: center;
+}
+
 .hdg_1 { font-size: 72px; }
 .hdg_2 { font-size: 32px; }
 .hdg_3 { font-size: 24px; }
@@ -457,7 +486,7 @@ small {
 .site-bd {
     overflow: hidden;
     *zoom: 1; /* clearfix for lte IE7 */
-    padding-bottom: ;
+    padding-bottom: 200px;
 }
 
 .site-ft {
@@ -468,12 +497,13 @@ small {
     overflow: hidden;
     *zoom: 1; /* clearfix for lte IE7 */
     padding: ;
-    height: ;
+    height: 200px;
+    background: #666666;
 }
 
 .site-ft-box {
     margin: ;
-    padding: ;
+    padding: 20px;
 }
 
 /* ---------------------------------------------------------------------
@@ -496,23 +526,88 @@ small {
    display: table;
 }
 
-/* Sub Nav List
+/* Nav List
 ------------------------------------------- */
-.navList > li + li {
-    margin-top: ;
+
+.navList > li {
+    position: relative;
+    font-size: 12px;
 }
 
-.mix-navList_tight > li + li {
-    margin-top: ;
+.navList li + li {
+    padding-left: 40px;
 }
 
 .navList a {
     position: relative;
-    padding-left: ;
-    font-size: ;
+    z-index: 3; /* to keep the link above the drop-shadow */
+    padding: 20px 10px;
+    height: 100%;
+    height: 9px;
+    display: block;
+    text-align: center;
+    color: #333333;
+    text-decoration: none;
 }
 
 .navList a:hover {
+}
+
+
+.navList > li > a:hover,
+.navList > li > a:focus {
+    background: #222222;
+    color: #ffffff;
+}
+
+
+
+/* Sub Nav List
+------------------------------------------- */
+.navList-sub {
+    position: absolute;
+    left: -999em;
+    width: 100%;
+}
+
+/*.navList-sub:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 6px;
+}
+*/
+.navList-sub > li {
+    position: relative;
+}
+
+.navList-sub li + li {
+    padding: 0;
+}
+
+.navList > li:hover > .navList-sub,
+.navList > li:focus > .navList-sub {
+    left: auto;
+}
+
+.navList-sub a {
+    display: block;
+    position: relative;
+    /*padding: 10px 10px;*/
+    background-color: #e5e5e5;
+    color: #333333;
+}
+
+.nav-utility-wrapper {
+    position: absolute;
+    right: -169px;
+    top: 10px;
+}
+
+.nav-utility-list > * {
+    margin-right: 21px;
 }
 
 /* ---------------------------------------------------------------------
@@ -534,4 +629,18 @@ small {
     font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
     font-size: 13px;
     text-align: left;
+}
+
+@media all and (max-width: 1024px) {
+    /* Add stuff here */
+    .wrapper {
+        width: 1010px;
+  }
+}
+
+@media all and (max-width: 768px) {
+    /* Add stuff here */
+    .wrapper {
+        width: 750px;
+  }
 }
