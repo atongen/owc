@@ -11,7 +11,7 @@ var HopeApp = (function(app, $){
 	 */
 	function init() {
 	
-	    console.log('ALIVE!!!');	
+	    console.log('ALIVE BUTTS 5!!!');	
 		return app;
 	}
 	
