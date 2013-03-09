@@ -1,0 +1,537 @@
+/* ---------------------------------------------------------------------
+Original Author: Matt Duffin
+Contributors: Peter Schultz, Wilson Lewis
+
+Target Browsers: All
+Media Type: Screen, Projection
+Width: All Sizes
+------------------------------------------------------------------------ */
+/*csslint
+   box-model: false,
+   box-sizing: false,
+   star-property-hack: false,
+   universal-selector: false,
+   unqualified-attributes: false
+ */
+
+/* ---------------------------------------------------------------------
+RESET CSS (thanks Eric Meyer)
+------------------------------------------------------------------------ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-weight: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* :focus {
+    outline: 0;
+} */
+
+/* Always show a vertical scrollbar, even when there is no scrolling */
+html {
+    overflow-y: scroll;
+}
+
+/* ---------------------------------------------------------------------
+ HTML5 Block / Inline Block declarations
+------------------------------------------------------------------------ */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+audio, canvas, video {
+    display: inline-block;
+    max-width: 100%;
+}
+
+/* ---------------------------------------------------------------------
+ Form Reset Styles
+------------------------------------------------------------------------ */
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+input[type=search] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top;
+    resize: vertical;
+}
+
+::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/* ---------------------------------------------------------------------
+ Base Styles
+------------------------------------------------------------------------ */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font: normal 14px/1.28571429 ;
+    color: ;
+}
+
+a {
+    color: #93a445;
+    text-decoration: none;
+}
+
+button, input, select, textarea {
+    font: normal 14px/1.28571429 ;
+}
+
+img {
+    vertical-align: bottom; /* remove gap between bottom of image and border */
+    max-width: 100%;
+}
+
+small {
+    font-size: inherit;
+}
+
+/* ---------------------------------------------------------------------
+ Style Guide
+------------------------------------------------------------------------ */
+.styleguideSection {
+    margin-bottom: 50px;
+}
+
+.styleguideSection-hd {
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+
+}
+
+/* ---------------------------------------------------------------------
+ Utility Classes
+------------------------------------------------------------------------ */
+.isHidden {
+    position: absolute;
+    left: -9999px;
+}
+
+/* ---------------------------------------------------------------------
+ Wrapper
+------------------------------------------------------------------------ */
+.wrapper {
+    display: block;
+    margin: 0 auto;
+    width: 960px;
+}
+
+/* ---------------------------------------------------------------------
+ Grid
+------------------------------------------------------------------------ */
+.grid {
+    margin-bottom: 10px;
+    *zoom: 1; /* clearfix for lte IE7 */
+}
+
+.grid:before,
+.grid:after {
+    content: " ";
+    display: table;
+}
+
+.grid:after {
+    clear: both;
+}
+
+.grid-col {
+    position: relative;
+    float: left;
+}
+
+.grid-col + .grid-col {
+    margin-left: 2.12766%;
+}
+
+/* grid column sizes */
+.grid-col_size1of12 { width: 6.38297%; }
+.grid-col_size2of12 { width: 14.89361%; }
+.grid-col_size3of12 { width: 23.40425%; }
+.grid-col_size4of12 { width: 31.91489%; }
+.grid-col_size5of12 { width: 40.42553%; }
+.grid-col_size6of12 { width: 48.93617%; }
+.grid-col_size7of12 { width: 57.4468%; }
+.grid-col_size8of12 { width: 65.95744%; }
+.grid-col_size9of12 { width: 74.46808%; }
+.grid-col_size10of12 { width: 82.97872%; }
+.grid-col_size11of12 { width: 91.48936%; }
+.grid-col_size12of12 { width: 100.0%; }
+
+/* grid column prefixes */
+.grid-col_prefix1of12 { margin-left: 8.51063%; }
+.grid-col_prefix2of12 { margin-left: 17.02127%; }
+.grid-col_prefix3of12 { margin-left: 25.53191%; }
+.grid-col_prefix4of12 { margin-left: 34.04255%; }
+.grid-col_prefix5of12 { margin-left: 42.55319%; }
+.grid-col_prefix6of12 { margin-left: 51.06382%; }
+.grid-col_prefix7of12 { margin-left: 59.57446%; }
+.grid-col_prefix8of12 { margin-left: 68.085106%; }
+.grid-col_prefix9of12 { margin-left: 76.59574%; }
+.grid-col_prefix10of12 { margin-left: 85.10638%; }
+.grid-col_prefix11of12 { margin-left: 93.61702%; }
+
+/* grid column suffixes */
+.grid-col_suffix1of12 { margin-right: 8.51063%; }
+.grid-col_suffix2of12 { margin-right: 17.02127%; }
+.grid-col_suffix3of12 { margin-right: 25.53191%; }
+.grid-col_suffix4of12 { margin-right: 34.04255%; }
+.grid-col_suffix5of12 { margin-right: 42.55319%; }
+.grid-col_suffix6of12 { margin-right: 51.06382%; }
+.grid-col_suffix7of12 { margin-right: 59.57446%; }
+.grid-col_suffix8of12 { margin-right: 68.085106%; }
+.grid-col_suffix9of12 { margin-right: 76.59574%; }
+.grid-col_suffix10of12 { margin-right: 85.10638%; }
+.grid-col_suffix11of12 { margin-right: 93.61702%; }
+
+/* grid column push */
+.grid-col_push1of12 { left: 8.51063%; }
+.grid-col_push2of12 { left: 17.02127%; }
+.grid-col_push3of12 { left: 25.53191%; }
+.grid-col_push4of12 { left: 34.04255%; }
+.grid-col_push5of12 { left: 42.55319%; }
+.grid-col_push6of12 { left: 51.06382%; }
+.grid-col_push7of12 { left: 59.57446%; }
+.grid-col_push8of12 { left: 68.085106%; }
+.grid-col_push9of12 { left: 76.59574%; }
+.grid-col_push10of12 { left: 85.10638%; }
+.grid-col_push11of12 { left: 93.61702%; }
+
+/* grid column pull */
+.grid-col_pull1of12 { left: -8.51063%; }
+.grid-col_pull2of12 { left: -17.02127%; }
+.grid-col_pull3of12 { left: -25.53191%; }
+.grid-col_pull4of12 { left: -34.04255%; }
+.grid-col_pull5of12 { left: -42.55319%; }
+.grid-col_pull6of12 { left: -51.06382%; }
+.grid-col_pull7of12 { left: -59.57446%; }
+.grid-col_pull8of12 { left: -68.085106%; }
+.grid-col_pull9of12 { left: -76.59574%; }
+.grid-col_pull10of12 { left: -85.10638%; }
+.grid-col_pull11of12 { left: -93.61702%; }
+
+/* ---------------------------------------------------------------------
+ Blocks
+------------------------------------------------------------------------ */
+.blocks {
+    *zoom: 1; /* clearfix for lte IE7 */
+    font-size: 0; /* remove space from between inline-block elements */
+}
+
+.blocks:before,
+.blocks:after {
+    content: " ";
+    display: table;
+}
+
+.blocks:after {
+    clear: both;
+}
+
+.blocks > * {
+    margin-bottom: 10px;
+    display: inline-block;
+    *display: inline; /* inline-block for lte IE7 */
+    *zoom: 1; /* inline-block for lte IE7 */
+    vertical-align: top;
+    font-size: 14px; /* reset the font-size back to the normal size */
+}
+
+/* block sizing */
+.blocks_2up > * { width: 50%; }
+.blocks_3up > * { width: 33.33333%; }
+.blocks_4up > * { width: 25%; }
+.blocks_5up > * { width: 20%; }
+.blocks_5up > * { width: 20%; }
+.blocks_6up > * { width: 16.66666%; }
+
+
+/* ---------------------------------------------------------------------
+ Media
+------------------------------------------------------------------------ */
+.media {
+    overflow: hidden;
+    *zoom: 1; /* clearfix for lte IE7 */
+}
+
+.media-img {
+    float: left;
+    margin-right: 20px;
+}
+
+.media-img_reverse {
+    float: right;
+    margin-right: 0;
+    margin-left: 20px;
+}
+
+.media-img_sm {
+    margin-right: 5px;
+}
+
+.media-bd {
+    overflow: hidden;
+    *zoom: 1; /* new bfc for IE7 */
+}
+
+/* ---------------------------------------------------------------------
+ Horizontal List
+------------------------------------------------------------------------ */
+.hList {
+    overflow: hidden;
+    *zoom: 1; /* clearfix for lte IE7 */
+}
+
+.hList > * {
+    float: left;
+}
+
+/* ---------------------------------------------------------------------
+ Vertical List
+------------------------------------------------------------------------ */
+.vList > * > .vList {
+    margin-top: 4px;
+}
+
+/* ---------------------------------------------------------------------
+ Box
+------------------------------------------------------------------------ */
+.box {
+    background-color: ;
+    padding: 10px;
+}
+
+.box_center {
+    text-align: center;
+}
+
+.box_inset {
+    padding: 20px;
+}
+
+.box_highlight {
+    padding: 14px 30px;
+    border-top: 2px solid #eef2d9;
+}
+
+/* ---------------------------------------------------------------------
+ Gap
+------------------------------------------------------------------------ */
+.gap {
+    display: block;
+}
+
+/* TODO: Give these descriptive names once we have font feedback. */
+.gap_0 { margin-bottom: 74px; }
+.gap_1 { margin-bottom: 50px; }
+.gap_2 { margin-bottom: 40px; }
+.gap_3 { margin-bottom: 36px; }
+.gap_4 { margin-bottom: 24px; }
+.gap_5 { margin-bottom: 18px; }
+.gap_6 { margin-bottom: 12px; }
+.gap_7 { margin-bottom: 8px; }
+.gap_8 { margin-bottom: 4px; }
+
+/* ---------------------------------------------------------------------
+ Headings
+------------------------------------------------------------------------ */
+/* TODO - Actually do real headings, these are just placeholder for the styleguide */
+.hdg {
+    display: block;
+    font-family: ;
+    line-height: 1.2;
+}
+
+.hdg_inline {
+    display: inline-block;
+    *display: inline; /* inline-block for lte IE7 */
+    *zoom: 1; /* inline-block for lte IE7 */
+    vertical-align: middle;
+}
+
+.hdg_1 { font-size: 72px; }
+.hdg_2 { font-size: 32px; }
+.hdg_3 { font-size: 24px; }
+.hdg_4 { font-size: 18px; }
+.hdg_5 { font-size: 14px; }
+.hdg_6 { font-size: 10px; }
+
+/* ---------------------------------------------------------------------
+ Copy
+------------------------------------------------------------------------ */
+.copy {
+    color: ;
+}
+
+/* ---------------------------------------------------------------------
+ Site
+------------------------------------------------------------------------ */
+.site {
+    position: relative;
+    height: auto;
+    min-height: 100%;
+    width: 100%;
+    min-width: 960px;
+}
+
+.site-hd {
+    padding-top: ;
+    height: ;
+    background: ;
+    position: relative;
+    font-family: ;
+    *zoom: 1; /* clearfix for lte IE7 */
+}
+
+.site-hd:after {
+    clear: both;
+}
+
+.site-hd:before,
+.site-hd:after {
+   content: " ";
+   display: table;
+}
+
+.site-bd {
+    overflow: hidden;
+    *zoom: 1; /* clearfix for lte IE7 */
+    padding-bottom: ;
+}
+
+.site-ft {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    *zoom: 1; /* clearfix for lte IE7 */
+    padding: ;
+    height: ;
+}
+
+.site-ft-box {
+    margin: ;
+    padding: ;
+}
+
+/* ---------------------------------------------------------------------
+ Navigation
+------------------------------------------------------------------------ */
+
+/* primary
+------------------------------------------- */
+.navPrimary {
+    *zoom: 1; /* clearfix for lte IE7 */
+}
+
+.navPrimary:after {
+    clear: both;
+}
+
+.navPrimary:before,
+.navPrimary:after {
+   content: " ";
+   display: table;
+}
+
+/* Sub Nav List
+------------------------------------------- */
+.navList > li + li {
+    margin-top: ;
+}
+
+.mix-navList_tight > li + li {
+    margin-top: ;
+}
+
+.navList a {
+    position: relative;
+    padding-left: ;
+    font-size: ;
+}
+
+.navList a:hover {
+}
+
+/* ---------------------------------------------------------------------
+ Buttons
+------------------------------------------------------------------------ */
+.btn {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    *display: inline; /* inline-block for lte IE7 */
+    *zoom: 1; /* inline-block for lte IE7 */
+    margin: 0;
+    padding: 4px 7px 5px;
+    background-color: #a0af6c;
+    border: 1px solid #cbd488;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-size: 13px;
+    text-align: left;
+}
