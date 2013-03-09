@@ -1,0 +1,30 @@
+es:
+  refinery:
+    plugins:
+      waiting_families:
+        title: Waiting Families
+#        article: masculino/femenino
+    waiting_families:
+      admin:
+        waiting_families:
+          actions:
+            create_new: Crear nuevo waiting family
+            reorder: Reordenar waiting families
+            reorder_done: Reordenación de waiting families completada
+          records:
+            title: Waiting Families
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay waiting families todavía. Pulsa en "Crear nuevo Waiting Family" para crear tu primer waiting family.
+          waiting_family:
+            view_live_html: Ver este waiting family como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este waiting family
+            delete: Borrar este waiting family para siempre
+      waiting_families:
+        show:
+          other: Otros waiting families
+  activerecord:
+    attributes:
+      'refinery/waiting_families/waiting_family':
+        summary: Summary
+        description: Description
+        picture: Picture

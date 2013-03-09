@@ -1,0 +1,31 @@
+zh-CN:
+  refinery:
+    plugins:
+      waiting_families:
+        title: Waiting Families
+    waiting_families:
+      admin:
+        waiting_families:
+          actions:
+            create_new: 建立新的 Waiting Family
+            reorder: 对 Waiting Families 重新排序
+            reorder_done: 对 Waiting Families 的重新排序结束
+          records:
+            title: Waiting Families
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Waiting Families yet. Click "Add New Waiting Family" to add your first waiting family.
+            no_items_yet: 目前没有 Waiting Families . 点击 "Add New Waiting Family" 创建一个waiting family.
+          waiting_family:
+            view_live_html: 查看 waiting family 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 waiting family
+            delete: 永久删除 waiting family
+      waiting_families:
+        show:
+          other: 其他 Waiting Families
+  activerecord:
+    attributes:
+      'refinery/waiting_families/waiting_family':
+        summary: Summary
+        description: Description
+        picture: Picture

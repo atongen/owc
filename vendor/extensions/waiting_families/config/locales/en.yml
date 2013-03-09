@@ -1,0 +1,29 @@
+en:
+  refinery:
+    plugins:
+      waiting_families:
+        title: Waiting Families
+    waiting_families:
+      admin:
+        waiting_families:
+          actions:
+            create_new: Add New Waiting Family
+            reorder: Reorder Waiting Families
+            reorder_done: Done Reordering Waiting Families
+          records:
+            title: Waiting Families
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Waiting Families yet. Click "Add New Waiting Family" to add your first waiting family.
+          waiting_family:
+            view_live_html: View this waiting family live <br/><em>(opens in a new window)</em>
+            edit: Edit this waiting family
+            delete: Remove this waiting family forever
+      waiting_families:
+        show:
+          other: Other Waiting Families
+  activerecord:
+    attributes:
+      'refinery/waiting_families/waiting_family':
+        summary: Summary
+        description: Description
+        picture: Picture

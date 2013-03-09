@@ -44,3 +44,5 @@ gem 'refinerycms-search', '~> 2.0.0'
 gem 'refinerycms-page-images', '~> 2.0.0'
 
 gem 'figaro'
+
+gem 'refinerycms-waiting_families', :path => 'vendor/extensions'
