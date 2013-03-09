@@ -5,14 +5,11 @@ var HopeApp = (function(app, $){
 	 */
 	function init() {
 	
-	    console.log('ALIVE BUTTS 5!!!');	
+	    console.log('ALIVE!');	
+	    
+	    console.log(app.heroCarousel);
+	    app.heroCarousel.init();
 		return app;
-	}
-	
-	// announce touch device
-	app.isTouch = !!('ontouchstart' in window) ? true : false; // bang bang, you're boolean
-	if (app.isTouch) {
-		$('body').addClass('is-touch');
 	}
 	
 	app.config = {
