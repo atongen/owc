@@ -1,0 +1,30 @@
+nb:
+  refinery:
+    plugins:
+      waiting_kids:
+        title: Waiting Kids
+    waiting_kids:
+      admin:
+        waiting_kids:
+          actions:
+            create_new: Lag en ny Waiting Kid
+            reorder: Endre rekkefølgen på Waiting Kids
+            reorder_done: Ferdig å endre rekkefølgen Waiting Kids
+          records:
+            title: Waiting Kids
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Waiting Kids enda. Klikk på "Lag en ny Waiting Kid" for å legge til din første waiting kid.
+          waiting_kid:
+            view_live_html: Vis hvordan denne waiting kid ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne waiting kid
+            delete: Fjern denne waiting kid permanent
+      waiting_kids:
+        show:
+          other: Andre Waiting Kids
+  activerecord:
+    attributes:
+      'refinery/waiting_kids/waiting_kid':
+        title: Title
+        summary: Summary
+        body: Body
+        picture: Picture

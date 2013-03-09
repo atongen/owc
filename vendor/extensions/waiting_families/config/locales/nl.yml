@@ -1,0 +1,29 @@
+nl:
+  refinery:
+    plugins:
+      waiting_families:
+        title: Waiting Families
+    waiting_families:
+      admin:
+        waiting_families:
+          actions:
+            create_new: Maak een nieuwe Waiting Family
+            reorder: Wijzig de volgorde van de Waiting Families
+            reorder_done: Klaar met het wijzingen van de volgorde van de Waiting Families
+          records:
+            title: Waiting Families
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Waiting Families. Druk op 'Maak een nieuwe Waiting Family' om de eerste aan te maken.
+          waiting_family:
+            view_live_html: Bekijk deze waiting family op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze waiting family
+            delete: Verwijder deze waiting family voor eeuwig
+      waiting_families:
+        show:
+          other: Andere Waiting Families
+  activerecord:
+    attributes:
+      'refinery/waiting_families/waiting_family':
+        summary: Summary
+        description: Description
+        picture: Picture

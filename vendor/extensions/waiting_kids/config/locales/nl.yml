@@ -1,0 +1,30 @@
+nl:
+  refinery:
+    plugins:
+      waiting_kids:
+        title: Waiting Kids
+    waiting_kids:
+      admin:
+        waiting_kids:
+          actions:
+            create_new: Maak een nieuwe Waiting Kid
+            reorder: Wijzig de volgorde van de Waiting Kids
+            reorder_done: Klaar met het wijzingen van de volgorde van de Waiting Kids
+          records:
+            title: Waiting Kids
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Waiting Kids. Druk op 'Maak een nieuwe Waiting Kid' om de eerste aan te maken.
+          waiting_kid:
+            view_live_html: Bekijk deze waiting kid op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze waiting kid
+            delete: Verwijder deze waiting kid voor eeuwig
+      waiting_kids:
+        show:
+          other: Andere Waiting Kids
+  activerecord:
+    attributes:
+      'refinery/waiting_kids/waiting_kid':
+        title: Title
+        summary: Summary
+        body: Body
+        picture: Picture

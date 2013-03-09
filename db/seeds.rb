@@ -25,3 +25,8 @@ if File.file?(seed_env_file)
   puts "Seeding #{Rails.env} environment."
   require seed_env_file
 end
+
+# Added by Refinery CMS Waiting Families extension
+Refinery::WaitingFamilies::Engine.load_seed
+# Added by Refinery CMS Waiting Kids extension
+Refinery::WaitingKids::Engine.load_seed

@@ -1,0 +1,31 @@
+es:
+  refinery:
+    plugins:
+      waiting_kids:
+        title: Waiting Kids
+#        article: masculino/femenino
+    waiting_kids:
+      admin:
+        waiting_kids:
+          actions:
+            create_new: Crear nuevo waiting kid
+            reorder: Reordenar waiting kids
+            reorder_done: Reordenación de waiting kids completada
+          records:
+            title: Waiting Kids
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay waiting kids todavía. Pulsa en "Crear nuevo Waiting Kid" para crear tu primer waiting kid.
+          waiting_kid:
+            view_live_html: Ver este waiting kid como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este waiting kid
+            delete: Borrar este waiting kid para siempre
+      waiting_kids:
+        show:
+          other: Otros waiting kids
+  activerecord:
+    attributes:
+      'refinery/waiting_kids/waiting_kid':
+        title: Title
+        summary: Summary
+        body: Body
+        picture: Picture

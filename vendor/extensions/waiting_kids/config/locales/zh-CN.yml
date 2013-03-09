@@ -1,0 +1,32 @@
+zh-CN:
+  refinery:
+    plugins:
+      waiting_kids:
+        title: Waiting Kids
+    waiting_kids:
+      admin:
+        waiting_kids:
+          actions:
+            create_new: 建立新的 Waiting Kid
+            reorder: 对 Waiting Kids 重新排序
+            reorder_done: 对 Waiting Kids 的重新排序结束
+          records:
+            title: Waiting Kids
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Waiting Kids yet. Click "Add New Waiting Kid" to add your first waiting kid.
+            no_items_yet: 目前没有 Waiting Kids . 点击 "Add New Waiting Kid" 创建一个waiting kid.
+          waiting_kid:
+            view_live_html: 查看 waiting kid 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 waiting kid
+            delete: 永久删除 waiting kid
+      waiting_kids:
+        show:
+          other: 其他 Waiting Kids
+  activerecord:
+    attributes:
+      'refinery/waiting_kids/waiting_kid':
+        title: Title
+        summary: Summary
+        body: Body
+        picture: Picture

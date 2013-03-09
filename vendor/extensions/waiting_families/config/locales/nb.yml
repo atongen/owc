@@ -1,0 +1,29 @@
+nb:
+  refinery:
+    plugins:
+      waiting_families:
+        title: Waiting Families
+    waiting_families:
+      admin:
+        waiting_families:
+          actions:
+            create_new: Lag en ny Waiting Family
+            reorder: Endre rekkefølgen på Waiting Families
+            reorder_done: Ferdig å endre rekkefølgen Waiting Families
+          records:
+            title: Waiting Families
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Waiting Families enda. Klikk på "Lag en ny Waiting Family" for å legge til din første waiting family.
+          waiting_family:
+            view_live_html: Vis hvordan denne waiting family ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne waiting family
+            delete: Fjern denne waiting family permanent
+      waiting_families:
+        show:
+          other: Andre Waiting Families
+  activerecord:
+    attributes:
+      'refinery/waiting_families/waiting_family':
+        summary: Summary
+        description: Description
+        picture: Picture

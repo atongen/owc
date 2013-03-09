@@ -1,0 +1,29 @@
+fr:
+  refinery:
+    plugins:
+      waiting_families:
+        title: Waiting Families
+    waiting_families:
+      admin:
+        waiting_families:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Waiting Family
+            reorder: Réordonner les Waiting Families
+            reorder_done: Fin de réordonnancement des Waiting Families
+          records:
+            title: Waiting Families
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Waiting Family. Cliquer sur "Créer un(e) nouve(au/l/lle) Waiting Family" pour créer votre premi(er/ère) waiting family.'
+          waiting_family:
+            view_live_html: Voir ce(t/tte) waiting family <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) waiting family
+            delete: Supprimer définitivement ce(t/tte) waiting family
+      waiting_families:
+        show:
+          other: Autres Waiting Families
+  activerecord:
+    attributes:
+      'refinery/waiting_families/waiting_family':
+        summary: Summary
+        description: Description
+        picture: Picture

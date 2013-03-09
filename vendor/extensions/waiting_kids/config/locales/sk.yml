@@ -1,0 +1,30 @@
+sk:
+  refinery:
+    plugins:
+      waiting_kids:
+        title: Waiting Kids
+    waiting_kids:
+      admin:
+        waiting_kids:
+          actions:
+            create_new: Pridať Waiting Kid
+            reorder: Preusporiadať Waiting Kids
+            reorder_done: Koniec radenia Waiting Kids
+          records:
+            title: Waiting Kids
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Waiting Kids. Kliknite na "Pridať Waiting Kid" pre pridanie prvého waiting kid.
+          waiting_kid:
+            view_live_html: Zobraziť náhľad waiting kid<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť waiting kid
+            delete: Zmazať waiting kid
+      waiting_kids:
+        show:
+          other: Daľšie Waiting Kids
+  activerecord:
+    attributes:
+      'refinery/waiting_kids/waiting_kid':
+        title: Title
+        summary: Summary
+        body: Body
+        picture: Picture
