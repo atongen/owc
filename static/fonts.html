@@ -12,14 +12,41 @@
         <title>OWC</title>
 
         <!-- STYLESHEETS -->
-        <link href='http://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" media="screen, projection" href="public/styles/screen.css" />
 		
 		<style>
-			body { font-family: 'Georgia', serif; margin: 10px; font-size: 16px; }
+			body { 
+				max-width: 960px;
+				margin: 10px auto;
+				
+				font-family: 'Georgia', serif; 
+				font-size: 16px; 
+				line-height: 1.3em;
+				background: #f4f3f2; color: #58504d; }
 			
-			h1, h2, h3, h4 { font-family: 'Varela', sans-serif; margin-bottom: 20px}
+			.cyan { color: #00aeef; }
+			.dark-gray { color: #58504d; }
+			.warm-gray { color: #919191; }
+			.purple { color: #a854a1; }
+			.red { color: #f15623; }
+			.green { color: #b7d433; }
+			.gold { color: #ffc749; }
+			
+			.background-cyan { background-color: #00aeef; }
+			.background-dark-gray { background-color: #58504d }
+			.background-warm-gray { background-color: #919191; }
+			.background-purple { background-color: #a854a1; }
+			.background-green { background-color: #b7d433; }
+			.background-gold { background-color: #ffc749; }
+			.background-red { background-color: #f15623; }
+			
+			.text-block { display: block; width: 600px; height: 100px; margin: 10px 0 }
+			.site-bd { background: #fff; padding: 10px; }
+			
+			h1, h2, h3, h4 { font-family: 'Varela Round', sans-serif; margin-bottom: 20px; letter-spacing: 2px; }
 			h1 { font-size: 24px; }
+			h2 { font-size: 24px; letter-spacing: -2px }
 		</style>
 		
         <!-- JQUERY -->
@@ -30,11 +57,26 @@
         <script type="text/javascript" src="public/scripts/global.js"></script>
     </head>
 <body>
+	<div class="site-bd">
+		<h1 class="cyan">HEADING</h1>
+		<h2 class="cyan">HEADING</h2>
+		<h3>Heading 3</h3>
+		<h4>Heading 4</h4>
+		<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+	
+		<div class="background-cyan text-block"></div>
+		<div class="background-warm-gray text-block"></div>
+		<div class="background-dark-gray text-block"></div>
+		
+		
+		<div class="background-purple text-block"></div>
+		<div class="background-green text-block"></div>
+		<div class="background-gold text-block"></div>
+		<div class="background-red text-block"></div>
 
-	<h1>HEADING</h1>
-	<h2>Heading 2</h2>
-	<h3>Heading 3</h3>
-	<h4>Heading 4</h4>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		
+	</div>
 </body>
 </html>
