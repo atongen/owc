@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130309193700) do
+ActiveRecord::Schema.define(:version => 20130309194119) do
 
   create_table "refinery_blog_categories", :force => true do |t|
     t.string   "title"
@@ -110,6 +110,24 @@ ActiveRecord::Schema.define(:version => 20130309193700) do
   end
 
   add_index "refinery_inquiries_inquiries", ["id"], :name => "index_refinery_inquiries_inquiries_on_id"
+
+  create_table "refinery_mailchimp_campaigns", :force => true do |t|
+    t.string   "subject"
+    t.string   "mailchimp_campaign_id"
+    t.string   "mailchimp_list_id"
+    t.string   "mailchimp_template_id"
+    t.string   "from_email"
+    t.string   "from_name"
+    t.text     "body"
+    t.datetime "sent_at"
+    t.datetime "scheduled_at"
+    t.boolean  "auto_tweet",            :default => false
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
+    t.string   "to_name"
+  end
+
+  add_index "refinery_mailchimp_campaigns", ["id"], :name => "index_refinery_mailchimp_campaigns_on_id"
 
   create_table "refinery_page_part_translations", :force => true do |t|
     t.integer  "refinery_page_part_id"
@@ -235,22 +253,24 @@ ActiveRecord::Schema.define(:version => 20130309193700) do
 
   add_index "refinery_users", ["id"], :name => "index_refinery_users_on_id"
 
-<<<<<<< HEAD
   create_table "refinery_waiting_families", :force => true do |t|
-=======
-  create_table "refinery_waiting_kids", :force => true do |t|
-    t.string   "title"
->>>>>>> commit to add the engine
     t.text     "summary"
     t.text     "body"
     t.integer  "picture_id"
     t.integer  "position"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-<<<<<<< HEAD
     t.string   "title"
-=======
->>>>>>> commit to add the engine
+  end
+
+  create_table "refinery_waiting_kids", :force => true do |t|
+    t.string   "title"
+    t.text     "summary"
+    t.text     "body"
+    t.integer  "picture_id"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "seo_meta", :force => true do |t|
