@@ -100,3 +100,7 @@ vendor/extensions/**/spec/dummy
 
 # Ignore database configuration
 /config/database.yml
+
+# Ignore Sublime Text project files
+*.sublime*
+
