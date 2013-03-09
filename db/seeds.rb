@@ -28,3 +28,5 @@ end
 
 # Added by Refinery CMS Waiting Families extension
 Refinery::WaitingFamilies::Engine.load_seed
+# Added by Refinery CMS Waiting Kids extension
+Refinery::WaitingKids::Engine.load_seed

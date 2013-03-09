@@ -1,0 +1,45 @@
+<% content_for :body_content_title do %>
+  <%= @waiting_kid.title %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Title</h1>
+    <p>
+      <%=raw @waiting_kid.title %>
+    </p>
+  </section>
+  <section>
+    <h1>Summary</h1>
+    <p>
+      <%=raw @waiting_kid.summary %>
+    </p>
+  </section>
+  <section>
+    <h1>Body</h1>
+    <p>
+      <%=raw @waiting_kid.body %>
+    </p>
+  </section>
+  <section>
+    <h1>Picture</h1>
+    <p>
+      <%= image_fu @waiting_kid.picture, nil %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="waiting_kids">
+      <% @waiting_kids.each do |waiting_kid| %>
+        <li>
+          <%= link_to waiting_kid.title, refinery.waiting_kids_waiting_kid_path(waiting_kid) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

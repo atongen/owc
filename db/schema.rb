@@ -235,14 +235,22 @@ ActiveRecord::Schema.define(:version => 20130309193700) do
 
   add_index "refinery_users", ["id"], :name => "index_refinery_users_on_id"
 
+<<<<<<< HEAD
   create_table "refinery_waiting_families", :force => true do |t|
+=======
+  create_table "refinery_waiting_kids", :force => true do |t|
+    t.string   "title"
+>>>>>>> commit to add the engine
     t.text     "summary"
     t.text     "body"
     t.integer  "picture_id"
     t.integer  "position"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+<<<<<<< HEAD
     t.string   "title"
+=======
+>>>>>>> commit to add the engine
   end
 
   create_table "seo_meta", :force => true do |t|
