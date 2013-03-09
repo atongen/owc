@@ -65,6 +65,14 @@ ActiveRecord::Schema.define(:version => 20130309205551) do
   add_index "refinery_blog_posts", ["id"], :name => "index_refinery_blog_posts_on_id"
   add_index "refinery_blog_posts", ["slug"], :name => "index_refinery_blog_posts_on_slug"
 
+  create_table "refinery_carousel_images", :force => true do |t|
+    t.string   "title"
+    t.integer  "image_id"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "refinery_events", :force => true do |t|
     t.string   "title"
     t.text     "summary"
@@ -123,24 +131,6 @@ ActiveRecord::Schema.define(:version => 20130309205551) do
   end
 
   add_index "refinery_inquiries_inquiries", ["id"], :name => "index_refinery_inquiries_inquiries_on_id"
-
-  create_table "refinery_mailchimp_campaigns", :force => true do |t|
-    t.string   "subject"
-    t.string   "mailchimp_campaign_id"
-    t.string   "mailchimp_list_id"
-    t.string   "mailchimp_template_id"
-    t.string   "from_email"
-    t.string   "from_name"
-    t.text     "body"
-    t.datetime "sent_at"
-    t.datetime "scheduled_at"
-    t.boolean  "auto_tweet",            :default => false
-    t.datetime "created_at",                               :null => false
-    t.datetime "updated_at",                               :null => false
-    t.string   "to_name"
-  end
-
-  add_index "refinery_mailchimp_campaigns", ["id"], :name => "index_refinery_mailchimp_campaigns_on_id"
 
   create_table "refinery_page_part_translations", :force => true do |t|
     t.integer  "refinery_page_part_id"
