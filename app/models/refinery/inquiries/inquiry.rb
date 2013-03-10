@@ -9,9 +9,8 @@ module Refinery
                    #:secondary_phone, :info_place_baby, :info_adopt_child, :info_other, :info_other_message, :contact_street, :contact_city, :contact_state, :contact_state, :contact_zip
                    :extra_spam_words => %w()
 
-      validates_presence_of :name, :message
+      validates_presence_of :name, :message, :phone
       validates :email, :format=> { :with =>  /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
-      validates :phone, :format=> { :with => //}
       validate :information_selection
       validate :other_information_selection
       validate :exit_question_selection
@@ -36,7 +35,7 @@ module Refinery
       end
       
       def other_information_selection
-        errors.add(:other_information, 'field must be completed.') unless self.info_other_message?
+        errors.add(:other_information, 'field must be completed.') if self.info_other_message.blank? && self.info_other
       end
       
       def exit_question_selection
@@ -44,7 +43,7 @@ module Refinery
       end
       
       def exit_question_other_selection
-        errors.add(:how, 'did you hear about us \"Other\" section must be completed.') unless self.exit_question_other_message?
+        errors.add(:how, 'did you hear about us "Other" section must be completed.') if self.exit_question_other_message.blank? && self.exit_question_other
       end
       
       def requested_info_fields

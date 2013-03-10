@@ -20,6 +20,7 @@
       </ul>
     </div>
   </div>
+  <% if css != "navPrimaryMobile" %>
   <div class="grid">
     <div class="pageHdg">
       <% if @page.parent.nil? %>
@@ -30,4 +31,5 @@
       <% end %>
     </div>
   </div>
+  <% end %>
 <% end -%>
