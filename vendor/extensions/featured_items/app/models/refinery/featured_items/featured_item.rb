@@ -3,7 +3,7 @@ module Refinery
     class FeaturedItem < Refinery::Core::BaseModel
       self.table_name = 'refinery_featured_items'
 
-      attr_accessible :title, :model, :model_id, :position
+      attr_accessible :title, :model, :model_id, :position, :callout_text
 
       acts_as_indexed :fields => [:title, :model]
 

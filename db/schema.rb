@@ -64,7 +64,6 @@ ActiveRecord::Schema.define(:version => 20130310022024) do
   add_index "refinery_blog_posts", ["access_count"], :name => "index_refinery_blog_posts_on_access_count"
   add_index "refinery_blog_posts", ["id"], :name => "index_refinery_blog_posts_on_id"
   add_index "refinery_blog_posts", ["slug"], :name => "index_refinery_blog_posts_on_slug"
-
   create_table "refinery_events", :force => true do |t|
     t.string   "title"
     t.text     "summary"
@@ -83,8 +82,9 @@ ActiveRecord::Schema.define(:version => 20130310022024) do
     t.string   "model"
     t.integer  "model_id"
     t.integer  "position"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "callout_text"
   end
 
   create_table "refinery_image_page_translations", :force => true do |t|
