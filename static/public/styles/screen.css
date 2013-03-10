@@ -395,6 +395,7 @@ img {
 }
 
 .vList_bulleted {
+
 }
 
 .vList_bulleted > li {
@@ -408,6 +409,16 @@ img {
     line-height: 18px;
     position: absolute;
     left: 0;
+}
+
+.vList_footer {
+    margin-right: 40px;
+}
+
+@media all and (min-width: 768px) {
+    .vList_footer {
+        margin-right: 0;
+    }
 }
 
 .vList_footer > li {
@@ -499,6 +510,7 @@ img {
 
 .sectionHdg {
     position: relative;
+    padding-top: 20px;
     margin-bottom: 24px;
     color: #919191;
     text-align: center;
@@ -651,10 +663,10 @@ img {
     padding: 42px 0;
 }
 
+.site-ft-logo { display: none; }
+
 @media all and (min-width: 768px) {
-	.site {
-    	min-width: 960px;
-	}
+    .site-ft-logo { display: block; }
 }
 
 /* ---------------------------------------------------------------------
