@@ -240,6 +240,16 @@ ActiveRecord::Schema.define(:version => 20130310025718) do
 
   add_index "refinery_settings", ["name"], :name => "index_refinery_settings_on_name"
 
+  create_table "refinery_staffs", :force => true do |t|
+    t.string   "full_name"
+    t.string   "title"
+    t.string   "email"
+    t.integer  "picture_id"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "refinery_user_plugins", :force => true do |t|
     t.integer "user_id"
     t.string  "name"
