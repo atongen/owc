@@ -6,13 +6,18 @@ module Refinery
       before_filter :find_page
 
       def index
-        # you can use meta fields from your model instead (e.g. browser_title)
-        # by swapping @page for @staff in the line below:
-        present(@page)
+        @staffs = Staff.where(:staff_type => 'staff')
+        render :action => "index"
+      end
+
+      def board
+        # get all board members
+        @staffs = Staff.where(:staff_type => 'board')
+        render :action => "index"
       end
 
     protected
-
+    
       def find_all_staffs
         @staffs = Staff.order('position ASC')
       end

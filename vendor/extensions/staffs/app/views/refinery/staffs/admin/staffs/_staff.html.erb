@@ -1,11 +1,11 @@
 <li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(staff) -%>">
   <span class='title'>
-    <%= staff.full_name %>
+    <%= staff.full_name %> ( <%= staff.staff_type %> )
 
   </span>
   <span class='actions'>
     
-    <%= link_to refinery_icon_tag("application_go.png"), refinery.staffs_staff_path(staff),
+    <%= link_to refinery_icon_tag("application_go.png"), refinery.staffs_staffs_path(staff),
         :title => t('.view_live_html'),
         :target => "_blank" %>
     
