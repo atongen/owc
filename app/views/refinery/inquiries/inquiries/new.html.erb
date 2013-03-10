@@ -1,0 +1,71 @@
+<% content_for :body do %>
+  <div class='inquiries'>
+    <%= form_for [refinery, :inquiries, @inquiry] do |f| %>
+      <%= render :partial => "/refinery/admin/error_messages",
+                 :locals => {
+                   :object => @inquiry,
+                   :include_object_name => true
+                 } %>
+      <p>What type of information can we provide for you? *</p>
+      <div class="field">
+        <%= f.label :placing_my_baby, :class => 'placeholder-fallback' %>
+        <%= f.check_box :info_place_baby, :class => 'text' %>
+      </div>
+      <div class="field">
+        <%= f.label :adopting_a_child, :class => 'placeholder-fallback' %>
+        <%= f.check_box :info_adopt_child, :class => 'text' %>
+      </div>
+      <div class="field">
+        <%= f.label :other, :class => 'placeholder-fallback' %>
+        <%= f.check_box :info_other, :class => 'text' %>
+      </div>
+      <p>If Other, please describe:</p>
+      <div class='field message_field'>
+        <%= f.text_area :info_other_message, :rows => 6 %>
+      </div>
+      
+      <div class="field">
+        <%= f.required_label :name, :class => 'placeholder-fallback' %>
+        <%= f.text_field :name, :class => 'text', :required => 'required', :placeholder => t('name', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') %>
+      </div>
+      <p>Address:</p>
+      <div class="field">
+        <%= f.label :street, :class => 'placeholder-fallback' %>
+        <%= f.text_field :contact_street, :class => 'text', :placeholder => t('street', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') %>
+      </div>
+      <div class="field">
+        <%= f.label :city, :class => 'placeholder-fallback' %>
+        <%= f.text_field :contact_city, :class => 'text', :placeholder => t('city', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') %>
+      </div>
+      <div class="field">
+        <%= f.label :state, :class => 'placeholder-fallback' %>
+        <%= f.text_field :contact_state, :class => 'text', :placeholder => t('state', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') %>
+      </div>
+      <div class="field">
+        <%= f.label :zip, :class => 'placeholder-fallback' %>
+        <%= f.text_field :contact_zip, :class => 'text', :placeholder => t('zip', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') %>
+      </div>
+      <div class="field">
+        <%= f.required_label :primary_phone, :class => 'placeholder-fallback' %>
+        <%= f.text_field :phone, :class => 'text phone', :required => 'required', :placeholder => t('primary phone', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') %>
+      </div>
+      <div class="field">
+        <%= f.label :secondary_phone, :class => 'placeholder-fallback' %>
+        <%= f.text_field :contact_secondary_phone, :class => 'text phone', :placeholder => t('secondary phone', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') %>
+      </div>
+      <div class="field">
+        <%= f.required_label :email, :class => 'placeholder-fallback' %>
+        <%= f.email_field :email, :class => 'text email', :required => 'required', :placeholder => t('email', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') %>
+      </div>
+      <div class='field message_field'>
+        <%= f.required_label :message, :class => 'placeholder-fallback' %>
+        <%= f.text_area :message, :rows => 8, :required => 'required', :placeholder => t('message', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') %>
+      </div>
+      <div class="actions">
+        <%= f.submit t('.send') %>
+        <%= link_to t('.privacy_policy'), "/pages/privacy-policy", :id => "privacy_link" if Refinery::Inquiries.show_contact_privacy_link %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+<%= render :partial => "/refinery/content_page" %>

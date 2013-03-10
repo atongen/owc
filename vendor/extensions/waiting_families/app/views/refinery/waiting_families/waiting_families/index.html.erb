@@ -2,7 +2,12 @@
   <ul id="waiting_families">
     <% @waiting_families.each do |waiting_family| %>
       <li>
-        <%= link_to waiting_family, refinery.waiting_families_waiting_family_path(waiting_family) %>
+        <%= link_to image_fu(waiting_family.picture, '200x200'), refinery.waiting_families_waiting_family_path(waiting_family) %>
+        
+        <p><%= waiting_family.title %></p>
+        <div>
+          <%= raw waiting_family.summary %>
+        </div>
       </li>
     <% end %>
   </ul>

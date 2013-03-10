@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130309213228) do
+ActiveRecord::Schema.define(:version => 20130310030151) do
 
   create_table "refinery_blog_categories", :force => true do |t|
     t.string   "title"
@@ -65,13 +65,15 @@ ActiveRecord::Schema.define(:version => 20130309213228) do
   add_index "refinery_blog_posts", ["id"], :name => "index_refinery_blog_posts_on_id"
   add_index "refinery_blog_posts", ["slug"], :name => "index_refinery_blog_posts_on_slug"
 
-  create_table "refinery_carousel_images", :force => true do |t|
-    t.string   "title"
-    t.integer  "image_id"
-    t.integer  "position"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "refinery_event_images", :force => true do |t|
+    t.integer "image_id"
+    t.integer "event_id"
+    t.integer "position"
+    t.string  "caption"
   end
+
+  add_index "refinery_event_images", ["event_id"], :name => "index_refinery_event_images_on_event_id"
+  add_index "refinery_event_images", ["image_id"], :name => "index_refinery_event_images_on_image_id"
 
   create_table "refinery_events", :force => true do |t|
     t.string   "title"
@@ -91,8 +93,9 @@ ActiveRecord::Schema.define(:version => 20130309213228) do
     t.string   "model"
     t.integer  "model_id"
     t.integer  "position"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "callout_text"
   end
 
   create_table "refinery_image_page_translations", :force => true do |t|
@@ -134,9 +137,18 @@ ActiveRecord::Schema.define(:version => 20130309213228) do
     t.string   "email"
     t.string   "phone"
     t.text     "message"
-    t.boolean  "spam",       :default => false
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.boolean  "spam",                    :default => false
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
+    t.boolean  "info_place_baby"
+    t.boolean  "info_adopt_child"
+    t.boolean  "info_other"
+    t.text     "info_other_message"
+    t.string   "contact_street"
+    t.string   "contact_city"
+    t.string   "contact_zip"
+    t.string   "contact_secondary_phone"
+    t.string   "contact_state"
   end
 
   add_index "refinery_inquiries_inquiries", ["id"], :name => "index_refinery_inquiries_inquiries_on_id"
@@ -238,6 +250,16 @@ ActiveRecord::Schema.define(:version => 20130309213228) do
 
   add_index "refinery_settings", ["name"], :name => "index_refinery_settings_on_name"
 
+  create_table "refinery_staffs", :force => true do |t|
+    t.string   "full_name"
+    t.string   "title"
+    t.string   "email"
+    t.integer  "picture_id"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "refinery_user_plugins", :force => true do |t|
     t.integer "user_id"
     t.string  "name"
@@ -270,9 +292,10 @@ ActiveRecord::Schema.define(:version => 20130309213228) do
     t.text     "body"
     t.integer  "picture_id"
     t.integer  "position"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
     t.string   "title"
+    t.text     "detailed_information"
   end
 
   create_table "refinery_waiting_kids", :force => true do |t|

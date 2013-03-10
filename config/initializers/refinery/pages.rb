@@ -6,7 +6,7 @@ Refinery::Pages.configure do |config|
   # end
 
   # Configure global page default parts
-  config.default_parts = ["Summary", "First 3 Col Left", "First 3 Col Middle", "First 3 Col Right", "First Full Width", "Second Full Width", "Third Full Width", "Left 2 Col", "Right 2 Col"]
+  config.default_parts = ["Summary", "Left 3 Col", "Middle 3 Col", "Right 3 Col", "First Full Width", "Second Full Width", "Third Full Width", "Left 2 Col", "Right 2 Col"]
 
   # Configure whether to allow adding new page parts
   # config.new_page_parts = false

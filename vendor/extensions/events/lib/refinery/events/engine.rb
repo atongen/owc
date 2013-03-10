@@ -19,6 +19,10 @@ module Refinery
       end
 
       config.after_initialize do
+        Refinery::Events::Tab.register do |tab|
+          tab.name = "images"
+          tab.partial = "/refinery/admin/events/tabs/images"
+        end
         Refinery.register_extension(Refinery::Events)
       end
     end

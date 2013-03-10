@@ -3,7 +3,7 @@ module Refinery
     class WaitingFamily < Refinery::Core::BaseModel
       self.table_name = 'refinery_waiting_families'
 
-      attr_accessible :title, :summary, :body, :picture_id, :position
+      attr_accessible :title, :summary, :body, :picture_id, :position, :detailed_information
 
       acts_as_indexed :fields => [:summary, :body]
 

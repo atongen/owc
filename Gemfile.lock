@@ -5,6 +5,8 @@ PATH
       refinerycms-core (~> 2.0.9)
     refinerycms-featured_items (1.0)
       refinerycms-core (~> 2.0.9)
+    refinerycms-staffs (1.0)
+      refinerycms-core (~> 2.0.9)
     refinerycms-waiting_families (1.0)
       refinerycms-core (~> 2.0.9)
     refinerycms-waiting_kids (1.0)
@@ -108,6 +110,7 @@ GEM
     paper_trail (2.7.1)
       activerecord (~> 3.0)
       railties (~> 3.0)
+    pg (0.14.1)
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
@@ -238,6 +241,7 @@ DEPENDENCIES
   figaro
   jquery-rails (~> 2.0.0)
   mysql2
+  pg
   rails (~> 3.2.12)
   refinerycms (~> 2.0.0)
   refinerycms-blog (~> 2.0.0)
@@ -247,6 +251,7 @@ DEPENDENCIES
   refinerycms-inquiries (~> 2.0.0)
   refinerycms-page-images (~> 2.0.0)
   refinerycms-search (~> 2.0.0)
+  refinerycms-staffs!
   refinerycms-waiting_families!
   refinerycms-waiting_kids!
   sass-rails (~> 3.2.3)
