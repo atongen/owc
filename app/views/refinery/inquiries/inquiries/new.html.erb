@@ -33,22 +33,22 @@
             <li><%= f.required_label :name, :class => 'labelName' %>
             <%= f.text_field :name, :class => 'name', :required => 'required', :placeholder => t('name', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') %></li>
       
-            <li><%= f.label :address %>
+            <li><%= f.label :address, :class => 'labelAddress' %>
             <%= f.text_field :contact_street, :class => 'address', :placeholder => 'Street' %></li>
             
             <li>
               <%= f.label :city, :class => 'labelCity' %>
-              <%= f.text_field :contact_city, :placeholder => 'City' %>
+              <%= f.text_field :contact_city, :class => 'city', :placeholder => 'City' %>
               <%= f.label :state %>
-              <%= f.text_field :contact_state, :placeholder => 'State' %>
+              <%= f.text_field :contact_state, :class => 'state', :placeholder => 'State' %>
               <%= f.label :zip %>
-              <%= f.text_field :contact_zip, :placeholder => 'Zip' %>
+              <%= f.text_field :contact_zip, :class => 'zip', :placeholder => 'Zip' %>
             </li>
             <li>
               <%= f.required_label :primary_phone %>
-              <%= f.text_field :phone, :required => 'required', :placeholder => 'Primary Phone' %>
+              <%= f.text_field :phone, :required => 'required', :class => "primaryPhone", :placeholder => 'Primary Phone' %>
               <%= f.label :secondary_phone %>
-              <%= f.text_field :contact_secondary_phone, :placeholder => 'Secondary Phone' %>
+              <%= f.text_field :contact_secondary_phone, :class => "secondaryPhone", :placeholder => 'Secondary Phone' %>
             </li>
             <li>
               <%= f.required_label :email, :class => 'labelEmail' %>
@@ -71,7 +71,7 @@
       <div class="grid">
         <div class="grid-col grid-col_size4of12">
           <div class="gap gap_3">
-              <p>Where did you hear about<br /> HOPE Adoption &amp; Family Services?<sup>*</sup></p>
+              <p>Where did you hear about<br /> HOPE Adoption &amp; Family Services?<sup> *</sup></p>
             </div>
           </div>
           <div class="grid-col grid-col_size8of12">

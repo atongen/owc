@@ -1,14 +1,45 @@
 <% content_for :body do %>
   <ul id="waiting_families">
-    <% @waiting_families.each do |waiting_family| %>
-      <li>
-        <%= link_to image_fu(waiting_family.picture, '200x200'), refinery.waiting_families_waiting_family_path(waiting_family) %>
-        
-        <p><%= waiting_family.title %></p>
-        <div>
-          <%= raw waiting_family.summary %>
+    <%  @waiting_families.each_slice(3) do |families| %>
+      <div class="grid">
+        <div class="grid-col grid-col_size4of12">
+            <div class="event">
+                <div class="event-img">
+                    <%= link_to image_fu(families[0].picture, '200x200'), refinery.waiting_families_waiting_family_path(families[0]) %>
+                </div>
+                <div class="event-bd event-bd_highlight">
+                    <%= raw families[0].summary %>
+                </div>
+            </div>
         </div>
-      </li>
+
+        <% if families[1] != nil %>
+        <div class="grid-col grid-col_size4of12">
+            <div class="event">
+                <div class="event-img">
+                    <%= link_to image_fu(families[1].picture, '200x200'), refinery.waiting_families_waiting_family_path(families[1]) %>
+                </div>
+                <div class="event-bd event-bd_highlight">
+                     <%= raw families[1].summary %>
+                </div>
+            </div>
+        </div>
+        <% end %>
+
+        <% if families[2] != nil %>
+        <div class="grid-col grid-col_size4of12">
+            <div class="event">
+                <div class="event-img">
+                    <%= link_to image_fu(families[2].picture, '200x200'), refinery.waiting_families_waiting_family_path(families[2]) %>
+                </div>
+                <div class="event-bd event-bd_highlight">
+                    <%= raw families[2].summary %>
+                </div>
+            </div>
+        </div>
+        <% end %>
+      </div>
+
     <% end %>
   </ul>
 <% end %>
