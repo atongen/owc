@@ -21,7 +21,7 @@ module Refinery
     def self.colors
       [
         ['purple', '#a854a1'],
-        ['gold', '#ffc749'],
+        ['yellow', '#ffc749'],
         ['green', '#b7d433'],
         ['blue', '#00aeef'],
         ['orange', '#e86f15']
