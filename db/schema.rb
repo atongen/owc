@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130310022024) do
+ActiveRecord::Schema.define(:version => 20130310025718) do
 
   create_table "refinery_blog_categories", :force => true do |t|
     t.string   "title"
@@ -127,9 +127,18 @@ ActiveRecord::Schema.define(:version => 20130310022024) do
     t.string   "email"
     t.string   "phone"
     t.text     "message"
-    t.boolean  "spam",       :default => false
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.boolean  "spam",                    :default => false
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
+    t.boolean  "info_place_baby"
+    t.boolean  "info_adopt_child"
+    t.boolean  "info_other"
+    t.text     "info_other_message"
+    t.string   "contact_street"
+    t.string   "contact_city"
+    t.string   "contact_zip"
+    t.string   "contact_secondary_phone"
+    t.string   "contact_state"
   end
 
   add_index "refinery_inquiries_inquiries", ["id"], :name => "index_refinery_inquiries_inquiries_on_id"
