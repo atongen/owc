@@ -46,11 +46,18 @@ var HopeApp = (function(app, $){
 
 	var HeroCarousel = function () {
 
+		var autoRotateTimout,
+			autoRotateDelay = 1000,
+			currentSlideIndex = 0,
+			$carousel,
+			$slides,
+			$pagination;
+
 		function init() {
 	
-			var $carousel = $('.hero-carousel');
-			var $slides = $('.slides li', '.hero-carousel');
-			var $pagination = $carousel.find('.pagination');
+			$carousel = $('.hero-carousel');
+			$slides = $('.slides');
+			$pagination = $carousel.find('.pagination');
 			// build pagination
 			
 			var paginationMarkup = '';
@@ -59,17 +66,42 @@ var HopeApp = (function(app, $){
 				paginationMarkup += '<li><a href="#">•</a></li>';
 			}
 			
-			$carousel.find('.pagination').append(paginationMarkup);
-			
+			$carousel.find('.pagination').append(paginationMarkup);			
 			$pagination.find('li').first().addClass('active');
-			
-			console.log($slides);	
+	
+			beginTimer();
+	
 		}
 	
+		function beginTimer() {
+			autoRotateTimeout = setTimeout(function(){
+				nextSlide();
+			}, autoRotateDelay);
+		}
+		
+		function stopTimer() {
+		
+		}  
+	
+		function nextSlide(){
+			var targetSlideIndex = currentSlideIndex + 1;
+			if(targetSlideIndex >= $slides.length){
+				target = 0;
+			}
+			changeSlide(targetSlideIndex);
+		}
+		
+		function previousSlide(){
+			currentSlideIndex
+		}
+		
 		function changeSlide(targetIndex){
 			
-			
-			
+			var $currentSlide = $slides.find('li.active');
+			var $targetSlide = $slides.find('li').eq(targetIndex);
+			$currentSlide.removeClass('active');
+			$targetSlide.addClass('active');
+		
 		}
 	
 		return {
@@ -100,11 +132,16 @@ var HopeApp = (function(app, $){
         function Gallery(view) {
             var self = this;
             self.width = view.width();
+            self.navigation = view.find(".navigation");
             self.imageContainer = view.find(".images")
             self.images = view.find(".image");
+            self.previous = view.find(".previous");
+            self.next = view.find(".next");
             self.index = 0;
+            self.button;
 
-            console.log(self.images);
+            self.previous.fadeOut(0);
+            self.next.fadeOut(0);
 
             self.gotoIndex = function(index, animated, direction) {
                 if (index < 0)
@@ -132,12 +169,41 @@ var HopeApp = (function(app, $){
                 self.gotoIndex(self.index-1, true, "previous");
             }
 
-            view.find(".navigation").click(function(event) {
+            self.navigation.click(function(event) {
                 event.preventDefault();
-                if (event.offsetX < self.width/2)
+                if (self.button === self.previous)
                     self.gotoPreviousImage(true);
                 else
                     self.gotoNextImage(true);
+            });
+
+            self.setRollover = function(value) {
+                var rollover;
+                if (value !== 0)
+                    rollover = value < self.width/2 ? self.previous : self.next;
+
+                if (rollover !== self.button) {
+                    if (self.button)
+                        self.button.stop(true, true).fadeOut("fast");
+                    self.button = rollover;
+                    if (self.button)
+                        self.button.stop(true, true).fadeIn("fast");
+                }
+            }
+
+            self.navigation.mouseenter(function(event) {
+                event.preventDefault();
+                self.setRollover(event.pageX - self.images.offset().left);
+            });
+
+            self.navigation.mousemove(function(event) {
+                event.preventDefault();
+                self.setRollover(event.pageX - self.images.offset().left);
+            });
+
+            self.navigation.mouseleave(function(event) {
+                event.preventDefault();
+                self.setRollover(0);
             });
 
             self.gotoIndex(0, false);

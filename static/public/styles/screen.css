@@ -1047,7 +1047,7 @@ dark blue: #01729c;
 }
 
 .no-image .hero-carousel-bd h2 { font-size: 64px; line-height: 1.2em; margin-bottom: 20px; }
-.hero-carousel-bd p { font-size: 21px; margin-bottom: 40px; }
+.no-image .hero-carousel-bd p { font-size: 21px; margin-bottom: 40px; }
 
 .hero-carousel-img {
 	position: absolute;
