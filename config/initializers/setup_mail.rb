@@ -6,7 +6,7 @@ opts = %w{
   password
   authenication
   enable_starttls_auto
-}.each_with_object do |opts, k|
+}.each_with_object({}) do |k,opts|
   key = "SMTP_#{k.upcase}"
   opts[key.to_sym] = ENV[key] if ENV[key].present?
 end
