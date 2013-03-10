@@ -11,9 +11,11 @@ var HopeApp = (function(app, $){
         function Gallery(view) {
             var self = this;
             self.width = view.width();
-            self.imageContainer = view.find(".gallery-carousel-image-container")
-            self.images = self.imageContainer.find(".gallery-carousel-image");
+            self.imageContainer = view.find(".images")
+            self.images = view.find(".image");
             self.index = 0;
+
+            console.log(self.images);
 
             self.gotoIndex = function(index, animated, direction) {
                 if (index < 0)
@@ -41,12 +43,12 @@ var HopeApp = (function(app, $){
                 self.gotoIndex(self.index-1, true, "previous");
             }
 
-            view.find(".gallery-carouse-navigation-previous").click(function(event) {
-                self.gotoPreviousImage(true);
-            });
-
-            view.find(".gallery-carouse-navigation-next").click(function(event) {
-                self.gotoNextImage(true);
+            view.find(".navigation").click(function(event) {
+                event.preventDefault();
+                if (event.offsetX < self.width/2)
+                    self.gotoPreviousImage(true);
+                else
+                    self.gotoNextImage(true);
             });
 
             self.gotoIndex(0, false);
