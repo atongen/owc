@@ -1,0 +1,31 @@
+zh-CN:
+  refinery:
+    plugins:
+      featured_items:
+        title: Featured Items
+    featured_items:
+      admin:
+        featured_items:
+          actions:
+            create_new: 建立新的 Featured Item
+            reorder: 对 Featured Items 重新排序
+            reorder_done: 对 Featured Items 的重新排序结束
+          records:
+            title: Featured Items
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Featured Items yet. Click "Add New Featured Item" to add your first featured item.
+            no_items_yet: 目前没有 Featured Items . 点击 "Add New Featured Item" 创建一个featured item.
+          featured_item:
+            view_live_html: 查看 featured item 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 featured item
+            delete: 永久删除 featured item
+      featured_items:
+        show:
+          other: 其他 Featured Items
+  activerecord:
+    attributes:
+      'refinery/featured_items/featured_item':
+        title: Title
+        model: Model
+        model_id: Model

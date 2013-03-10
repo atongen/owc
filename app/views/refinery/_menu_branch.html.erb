@@ -1,0 +1,12 @@
+<li>
+    <%= link_to(menu_branch.title, refinery.url_for(menu_branch.url)) -%>
+    <% if menu_branch.children.count > 0 %>
+      <ul class="navList-sub">
+          <% menu_branch.children.each do |link| %>
+          <li>
+            <%= link_to(link.title, refinery.url_for(link.url)) -%>
+          </li>
+          <% end %>
+      </ul>
+    <% end %>
+</li>

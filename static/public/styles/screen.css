@@ -410,12 +410,16 @@ height: auto !important;
     margin-top: 4px;
 }
 
+.vList {
+    margin-top: 8px;
+}
+
 .vList_footer > li {
     margin-bottom: 12px;
 }
 
 .vList_footer a {
-    font: 14px/1 Helvetica, Arial, sans-serif;
+    font: 14px/1 'Varela Round', Helvetica, Arial, sans-serif;
     color: #ffffff;
     text-transform: uppercase;
 }
@@ -489,6 +493,7 @@ height: auto !important;
 .hdg_6 { font-size: 10px; }
 
 .pageHdg {
+    position: relative;
     margin-bottom: 24px;
     color: #919191;
     text-align: center;
@@ -507,7 +512,7 @@ height: auto !important;
     width: 100%;
     position: absolute;
     left: 0;
-    top: 15%;
+    top: 40%;
     z-index: -1;
 }
 
@@ -647,7 +652,7 @@ height: auto !important;
     display: block;
     text-align: center;
     color: #464646;
-    font: 14px/1 Helvetica, Arial, sans-serif;
+    font: 14px/1 'Varela Round', Helvetica, Arial, sans-serif;
     text-decoration: none;
     text-transform: uppercase;
     border-bottom: 3px solid #00aeef;
@@ -789,11 +794,27 @@ dark blue: #01729c;
     width: 140px;
     padding: 11px 0;
     background: #f15623;
-    font: 14px/1 Helvetica, Arial, sans-serif;
+    font: 14px/1 'Varela Round', Helvetica, Arial, sans-serif;
     color: #ffffff;
     text-transform: uppercase;
     text-align: center;
 }
+
+/* Contact Us
+------------------------------------------- */
+
+.contactUs {
+    position: absolute;
+    right: 190px;
+    top: 5px;
+}
+
+.contactUs-btn {
+    font: 14px/1 'Varela Round', Helvetica, Arial, sans-serif;
+    color: #00aeef;
+    text-transform: uppercase;
+}
+
 
 /* Utility Nav
 ------------------------------------------- */
@@ -813,7 +834,7 @@ dark blue: #01729c;
 
 .asideList a {
     font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Varela Round', Arial, Helvetica, sans-serif;
     font-weight: 700;
     text-transform: uppercase;
     color: #666666;

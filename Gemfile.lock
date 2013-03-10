@@ -3,6 +3,8 @@ PATH
   specs:
     refinerycms-events (1.0)
       refinerycms-core (~> 2.0.9)
+    refinerycms-featured_items (1.0)
+      refinerycms-core (~> 2.0.9)
     refinerycms-waiting_families (1.0)
       refinerycms-core (~> 2.0.9)
     refinerycms-waiting_kids (1.0)
@@ -240,6 +242,7 @@ DEPENDENCIES
   refinerycms (~> 2.0.0)
   refinerycms-blog (~> 2.0.0)
   refinerycms-events!
+  refinerycms-featured_items!
   refinerycms-i18n (~> 2.0.0)
   refinerycms-inquiries (~> 2.0.0)
   refinerycms-page-images (~> 2.0.0)
