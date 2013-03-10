@@ -54,8 +54,8 @@ namespace :owc do
     %w{ assets cache dragonfly index }.each do |dir|
       run "[ -d \"#{latest_release}/tmp/#{dir}\" ] || #{try_sudo} mkdir -p \"#{latest_release}/tmp/#{dir}\""
       run "#{try_sudo} chown -R #{application}:#{user} \"#{latest_release}/tmp/#{dir}\""
-      run "#{try_sudo} find \"#{latest_release}/tmp/#{dir}\" -type d -exec chmod 775 {} \;"
-      run "#{try_sudo} find \"#{latest_release}/tmp/#{dir}\" -type f -exec chmod 664 {} \;"
+      run "#{try_sudo} find \"#{latest_release}/tmp/#{dir}\" -type d -exec chmod 775 {} \\\\;"
+      run "#{try_sudo} find \"#{latest_release}/tmp/#{dir}\" -type f -exec chmod 664 {} \\\\;"
     end
   end
 end
