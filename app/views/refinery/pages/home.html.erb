@@ -1,35 +1,31 @@
-<div class="site-bd">
-  <div class="wrapper">
-    <div class="hero-carousel">
-      <ul class="slides"> <%# 660 x 500%>
-        <% carousel_images.each_with_index do |image,index| %>
-          <li class="<%= image.css_class %><%= index == 0 ? ' active' : ''%>">
-            <div class="hero-carousel-bd">
-              <h2 class="sans-serif"><%= image.title %></h2>
-              <%= raw image.copy %>
-              <%= link_to('Learn More', image.page.link_url, :class => 'sans-serif') %>
-            </div>
-            <% if image.picture.present? %>
-              <div class="hero-carousel-img">
-                <%= image_tag(image.picture.url) %>
-              </div>
-            <% end %>
-          </li>
+<div class="hero-carousel">
+  <ul class="slides"> <%# 660 x 500%>
+    <% carousel_images.each_with_index do |image,index| %>
+      <li class="<%= image.css_class %><%= index == 0 ? ' active' : ''%>">
+        <div class="hero-carousel-bd">
+          <h2 class="sans-serif"><%= image.title %></h2>
+          <%= raw image.copy %>
+          <%= link_to('Learn More', image.page.link_url, :class => 'sans-serif') %>
+        </div>
+        <% if image.picture.present? %>
+          <div class="hero-carousel-img">
+            <%= image_fu image.picture, '660x500#c' %>
+          </div>
         <% end %>
-      </ul>
-    </div>
-
-    <ul>
-      <% featured_items.each do |item| %>
-        <li>
-            <% if item.present? %>
-              <%= link_to(item[:text], item[:link]) %>
-              <%= item[:summary] %>
-              <%= item[:type] %>
-              <%= image_tag(item[:picture].url) if item[:picture].present? %>
-            <% end %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
+      </li>
+    <% end %>
+  </ul>
 </div>
+
+<ul>
+  <% featured_items.each do |item| %>
+    <li>
+        <% if item.present? %>
+          <%= link_to(item[:text], item[:link]) %>
+          <%= item[:summary] %>
+          <%= item[:type] %>
+          <%= image_tag(item[:picture].url) if item[:picture].present? %>
+        <% end %>
+    </li>
+  <% end %>
+</ul>

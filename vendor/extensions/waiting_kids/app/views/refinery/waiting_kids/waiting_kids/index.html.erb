@@ -1,11 +1,68 @@
 <% content_for :body do %>
-  <ul id="waiting_kids">
-    <% @waiting_kids.each do |waiting_kid| %>
-      <li>
-        <%= link_to waiting_kid.title, refinery.waiting_kids_waiting_kid_path(waiting_kid) %>
-      </li>
-    <% end %>
-  </ul>
+  <div class="grid">
+      <div class="pageHdg">
+          <h2 class="pageHdg-hd">Adopting</h2>
+          <h3 class="pageHd-sub">Minnesota Waiting Child Adoption</h3>
+      </div>
+  </div>
+  <div class="grid">
+      <p class="bigCopy">There are currently 355 children under State guardianship in immediate need of families.
+      </p>
+
+      <div class="grid-col grid-col_size6of12">
+          <div class="gap gap_3">
+              <p>HOPE works with the Minnesota Public Private Adoption Initiative (PPAI), a state funded program, and the Wendy’s Wonderful Kids Program to bring Minnesota children in the foster care system into permanent families.</p>
+              <p>All of these Minnesota Waiting Children have special needs, whether behavioral, emotional or physical. These children are over the age of 6. Many are a part of sibling groups and most are children of color.</p>
+          </div>
+      </div>
+      <div class="grid-col grid-col_size6of12">
+          <h4 class="hdg hdg_4">Costs</h4>
+          <p>Parents who adopt through the Minnesota PPAI program pay little to no fees. Both Minnesota and Wisconsin families are eligible. Learn more by filling out this <a href="">Online Request form</a> or attending a PPAI Orientation meeting <a href="">Training Link</a>.</p>
+          <p><a href="">PPAI brochure</a></p>
+      </div>
+
+  </div>
+  <div class="grid">
+      <p class="bigCopy">Meet some of the children HOPE is working with right now:
+
+      </p>
+  </div>
+  <div class="grid">
+      <div class="grid-col grid-col_size4of12">
+          <div class="event">
+              <div class="event-img">
+                  <img src="http://placehold.it/306x229&text=event-img" alt=""/>
+              </div>
+              <div class="event-bd">
+                  <h3>This is the event name and it needs to wrap nicely</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut l</p>
+              </div>
+          </div>
+      </div>
+      <div class="grid-col grid-col_size4of12">
+          <div class="event">
+              <div class="event-img">
+                  <img src="http://placehold.it/306x229&text=event-img" alt=""/>
+              </div>
+              <div class="event-bd">
+                  <h3>This is the event name and it needs to wrap nicely</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut l</p>
+              </div>
+          </div>
+      </div>
+      <div class="grid-col grid-col_size4of12">
+          <div class="event">
+              <div class="event-img">
+                  <img src="http://placehold.it/306x229&text=event-img" alt=""/>
+              </div>
+              <div class="event-bd">
+                  <h3>This is the event name and it needs to wrap nicely</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut l</p>
+              </div>
+          </div>
+      </div>
+
+  </div>
 <% end %>
 
 <%= render '/refinery/content_page' %>

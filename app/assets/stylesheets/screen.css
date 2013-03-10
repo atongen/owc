@@ -188,11 +188,21 @@ small {
 /* ---------------------------------------------------------------------
  Wrapper
 ------------------------------------------------------------------------ */
+
 .wrapper {
     position: relative;
     display: block;
     margin: 0 auto;
-    width: 960px;
+    
+    width: 100%;
+}
+
+@media all and (min-width: 768px) {
+
+.wrapper {
+   width: 960px;
+}
+
 }
 
 /* ---------------------------------------------------------------------
@@ -252,8 +262,8 @@ small {
  Events
 ------------------------------------------------------------------------ */
 img {
-max-width: 100%;
-height: auto !important;
+    max-width: 100%;
+    height: auto !important;
 }
 .event {
     padding-bottom: 25px;
@@ -281,6 +291,10 @@ height: auto !important;
 
 .event-bd {
     padding-top: 28px;
+}
+
+.event-bd_highlight h3 {
+    color: #00aeef;
 }
 
 .event-bd > h3 {
@@ -551,6 +565,7 @@ height: auto !important;
  Copy
 ------------------------------------------------------------------------ */
 .copy {
+    color: ;
 }
 
 .copy_center {
@@ -577,20 +592,21 @@ height: auto !important;
 /* ---------------------------------------------------------------------
  Site
 ------------------------------------------------------------------------ */
+
 .site {
     position: relative;
     height: auto;
     min-height: 100%;
     width: 100%;
-    min-width: 960px;
+    min-width: 480px;
 }
 
 .site-hd {
-    /* padding-top: ;
+    padding-top: ;
     height: ;
     background: ;
     position: relative;
-    font-family: ; */
+    font-family: ;
     *zoom: 1; /* clearfix for lte IE7 */
 }
 
@@ -623,18 +639,26 @@ height: auto !important;
 }
 
 .site-ft {
+    position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     overflow: hidden;
     *zoom: 1; /* clearfix for lte IE7 */
-    /* padding: ; */
+    padding: ;
     height: 310px;
     background: #58504d;
 }
 
 .site-ft-box {
     padding: 42px 0;
+}
+
+@media all and (min-width: 768px) {
+	.site {
+    	min-width: 960px;
+	}
+
 }
 
 /* ---------------------------------------------------------------------
@@ -791,6 +815,45 @@ a.lastItem + .navList-sub a {
 .orange .navList-sub a { background: #ffc749; }
 .orange .navList-sub a:hover { color: #e86f15; }
 
+/* Mobile Nav Toggle
+------------------------------------------- */
+
+.navPrimary-toggle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px
+}
+
+.navPrimary-toggle-btn {
+    display: block;
+    width: 100%;
+    padding: 21px 0;
+    background: #f15623;
+    font: 18px/1 'Varela Round', Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.navPrimary-toggle-bar {
+	display: block;
+	background: #fff;
+	width: 40px;
+	height: 20px;
+	margin-bottom: 2px;
+}
+
+.navPrimary-toggle-btn:hover {
+    background: #bc2027;
+}
+
+@media all and (min-width: 768px) {
+	.navPrimary-toggle {
+		display: none;
+	}
+}
+
 /* Donate
 ------------------------------------------- */
 
@@ -798,14 +861,15 @@ a.lastItem + .navList-sub a {
     position: absolute;
     right: 0;
     top: 0;
+    width: 30%;
 }
 
 .donate-btn {
     display: block;
-    width: 140px;
-    padding: 11px 0;
+    width: 100%;
+    padding: 21px 0;
     background: #f15623;
-    font: 14px/1 'Varela Round', Helvetica, Arial, sans-serif;
+    font: 18px/1 'Varela Round', Helvetica, Arial, sans-serif;
     color: #ffffff;
     text-transform: uppercase;
     text-align: center;
@@ -815,21 +879,55 @@ a.lastItem + .navList-sub a {
     background: #bc2027;
 }
 
+@media all and (min-width: 768px) {
+	.donate {
+		width: auto;
+	}
+	.donate-btn {
+		width: 140px;
+		padding: 11px 0;
+	}
+}
+
+
 /* Contact Us
 ------------------------------------------- */
 
 .contactUs {
     position: absolute;
-    right: 190px;
-    top: 5px;
+    right: 30%;
+    top: 0px;
+    width: 70%;
+    padding-right: 40px;
 }
 
 .contactUs-btn {
-    font: 14px/1 'Varela Round', Helvetica, Arial, sans-serif;
-    color: #00aeef;
+    font: 18px/1 'Varela Round', Helvetica, Arial, sans-serif;
+    color: #fff;
+    background: #00aeef;
+    padding: 21px 40px 21px 0;
     text-transform: uppercase;
+    width: 100%;
+    display: block;
+    text-align: right;
 }
 
+@media all and (min-width: 768px) {
+	.contactUs {
+		width: auto;
+    	right: 190px;
+    	top: 5px;
+    	padding: 0;
+	}
+	.contactUs-btn {
+    	font: 14px/1 'Varela Round', Helvetica, Arial, sans-serif;
+    	color: #00aeef;
+    	background: none;
+    	padding: 0px;
+    	width: auto;
+    	display: inline;
+	}
+}
 
 /* Utility Nav
 ------------------------------------------- */
@@ -844,86 +942,13 @@ a.lastItem + .navList-sub a {
     margin-right: 21px;
 }
 
-/* Archive list
-------------------------------------------- */
-
-.asideList a {
-    font-size: 14px;
-    font-family: 'Varela Round', Arial, Helvetica, sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #666666;
-}
-
-.asideList > li > a {
-    display: block;
-    padding: 12px 0 10px;
-    border-bottom: 1px solid #d6d6d6;
-    text-decoration: none;
-}
-
-.asideList > li > a:before,
-.asideList > li.aside-is-active > a:before {
-    width: 13px;
-    line-height: 12px;
-    display: block;
-    float: left;
-}
-
-.asideList > li > a:before {
-    /*content: '+\00a0\00a0';*/
-    content: '+';
-}
-
-.asideList > li.aside-is-active > a:before {
-    /*content: '–\00a0\00a0';*/
-    content: '–';
-}
-
-.asideList > li.aside-is-active {
-    border-bottom: 1px solid #d6d6d6;
-}
-
-.asideList > li > ul {
-    margin: 26px 0 44px;
-}
-
-.asideList > li > ul > li {
-    padding-bottom: 22px; /* padding instead of margin to prevent unexpected "bounce" caused during slideDown */
-}
-
 /* ---------------------------------------------------------------------
  Hero Carousel
 ------------------------------------------------------------------------ */
 
-/* colors
+.hero-carousel { display: none; }
 
-purple: #a854a1;
-dark purple: #4b1a88;
-green: #b7d433;
-dark green: #0a913b;
-gold: #ffc749;
-dark gold: #e86f15;
-blue: #00aeef;
-dark blue: #01729c;
-
-
-.blue { color: #00aeef; }
-.dark-blue { color: #01729c; }
-
-.purple { color: a854a1; }
-.dark-purple { color: #4c2d85; }
-
-.green { color: #b7d433; }
-.dark-green { color: #0c9146; }
-
-.yellow { color: #ffc749; }
-.dark-yellow { color: #e77025; }
-
-.red { color: #f15623; } 
-.dark-red { color: #bc2027; }
-
-*/
+@media all and (min-width: 768px) {
 
 .hero-carousel { 
 	position: relative;
@@ -931,6 +956,7 @@ dark blue: #01729c;
 	height: 500px; 
 	color: #fff;
 	overflow: hidden;
+	display: block;
 }
 
 .slides li {
@@ -974,7 +1000,7 @@ dark blue: #01729c;
 	height: 500px;
 }
 
-.hero-carousel-bd a { text-transform: uppercase; }
+.hero-carousel-bd a { text-transform: uppercase; font-style: normal; }
 .hero-carousel-bd a:hover { background: #fff; }
 
 .blue .hero-carousel-bd { background: #00aeef; }
@@ -996,8 +1022,6 @@ dark blue: #01729c;
 .yellow .hero-carousel-img { background: #ffc749; }
 .yellow .hero-carousel-bd a { background: #e77025; }
 .yellow .hero-carousel-bd a:hover { color: #e77025; background: #fff; }
-
-
 
 .hero-carousel .pagination-wrapper {
 	position: absolute;
@@ -1021,6 +1045,7 @@ dark blue: #01729c;
 .hero-carousel .pagination .active a { color: #01729c; }
 .hero-carousel .pagination a:hover { color: #01729c; }
 
+}
 
 /* ---------------------------------------------------------------------
  Buttons
@@ -1030,16 +1055,56 @@ dark blue: #01729c;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     display: inline-block;
-    *display: inline; /* inline-block for lte IE7 */
-    *zoom: 1; /* inline-block for lte IE7 */
     margin: 0;
-    padding: 4px 7px 5px;
-    background-color: #a0af6c;
-    border: 1px solid #cbd488;
+    padding: 15px 0 10px;
+    background-color: #00aeef;
+    border: none;
     color: #ffffff;
     cursor: pointer;
-    font-size: 13px;
-    text-align: left;
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 303px;
+}
+
+/* ---------------------------------------------------------------------
+ Contact Us Form
+------------------------------------------------------------------------ */
+
+.contactUs-form label {
+    padding-right: 10px;
+}
+
+.contactUs-form li {
+    margin-bottom: 10px;
+}
+
+.contactUs-form input[type=text] {
+    padding: 10px 0;
+}
+
+.contactUs-form .name {
+    width: 470px;
+}
+
+.contactUs-form .address {
+    width: 470px;
+}
+
+.contactUs-form .email {
+    width: 468px;
+}
+
+label.labelName {
+    padding-right: 25px;
+}
+
+label.labelEmail {
+    padding-right: 31px;
+}
+
+label.labelCity {
+    padding-right: 37px;
 }
 
 @media all and (min-width: 768px) {
