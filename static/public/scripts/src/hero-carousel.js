@@ -3,8 +3,10 @@ var HopeApp = (function(app, $){
 	var HeroCarousel = function () {
 
 		var autoRotateTimout,
-			autoRotateDelay = 1000,
+			autoRotateDelay = 2000,
 			currentSlideIndex = 0,
+			slideChangeSpeed = 1000,
+			totalSlides = 0,
 			$carousel,
 			$slides,
 			$pagination;
@@ -13,12 +15,13 @@ var HopeApp = (function(app, $){
 	
 			$carousel = $('.hero-carousel');
 			$slides = $('.slides');
+			totalSlides = $slides.find('li').length;
 			$pagination = $carousel.find('.pagination');
 			// build pagination
 			
 			var paginationMarkup = '';
 		
-			for(var i=0; i<$slides.length; i++){
+			for(var i=0; i< totalSlides; i++){
 				paginationMarkup += '<li><a href="#">•</a></li>';
 			}
 			
@@ -41,8 +44,8 @@ var HopeApp = (function(app, $){
 	
 		function nextSlide(){
 			var targetSlideIndex = currentSlideIndex + 1;
-			if(targetSlideIndex >= $slides.length){
-				target = 0;
+			if(targetSlideIndex >= totalSlides){
+				targetSlideIndex = 0;
 			}
 			changeSlide(targetSlideIndex);
 		}
@@ -51,13 +54,22 @@ var HopeApp = (function(app, $){
 			currentSlideIndex
 		}
 		
-		function changeSlide(targetIndex){
+		function changeSlide(targetSlideIndex){
 			
 			var $currentSlide = $slides.find('li.active');
-			var $targetSlide = $slides.find('li').eq(targetIndex);
-			$currentSlide.removeClass('active');
-			$targetSlide.addClass('active');
-		
+			var $targetSlide = $slides.find('li').eq(targetSlideIndex);
+			$currentSlide.removeClass('active').addClass('exiting');
+			var slideWidth = $carousel.width();
+			$targetSlide.css({ left: slideWidth }).addClass('active').animate({ left: 0 }, slideChangeSpeed, function(){
+				$slides.find('li').removeClass('exiting');
+			});
+			currentSlideIndex = targetSlideIndex;
+			
+			// update pagination
+			$pagination.find('li').removeClass('active');
+			$pagination.find('li').eq(targetSlideIndex).addClass('active');
+			
+			beginTimer();
 		}
 	
 		return {
