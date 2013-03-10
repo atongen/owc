@@ -1,22 +1,21 @@
 <% content_for :body do %>
-  <ul id="waiting_families">
-    <% @waiting_families.each_slice(3) do |families| %>
+  <% @waiting_families.each_slice(3) do |families| %>
+    <div class="grid">
       <% families.each do |family| %>
-        <div class="grid">
-          <div class="grid-col grid-col_size4of12">
-            <div class="event">
-              <div class="event-img">
-                <%= link_to image_fu(family.picture, '306x229'), refinery.waiting_families_waiting_family_path(family) %>
-              </div>
-              <div class="event-bd event-bd_highlight">
-                <%= raw family.summary %>
-              </div>
+        <div class="grid-col grid-col_size4of12">
+          <div class="event">
+            <div class="event-img">
+              <%= link_to image_fu(family.picture, '306x229'), refinery.waiting_families_waiting_family_path(family) %>
+            </div>
+            <div class="event-bd event-bd_highlight">
+              <h3><%= family.title %></h3>
+              <%= raw family.summary %>
             </div>
           </div>
         </div>
       <% end %>
-    <% end %>
-  </ul>
+    </div>
+  <% end %>
 <% end %>
 
 <%= render '/refinery/content_page' %>
