@@ -1,0 +1,13 @@
+<% if @page.content_for(:first_3_col_left).to_s.present? %>
+  <div class="row">
+    <div class="left">
+      <%= raw @page.content_for(:first_3_col_left) %>
+    </div>
+    <div class="middle">
+    <%= raw @page.content_for(:first_3_col_middle) %>
+    </div>
+    <div class="right">
+      <%= raw @page.content_for(:first_3_col_right) %>
+    </div>
+  </div>
+<% end %>
