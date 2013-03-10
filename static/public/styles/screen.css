@@ -874,10 +874,19 @@ dark blue: #01729c;
 */
 
 .hero-carousel .grid-col { height: 100%; }
-.hero-carousel-bd { padding: 20% 10% 0 10%; height: 100%; }
-.hero-carousel-bd a { color: #fff; }
-.hero-carousel-bd h2 { font-size: 38px; line-height: 1.2em }
-.hero-carousel-bd p { font-style: italic; line-height: 1.4em; }
+
+.hero-carousel ul { position: relative; }
+
+.hero-carousel-bd { 
+	padding: 20% 10% 0 10%; 
+	height: 100%; 
+}
+.hero-carousel-bd h2 { font-size: 34px; line-height: 1.2em; margin-bottom: 20px; }
+.hero-carousel-bd p { font-style: italic; line-height: 1.4em; margin-bottom: 30px; }
+.hero-carousel-bd a { color: #fff; padding: 10px 20px; }
+
+.hero-carousel-img { margin-left: -20px; overflow: hidden; width: 100%; height: 100%; }
+
 
 li.blue { background: #00aeef; }
 .blue .hero-carousel-bd a { background: #01729c; }
