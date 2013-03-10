@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::FeaturedItems::Admin::FeaturedItemsController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.featured_items_admin_featured_items_path %>
+    </li>
+  <% end %>
+  <li>
+    <%#= link_to t('.create_new'), refinery.new_featured_items_admin_featured_item_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::FeaturedItems::Admin::FeaturedItemsController.sortable? && ::Refinery::FeaturedItems::FeaturedItem.any? %>
+  <li>
+    <%#= link_to t('.reorder', :what => "Featured Items"),
+                 refinery.featured_items_admin_featured_items_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%#= link_to t('.reorder_done', :what => "Featured Items"),
+                 refinery.featured_items_admin_featured_items_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

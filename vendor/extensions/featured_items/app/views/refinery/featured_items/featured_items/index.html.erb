@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="featured_items">
+    <% @featured_items.each do |featured_item| %>
+      <li>
+        <%= link_to featured_item.title, refinery.featured_items_featured_item_path(featured_item) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>
