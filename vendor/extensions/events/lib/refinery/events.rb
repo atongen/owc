@@ -5,6 +5,7 @@ module Refinery
 
   module Events
     require 'refinery/events/engine'
+    require 'refinery/events/tab'
 
     class << self
       attr_writer :root
