@@ -21,4 +21,23 @@ module ApplicationHelper
       end
     end
   end
+
+  # change this to contains
+  def get_page_color pageUrl
+    if pageUrl.include? "pregnant"
+      return 'purple'
+    elsif pageUrl.include? "adopting"
+      return ''
+    elsif pageUrl.include? "support"
+      return ''
+    elsif pageUrl.include? "about_us"
+      return ''
+    elsif pageUrl.include? "get_involved"
+      return ''
+    elsif pageUrl.include? "events"
+      return ''
+    else
+      return 'purple'
+    end
+  end
 end
