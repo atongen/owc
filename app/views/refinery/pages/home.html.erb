@@ -25,6 +25,7 @@
             <% if item.present? %>
               <%= link_to(item[:text], item[:link]) %>
               <%= item[:summary] %>
+              <%= item[:type] %>
               <%= image_tag(item[:picture].url) if item[:picture].present? %>
             <% end %>
         </li>
