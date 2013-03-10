@@ -20,13 +20,11 @@
       </ul>
     </div>
   </div>
-  <% if css != "navPrimaryMobile" %>
+  <% if css != "navPrimaryMobile" && @page.title != nil && @page.title.downcase != 'home' %>
   <div class="grid">
     <div class="pageHdg">
       <% if @page.parent.nil? %>
-        <% if @page.title != nil && @page.title.downcase != 'home' %>
-          <h2 class="pageHdg-hd"><%= @page.title %></h2>
-        <% end %>
+        <h2 class="pageHdg-hd"><%= @page.title %></h2>
       <% else %>
         <h2 class="pageHdg-hd"><%= @page.parent.title %></h2>
         <h3 class="pageHd-sub"><%= @page.title %></h3>
