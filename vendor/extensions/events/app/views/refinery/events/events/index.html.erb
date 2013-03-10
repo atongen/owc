@@ -1,11 +1,26 @@
 <% content_for :body do %>
-  <ul id="events">
-    <% @events.each do |event| %>
-      <li>
-        <%= link_to event.title, refinery.events_event_path(event) %>
-      </li>
-    <% end %>
-  </ul>
+<% @events.each do |event| %>
+<div class="grid">
+    <div class="grid-col grid-col_size8of12">
+        <div class="gallery-carousel">
+            <ul class="images">
+                <% event.images.each do |image| %>
+                  <li class="image"><img src="<%= image.thumbnail("618x390").url %>"/></li>
+                <% end %>
+            </ul>
+            <a href="javascript:void(0);" class="navigation">
+                <div class="buttons">
+                    <div class="button previous"></div>
+                    <div class="button next"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="grid-col grid-col_size4of12">
+        <h3><%= event.title %></h3>
+        <%= raw(event.body) %>
+    </div>
+</div>
 <% end %>
-
+<% end %>
 <%= render '/refinery/content_page' %>

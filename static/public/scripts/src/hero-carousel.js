@@ -2,9 +2,12 @@ var HopeApp = (function(app, $){
 
 	var HeroCarousel = function () {
 
-		var autoRotateTimout,
-			autoRotateDelay = 1000,
+		var autoRotateTimeout,
+			autoRotateDelay = 5000,
 			currentSlideIndex = 0,
+			slideChangeSpeed = 750,
+			totalSlides = 0,
+			isOver = false,
 			$carousel,
 			$slides,
 			$pagination;
@@ -12,18 +15,37 @@ var HopeApp = (function(app, $){
 		function init() {
 	
 			$carousel = $('.hero-carousel');
+			
+			$carousel.mouseenter(function(){
+				isOver = true;
+				stopTimer();
+			});
+			
+			$carousel.mouseleave(function(){
+				isOver = false;
+				beginTimer();
+			});
+			
 			$slides = $('.slides');
+			totalSlides = $slides.find('li').length;
 			$pagination = $carousel.find('.pagination');
+			
+		
 			// build pagination
 			
 			var paginationMarkup = '';
 		
-			for(var i=0; i<$slides.length; i++){
+			for(var i=0; i< totalSlides; i++){
 				paginationMarkup += '<li><a href="#">•</a></li>';
 			}
 			
 			$carousel.find('.pagination').append(paginationMarkup);			
 			$pagination.find('li').first().addClass('active');
+	
+			$pagination.find('a').click(function(){
+				var targetSlideIndex = $(this).parent().index();
+				changeSlide(targetSlideIndex);
+			});
 	
 			beginTimer();
 	
@@ -36,28 +58,46 @@ var HopeApp = (function(app, $){
 		}
 		
 		function stopTimer() {
-		
+			clearTimeout(autoRotateTimeout);
 		}  
 	
 		function nextSlide(){
 			var targetSlideIndex = currentSlideIndex + 1;
-			if(targetSlideIndex >= $slides.length){
-				target = 0;
+			if(targetSlideIndex >= totalSlides){
+				targetSlideIndex = 0;
 			}
 			changeSlide(targetSlideIndex);
 		}
 		
-		function previousSlide(){
-			currentSlideIndex
-		}
 		
-		function changeSlide(targetIndex){
+		function changeSlide(targetSlideIndex){
+			
+			
+			var fromLeft = false;
+			
+			if(targetSlideIndex < currentSlideIndex) fromLeft = true;
 			
 			var $currentSlide = $slides.find('li.active');
-			var $targetSlide = $slides.find('li').eq(targetIndex);
-			$currentSlide.removeClass('active');
-			$targetSlide.addClass('active');
-		
+			var $targetSlide = $slides.find('li').eq(targetSlideIndex);
+			$currentSlide.removeClass('active').addClass('exiting');
+			var slideWidth = $carousel.width();
+			
+			if(!fromLeft){
+				$targetSlide.css({ left: slideWidth }).addClass('active').animate({ left: 0 }, slideChangeSpeed, function(){
+					$slides.find('li').removeClass('exiting');
+				});
+			} else {
+				$targetSlide.css({ left: -slideWidth }).addClass('active').animate({ left: 0 }, slideChangeSpeed, function(){
+					$slides.find('li').removeClass('exiting');
+				});
+			}
+			currentSlideIndex = targetSlideIndex;
+			
+			// update pagination
+			$pagination.find('li').removeClass('active');
+			$pagination.find('li').eq(targetSlideIndex).addClass('active');
+			
+			if(!isOver) beginTimer();
 		}
 	
 		return {

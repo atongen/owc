@@ -1,0 +1,52 @@
+.gallery-carousel {
+    position: relative;
+    width: 100%;
+    height: 390px;
+    overflow: hidden;
+}
+
+.gallery-carousel .navigation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.gallery-carousel .buttons {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+}
+
+.gallery-carousel .button {
+    overflow: hidden;
+    background-repeat: none;
+    background-image: url('/assets/gallery-arrows.png');
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    margin: 10px;
+    bottom: 0px;
+    margin-bottom: -27px;
+}
+
+.gallery-carousel .next {
+    background-position: -45px 0px;
+    right: 0px;
+}
+
+.gallery-carousel .image {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+.gallery-carousel img {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}

@@ -31,3 +31,6 @@ Refinery::FeaturedItems::Engine.load_seed
 
 # Added by Refinery CMS Staffs extension
 Refinery::Staffs::Engine.load_seed
+
+# Added by Refinery CMS Carousel Images extension
+Refinery::CarouselImages::Engine.load_seed

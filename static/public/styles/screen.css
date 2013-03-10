@@ -138,11 +138,11 @@ a {
     color: #00aeef;
     font-style: italic;
     text-decoration: none;
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
-    -ms-transition: all .3s;
-    -o-transition: all .3s;
-    transition: all .3s;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
 }
 
 p {
@@ -733,6 +733,8 @@ dark blue: #01729c;
 ------------------------------------------- */
 .navPrimary {
     margin-bottom: 10px;
+    position: relative;
+    z-index: 100;
     *zoom: 1; /* clearfix for lte IE7 */
 }
 
@@ -1020,6 +1022,7 @@ dark blue: #01729c;
 	width: 100%; 
 	height: 500px; 
 	color: #fff;
+	overflow: hidden;
 }
 
 .slides li {
@@ -1029,6 +1032,12 @@ dark blue: #01729c;
 
 .slides li.active {
 	display: block;
+	z-index: 10;
+}
+
+.slides li.exiting {
+	display: block;
+	z-index: 0;
 }
 
 .hero-carousel-bd { 
@@ -1061,18 +1070,22 @@ dark blue: #01729c;
 .hero-carousel-bd a:hover { background: #fff; }
 
 .blue .hero-carousel-bd { background: #00aeef; }
+.blue .hero-carousel-img { background: #00aeef; }
 .blue .hero-carousel-bd a { background: #01729c; }
 .blue .hero-carousel-bd a:hover { color: #01729c; background: #fff; }
 
 .green .hero-carousel-bd { background: #b7d433; }
+.green .hero-carousel-img { background: #b7d433; }
 .green .hero-carousel-bd a { background: #0a913b; }
 .green .hero-carousel-bd a:hover { color: #0a913b; background: #fff; }
 
 .purple .hero-carousel-bd { background: #a854a1; }
+.purple .hero-carousel-img { background: #a854a1; }
 .purple .hero-carousel-bd a { background: #4c2d85; }
 .purple .hero-carousel-bd a:hover { color: #4c2d85; background: #fff; }
 
 .yellow .hero-carousel-bd { background: #ffc749; }
+.yellow .hero-carousel-img { background: #ffc749; }
 .yellow .hero-carousel-bd a { background: #e77025; }
 .yellow .hero-carousel-bd a:hover { color: #e77025; background: #fff; }
 
@@ -1082,6 +1095,7 @@ dark blue: #01729c;
 	position: absolute;
 	width: 100%;
 	bottom: 0;
+	z-index: 20;
 }
 
 .hero-carousel .pagination {
