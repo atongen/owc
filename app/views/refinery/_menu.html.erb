@@ -24,7 +24,9 @@
   <div class="grid">
     <div class="pageHdg">
       <% if @page.parent.nil? %>
-        <h2 class="pageHdg-hd"><%= @page.title %></h2>
+        <% if @page.title != nil && @page.title.downcase != 'home' %>
+          <h2 class="pageHdg-hd"><%= @page.title %></h2>
+        <% end %>
       <% else %>
         <h2 class="pageHdg-hd"><%= @page.parent.title %></h2>
         <h3 class="pageHd-sub"><%= @page.title %></h3>
