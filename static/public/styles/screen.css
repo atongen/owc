@@ -381,12 +381,37 @@ height: auto !important;
     float: left;
 }
 
+.hList_social > li + li {
+    margin-left: 8px;
+}
+
+.hList_social > li > a {
+    display: block;
+    width: 42px;
+    height: 41px;
+    text-indent: -999em;
+    background: url(../images/sprite-social-icons.png) no-repeat 0 0;
+}
+
+.hList_social > li > a.twitter { background-position: -49px 0; }
+.hList_social > li > a.youtube { background-position: -99px 0; }
+
 
 /* ---------------------------------------------------------------------
  Vertical List
 ------------------------------------------------------------------------ */
 .vList > * > .vList {
     margin-top: 4px;
+}
+
+.vList_footer > li {
+    margin-bottom: 12px;
+}
+
+.vList_footer a {
+    font: 14px/1 Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    text-transform: uppercase;
 }
 
 /* ---------------------------------------------------------------------
@@ -434,7 +459,7 @@ height: auto !important;
 /* TODO - Actually do real headings, these are just placeholder for the styleguide */
 .hdg {
     display: block;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Varela Round', Helvetica, Arial, sans-serif;
     line-height: 1.727272;
     text-transform: uppercase;
 }
@@ -499,6 +524,17 @@ height: auto !important;
     line-height: 1.3;
 }
 
+.legalese {
+    margin-top: 19px;
+    font-size: 14px;
+    font-style: italic;
+    color: #919191;
+}
+
+.legalese > * {
+    display: inline-block;
+}
+
 /* ---------------------------------------------------------------------
  Site
 ------------------------------------------------------------------------ */
@@ -544,7 +580,7 @@ height: auto !important;
 .site-bd {
     overflow: hidden;
     *zoom: 1; /* clearfix for lte IE7 */
-    padding-bottom: 200px;
+    padding-bottom: 310px;
 }
 
 .site-ft {
@@ -555,13 +591,13 @@ height: auto !important;
     overflow: hidden;
     *zoom: 1; /* clearfix for lte IE7 */
     padding: ;
-    height: 200px;
-    background: #666666;
+    height: 310px;
+    background: #58504d;
 }
 
 .site-ft-box {
     margin: ;
-    padding: 20px;
+    padding: 42px 0;
 }
 
 /* ---------------------------------------------------------------------
