@@ -1,4 +1,5 @@
 //@codekit-append "app.js";
+//@codekit-append "global-nav.js";
 //@codekit-append "hero-carousel.js";
 //@codekit-append "gallery-carousel.js";
 //@codekit-append "easter-egg.js";
@@ -13,20 +14,21 @@ var HopeApp = (function(app, $){
 	 * Initialize Hope App
 	 */
 	function init() {
-
 	    app.heroCarousel.init();
         app.galleryCarousel.init();
         app.easterEgg.init();
+        if ('ontouchstart' in document.documentElement)
+            app.globalNav.init();
 		return app;
 	}
-	
+
 	app.config = {
-	
+
 	};
-	
+
 	app.init = init;
 
-	return app;
+    return app;
 
 })(HopeApp || {}, $);
 
@@ -36,6 +38,36 @@ $(function(){
 	var app = HopeApp.init();
 });
 
+
+/* **********************************************
+     Begin global-nav.js
+********************************************** */
+
+var HopeApp = (function(app, $){
+    var GlobalNav = function () {
+        var buttons;
+        var selection;
+
+        function init() {
+            buttons = $(".navList").children().find("a").each(function(key, value) {
+                $(value).click(didClickButton);
+            });
+
+            return app;
+        }
+
+        function didClickButton(event) {
+            event.preventDefault();
+            $(event.currentTarget).parent().trigger("mouseover");
+        }
+
+        return {
+            init: init
+        }
+    }
+    app.globalNav = new GlobalNav();
+    return app;
+})(HopeApp || {}, $);
 
 /* **********************************************
      Begin hero-carousel.js
