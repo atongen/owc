@@ -1,0 +1,31 @@
+es:
+  refinery:
+    plugins:
+      carousel_images:
+        title: Carousel Images
+#        article: masculino/femenino
+    carousel_images:
+      admin:
+        carousel_images:
+          actions:
+            create_new: Crear nuevo carousel image
+            reorder: Reordenar carousel images
+            reorder_done: Reordenación de carousel images completada
+          records:
+            title: Carousel Images
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay carousel images todavía. Pulsa en "Crear nuevo Carousel Image" para crear tu primer carousel image.
+          carousel_image:
+            view_live_html: Ver este carousel image como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este carousel image
+            delete: Borrar este carousel image para siempre
+      carousel_images:
+        show:
+          other: Otros carousel images
+  activerecord:
+    attributes:
+      'refinery/carousel_images/carousel_image':
+        title: Title
+        page_id: Page
+        copy: Copy
+        picture: Picture

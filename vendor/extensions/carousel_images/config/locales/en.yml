@@ -1,0 +1,30 @@
+en:
+  refinery:
+    plugins:
+      carousel_images:
+        title: Carousel Images
+    carousel_images:
+      admin:
+        carousel_images:
+          actions:
+            create_new: Add New Carousel Image
+            reorder: Reorder Carousel Images
+            reorder_done: Done Reordering Carousel Images
+          records:
+            title: Carousel Images
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Carousel Images yet. Click "Add New Carousel Image" to add your first carousel image.
+          carousel_image:
+            view_live_html: View this carousel image live <br/><em>(opens in a new window)</em>
+            edit: Edit this carousel image
+            delete: Remove this carousel image forever
+      carousel_images:
+        show:
+          other: Other Carousel Images
+  activerecord:
+    attributes:
+      'refinery/carousel_images/carousel_image':
+        title: Title
+        page_id: Page
+        copy: Copy
+        picture: Picture

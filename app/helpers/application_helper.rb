@@ -39,5 +39,7 @@ module ApplicationHelper
     else
       return 'purple'
     end
+  def carousel_images
+    Refinery::CarouselImages::CarouselImage.order(:position).all
   end
 end

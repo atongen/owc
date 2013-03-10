@@ -1,0 +1,30 @@
+fr:
+  refinery:
+    plugins:
+      carousel_images:
+        title: Carousel Images
+    carousel_images:
+      admin:
+        carousel_images:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Carousel Image
+            reorder: Réordonner les Carousel Images
+            reorder_done: Fin de réordonnancement des Carousel Images
+          records:
+            title: Carousel Images
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Carousel Image. Cliquer sur "Créer un(e) nouve(au/l/lle) Carousel Image" pour créer votre premi(er/ère) carousel image.'
+          carousel_image:
+            view_live_html: Voir ce(t/tte) carousel image <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) carousel image
+            delete: Supprimer définitivement ce(t/tte) carousel image
+      carousel_images:
+        show:
+          other: Autres Carousel Images
+  activerecord:
+    attributes:
+      'refinery/carousel_images/carousel_image':
+        title: Title
+        page_id: Page
+        copy: Copy
+        picture: Picture
