@@ -1,4 +1,4 @@
-<li>
+<li class="<%= get_page_color menu_branch.title %>">
     <%= link_to(menu_branch.title, refinery.url_for(menu_branch.url)) -%>
     <% if menu_branch.children.count > 0 %>
       <ul class="navList-sub">

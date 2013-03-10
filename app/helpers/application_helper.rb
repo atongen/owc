@@ -27,9 +27,9 @@ module ApplicationHelper
     if pageUrl.include? "pregnant"
       return 'purple'
     elsif pageUrl.include? "adopting"
-      return ''
+      return 'green'
     elsif pageUrl.include? "support"
-      return ''
+      return 'orange'
     elsif pageUrl.include? "about_us"
       return ''
     elsif pageUrl.include? "get_involved"
