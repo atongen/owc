@@ -2,31 +2,25 @@ module Refinery
   module Events
     class EventsController < ::ApplicationController
 
-      before_filter :find_all_events
-      before_filter :find_page
-
+      # upcoming events
       def index
-        # you can use meta fields from your model instead (e.g. browser_title)
-        # by swapping @page for @event in the line below:
-        present(@page)
-      end
-
-      def show
-        @event = Event.find(params[:id])
-
-        # you can use meta fields from your model instead (e.g. browser_title)
-        # by swapping @page for @event in the line below:
-        present(@page)
-      end
-
-    protected
-
-      def find_all_events
         @events = Event.order('position ASC')
+        # you can use meta fields from your model instead (e.g. browser_title)
+        # by swapping @page for @event in the line below:
+        @page = ::Refinery::Page.where(:link_url => "/events").first
+        present(@page)
       end
 
-      def find_page
-        @page = ::Refinery::Page.where(:link_url => "/events").first
+      def upcoming
+        @events = Event.where("date(start_date) >= ?", Date.today)
+        @page = ::Refinery::Page.where(:link_url => "/events/upcoming").first
+        present(@page)
+      end
+
+      def past
+        @events = Event.where("date(start_date) < ?", Date.today)
+        @page = ::Refinery::Page.where(:link_url => "/events/past").first
+        present(@page)
       end
 
     end
