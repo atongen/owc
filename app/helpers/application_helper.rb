@@ -48,11 +48,11 @@ module ApplicationHelper
     elsif pageUrl.include? "support"
       return 'orange'
     elsif pageUrl.include? "about_us"
-      return ''
-    elsif pageUrl.include? "get_involved"
-      return ''
+      return 'dark green'
+    elsif pageUrl.include? "get-involved"
+      return 'gold'
     elsif pageUrl.include? "events"
-      return ''
+      return 'blue'
     else
       return 'purple'
     end
