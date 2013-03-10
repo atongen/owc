@@ -984,16 +984,56 @@ dark blue: #01729c;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     display: inline-block;
-    *display: inline; /* inline-block for lte IE7 */
-    *zoom: 1; /* inline-block for lte IE7 */
     margin: 0;
-    padding: 4px 7px 5px;
-    background-color: #a0af6c;
-    border: 1px solid #cbd488;
+    padding: 15px 0 10px;
+    background-color: #00aeef;
+    border: none;
     color: #ffffff;
     cursor: pointer;
-    font-size: 13px;
-    text-align: left;
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 303px;
+}
+
+/* ---------------------------------------------------------------------
+ Contact Us Form
+------------------------------------------------------------------------ */
+
+.contactUs-form label {
+    padding-right: 10px;
+}
+
+.contactUs-form li {
+    margin-bottom: 10px;
+}
+
+.contactUs-form input[type=text] {
+    padding: 10px 0;
+}
+
+.contactUs-form .name {
+    width: 470px;
+}
+
+.contactUs-form .address {
+    width: 470px;
+}
+
+.contactUs-form .email {
+    width: 468px;
+}
+
+label.labelName {
+    padding-right: 25px;
+}
+
+label.labelEmail {
+    padding-right: 31px;
+}
+
+label.labelCity {
+    padding-right: 37px;
 }
 
 @media all and (min-width: 768px) {
