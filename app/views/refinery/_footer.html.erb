@@ -12,17 +12,17 @@
                     </div>
                     <div class="grid-col grid-col_size3of12">
                         <ul class="vList vList_footer">
-                            <li><a href="">Get Involved</a></li>
-                            <li><a href="">Site Map</a></li>
-                            <li><a href="">Privacy Policy</a></li>
+                            <li><%= link_to "Get Involved", "/get-involved" %></li>
+                            <li><%= link_to "Site Map", "/sitemap.xml" %></li>
+                            <li><%= link_to "Privacy Policy", "/pages/privacy-policy", :id => "privacy_link" if Refinery::Inquiries.show_contact_privacy_link %></li>
                             <li><a href="">Terms</a></li>
                         </ul>
                     </div>
                     <div class="grid-col grid-col_size6of12">
                         <ul class="vList vList_footer">
-                            <li><a href="">Contact</a></li>
-                            <li><a href="">Hague Accreditation</a></li>
-                            <li><a href="">Our Newsletter</a></li>
+                            <li><%= link_to "Contact", "/contact" %></li>
+                            <li><a href="http://www.coanet.org/programs/hague-accreditation-and-approval/public-comment/" target="_blank">Hague Accreditation</a></li>
+                            <li><%= link_to "Our Newsletter", "/about-us/newsletter-archive" %></li>
                         </ul>
                     </div>
                 </div>

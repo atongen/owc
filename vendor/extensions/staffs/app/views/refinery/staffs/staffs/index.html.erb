@@ -2,37 +2,43 @@
 <div class="grid">
   <% @staffs.each_slice(2) do |parts| %>
     <div class="grid-col grid-col_size6of12">
-        <div class="gap gap_2">
-            <div class="media">
-                <div class="media-img">
-                    <%= image_fu(parts[0].picture, '220x250') %>
-                </div>
-                <div class="media-bd">
-                    <h3><%= parts[0].full_name %></h3>
-                    <h4><%= parts[0].title %></h4>
+      <div class="gap gap_2">
+          <div class="media">
+              <div class="media-img">
+                  <%= image_fu(parts[0].picture, '220x250') %>
+              </div>
+              <div class="media-bd">
+                  <h3><%= parts[0].full_name %></h3>
+                  <h4><%= parts[0].title %></h4>
+                  <% if parts[0].staff_type.downcase != 'board' %>
                     <%= mail_to parts[0].email %>
-                </div>
-            </div>
-        </div>
+                  <% end %>
+              </div>
+          </div>
       </div>
+    </div>
 
-      <% if parts[1] != nil %>
-      <div class="grid-col grid-col_size6of12">
-        <div class="gap gap_2">
-            <div class="media">
-                <div class="media-img">
-                    <%= image_fu(parts[1].picture, '220x250') %>
-                </div>
-                <div class="media-bd">
-                    <h3><%= parts[1].full_name %></h3>
-                    <h4><%= parts[1].title %></h4>
+    <% if parts[1] != nil %>
+    <div class="grid-col grid-col_size6of12">
+      <div class="gap gap_2">
+          <div class="media">
+              <div class="media-img">
+                  <%= image_fu(parts[1].picture, '220x250') %>
+              </div>
+              <div class="media-bd">
+                  <h3><%= parts[1].full_name %></h3>
+                  <h4><%= parts[1].title %></h4>
+                  <% if parts[1].staff_type.downcase != 'board' %>
                     <%= mail_to parts[1].email %>
-                </div>
-            </div>
-        </div>
+                  <% end %>
+              </div>
+          </div>
       </div>
-      <% end %>
+    </div>
+    <% end %>
+
   </div>
   <% end %> 
 <% end %>
+
 <%= render '/refinery/content_page' %>
