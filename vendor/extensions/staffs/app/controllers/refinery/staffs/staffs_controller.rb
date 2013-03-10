@@ -6,13 +6,13 @@ module Refinery
       before_filter :find_page
 
       def index
-        @staffs = Staff.where(:staff_type => 'staff')
+        @staffs = Staff.where(:staff_type => 'Staff')
         render :action => "index"
       end
 
       def board
         # get all board members
-        @staffs = Staff.where(:staff_type => 'board')
+        @staffs = Staff.where(:staff_type => 'Board')
         render :action => "index"
       end
 
