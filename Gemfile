@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '~> 3.2.12'
 # gem 'pg'
-gem 'mysql2'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -32,6 +31,14 @@ gem 'capistrano'
 
 # To use debugger
 # gem 'debugger'
+
+group :development, :test do
+  gem 'mysql2'
+end
+
+group :production do
+  gem 'pg'
+end
 
 # Refinery CMS
 gem 'refinerycms', '~> 2.0.0'

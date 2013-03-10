@@ -136,12 +136,21 @@ body {
 
 a {
     color: #00aeef;
+    font-style: italic;
     text-decoration: none;
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
     -ms-transition: all .3s;
     -o-transition: all .3s;
     transition: all .3s;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+i {
+    font-style: italic;
 }
 
 button, input, select, textarea {
@@ -311,34 +320,49 @@ small {
 .blocks_6up > * { width: 16.66666%; }
 
 /* ---------------------------------------------------------------------
- Feature
+ Events
 ------------------------------------------------------------------------ */
 img {
 max-width: 100%;
 height: auto !important;
 }
-.feature {
+.event {
+    padding-bottom: 25px;
     overflow: hidden;
     *zoom: 1; /* clearfix for lte IE7 */
 }
 
-.feature-img {
+.event-img {
     display: block;
     text-align: center;
 }
 
-.feature-img > * {
+.event-img > * {
     display: inline-block;
 }
 
-.feature-hd {
-    padding: 10px;
-    background: #ccc;
+.event-caption {
+    padding: 18px 0;
+    background: #00aeef;
+    font: 20px/1 'Varela Round', Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: center;
 }
 
-.feature-bd {
-    padding: 10px;
+.event-bd {
+    padding-top: 28px;
 }
+
+.event-bd > h3 {
+    margin-bottom: 10px;
+    font: 18px/1.22222 'Varela Round', Helvetica, Arial, sans-serif;
+}
+
+.event-bd p:last-of-type {
+    margin-bottom: 10px;
+}
+
 
 /* ---------------------------------------------------------------------
  Media
@@ -563,19 +587,21 @@ dark blue: #01729c;
 
 */
 
-.page .pageHdg-hd {
+.about_us .pageHdg-hd,
+.get_involved .pageHdg-hd,
+.events .pageHdg-hd {
     color: #00aeef;
 }
 
-.page-purple .pageHdg-hd {
+.pregnant .pageHdg-hd {
     color: #a854a1;
 }
 
-.page-green .pageHdg-hd {
+.adopting .pageHdg-hd {
     color: #b7d433;
 }
 
-.page-orange .pageHdg-hd {
+.support .pageHdg-hd {
     color: #ffc749;
 }
 
@@ -591,9 +617,12 @@ dark blue: #01729c;
     color: ;
 }
 
+.copy_center {
+    text-align: center;
+}
+
 .bigCopy {
     margin-bottom: 25px;
-    text-align: center;
     font-size: 30px;
     line-height: 1.3;
 }
