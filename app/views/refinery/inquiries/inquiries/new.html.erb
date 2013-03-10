@@ -1,4 +1,5 @@
 <% content_for :body do %>
+  <%=raw @page.content_for :body %>
   <div class="grid">
       <h3 class="hdg hdg_4">Send A Message</h3>
   </div>
@@ -108,6 +109,5 @@
         
       </div>
     <% end %>
-
 <% end %>
 <%= render :partial => "/refinery/content_page" %>
