@@ -5,11 +5,7 @@
                 <div class="pageHdg">
                     <h2 class="pageHdg-hd">About Us</h2>
                     <h3 class="pageHd-sub">
-                      <% if @staffs.first.staff_type == 'Staff' %>
-                      Our Staff
-                      <% else %>
-                      Board Members
-                      <% end %>
+                      <%= @page_header_text %>
                     </h3>
                 </div>
             </div>
