@@ -447,21 +447,19 @@ height: auto !important;
 /* ---------------------------------------------------------------------
  Vertical List
 ------------------------------------------------------------------------ */
-.vList > * > .vList {
-    margin-top: 4px;
-}
-
 .vList {
     margin-top: 8px;
 }
 
+.vList > li {
+    margin-bottom: 10px;
+}
+
 .vList_bulleted {
-    
 }
 
 .vList_bulleted > li {
     padding-left: 26px;
-    margin-bottom: 10px;
 }
 
 .vList_bulleted > li:before {
@@ -595,19 +593,6 @@ height: auto !important;
     font: 34px/1 'Varela Round', Helvetica, Arial, sans-serif;
     text-transform: uppercase;
 }
-
-/* colors
-
-purple: #a854a1;
-dark purple: #4b1a88;
-green: #b7d433;
-dark green: #0a913b;
-gold: #ffc749;
-dark gold: #e86f15;
-blue: #00aeef;
-dark blue: #01729c;
-
-*/
 
 .about_us .pageHdg-hd,
 .get_involved .pageHdg-hd,
