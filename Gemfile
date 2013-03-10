@@ -32,6 +32,8 @@ gem 'capistrano'
 # To use debugger
 # gem 'debugger'
 
+gem 'exception_notification', :require => 'exception_notifier'
+
 group :development, :test do
   gem 'mysql2'
 end
