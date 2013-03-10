@@ -158,6 +158,12 @@ small {
 }
 
 /* ---------------------------------------------------------------------
+ Fonts
+------------------------------------------------------------------------ */
+
+.sans-serif { font-family: 'Varela Round', sans-serif; }
+
+/* ---------------------------------------------------------------------
  Utility Classes
 ------------------------------------------------------------------------ */
 .isHidden {
@@ -868,16 +874,16 @@ dark blue: #01729c;
 */
 
 .hero-carousel .grid-col { height: 100%; }
-.hero-carousel-bd { padding: 10%; height: 100%; }
+.hero-carousel-bd { padding: 20% 10% 0 10%; height: 100%; }
 .hero-carousel-bd a { color: #fff; }
-.hero-carousel-bd h2 { font-size: 38px; }
-
+.hero-carousel-bd h2 { font-size: 38px; line-height: 1.2em }
+.hero-carousel-bd p { font-style: italic; line-height: 1.4em; }
 
 li.blue { background: #00aeef; }
 .blue .hero-carousel-bd a { background: #01729c; }
 .blue .hero-carousel-bd a:hover { background: white; color: #01729c; }
 
-.hero-carousel-bd p { font-style: italic }
+
 .blue .hero-carousel-bd { background: #00aeef; color: #fff; }
 
 .blue p a { background: #a854a1; }
