@@ -1,4 +1,5 @@
 //@codekit-append "app.js";
+//@codekit-append "hero-carousel.js"; 
 
 /* **********************************************
      Begin app.js
@@ -11,14 +12,11 @@ var HopeApp = (function(app, $){
 	 */
 	function init() {
 	
-	    console.log('ALIVE BUTTS 5!!!');	
+	    console.log('ALIVE!');	
+	    
+	    console.log(app.heroCarousel);
+	    app.heroCarousel.init();
 		return app;
-	}
-	
-	// announce touch device
-	app.isTouch = !!('ontouchstart' in window) ? true : false; // bang bang, you're boolean
-	if (app.isTouch) {
-		$('body').addClass('is-touch');
 	}
 	
 	app.config = {
@@ -36,3 +34,29 @@ $(function(){
 	// BEGIN!
 	var app = HopeApp.init();
 });
+
+
+/* **********************************************
+     Begin hero-carousel.js
+********************************************** */
+
+var HopeApp = (function(app, $){
+
+	var HeroCarousel = function () {
+
+		function init() {
+	
+			console.log('Carousel');	
+			return app;
+		}
+	
+		return {
+			init: init
+		}
+	
+	}
+	app.heroCarousel = new HeroCarousel();
+	
+	return app;
+
+})(HopeApp || {}, $);
