@@ -44,16 +44,6 @@
         <%= @inquiry.name %> [<%= mail_to @inquiry.email, @inquiry.email, {:title => t('.click_to_email')} %>]
       </td>
     </tr>
-    <% unless @inquiry.phone.blank? %>
-      <tr>
-        <td>
-          <strong><%= t('.phone') %></strong>
-        </td>
-        <td>
-          <%= @inquiry.phone %>
-        </td>
-      </tr>
-    <% end %>
     <tr>
       <td>
         <strong><%= t('.date') %></strong>
@@ -63,8 +53,55 @@
       </td>
     </tr>
     <tr>
+      <td>
+        <strong>Requested Information</strong>
+      </td>
+      <td>
+        <%= @inquiry.requested_info_fields %>
+      </td>
+    </tr>
+    <% unless @inquiry.info_other_message.blank? %>
+      <tr>
+        <td>
+          <strong>Info Message</strong>
+        </td>
+        <td>
+          <%= simple_format strip_tags(@inquiry.info_other_message), :style => 'margin-top: 0' %>
+        </td>
+      </tr>
+    <% end %>
+    <% unless @inquiry.contact_street.blank? %>
+      <tr>
+        <td>
+          <strong>Address</strong>
+        </td>
+        <td>
+          <%= @inquiry.contact_street if @inquiry.contact_street.present? %> <%= @inquiry.contact_city if @inquiry.contact_city.present? %>
+          <%= @inquiry.contact_state  if @inquiry.contact_state.present? %> <%= @inquiry.contact_zip if @inquiry.contact_zip.present? %>
+        </td>
+      </tr>
+    <% end %>
+    <tr>
+      <td>
+        <strong>Primary Phone</strong>
+      </td>
+      <td>
+        <%= @inquiry.phone %>
+      </td>
+    </tr>
+    <% unless @inquiry.contact_secondary_phone.blank? %>
+      <tr>
+        <td>
+          <strong>Secondary Phone</strong>
+        </td>
+        <td>
+          <%= @inquiry.contact_secondary_phone %>
+        </td>
+      </tr>
+    <% end %>
+    <tr>
       <td valign='top'>
-        <strong><%= t('.message') %></strong>
+        <strong>Message</strong>
       </td>
       <td>
         <%= simple_format strip_tags(@inquiry.message), :style => 'margin-top: 0' %>

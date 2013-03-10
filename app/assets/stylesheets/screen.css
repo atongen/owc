@@ -551,7 +551,6 @@ height: auto !important;
  Copy
 ------------------------------------------------------------------------ */
 .copy {
-    color: ;
 }
 
 .copy_center {
@@ -587,11 +586,11 @@ height: auto !important;
 }
 
 .site-hd {
-    padding-top: ;
+    /* padding-top: ;
     height: ;
     background: ;
     position: relative;
-    font-family: ;
+    font-family: ; */
     *zoom: 1; /* clearfix for lte IE7 */
 }
 
@@ -629,7 +628,7 @@ height: auto !important;
     right: 0;
     overflow: hidden;
     *zoom: 1; /* clearfix for lte IE7 */
-    padding: ;
+    /* padding: ; */
     height: 310px;
     background: #58504d;
 }
@@ -1039,7 +1038,6 @@ dark blue: #01729c;
     border: 1px solid #cbd488;
     color: #ffffff;
     cursor: pointer;
-    font-family: ;
     font-size: 13px;
     text-align: left;
 }

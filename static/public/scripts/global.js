@@ -85,8 +85,10 @@ var HopeApp = (function(app, $){
 			$carousel.find('.pagination').append(paginationMarkup);			
 			$pagination.find('li').first().addClass('active');
 	
-			$pagination.find('a').click(function(){
+			$pagination.find('a').click(function(event){
+				event.preventDefault();
 				var targetSlideIndex = $(this).parent().index();
+				if(targetSlideIndex == currentSlideIndex) return;
 				changeSlide(targetSlideIndex);
 			});
 	

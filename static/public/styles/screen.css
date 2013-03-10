@@ -252,8 +252,8 @@ small {
  Events
 ------------------------------------------------------------------------ */
 img {
-max-width: 100%;
-height: auto !important;
+    max-width: 100%;
+    height: auto !important;
 }
 .event {
     padding-bottom: 25px;
@@ -846,54 +846,6 @@ a.lastItem + .navList-sub a {
     margin-right: 21px;
 }
 
-/* Archive list
-------------------------------------------- */
-
-.asideList a {
-    font-size: 14px;
-    font-family: 'Varela Round', Arial, Helvetica, sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #666666;
-}
-
-.asideList > li > a {
-    display: block;
-    padding: 12px 0 10px;
-    border-bottom: 1px solid #d6d6d6;
-    text-decoration: none;
-}
-
-.asideList > li > a:before,
-.asideList > li.aside-is-active > a:before {
-    width: 13px;
-    line-height: 12px;
-    display: block;
-    float: left;
-}
-
-.asideList > li > a:before {
-    /*content: '+\00a0\00a0';*/
-    content: '+';
-}
-
-.asideList > li.aside-is-active > a:before {
-    /*content: '–\00a0\00a0';*/
-    content: '–';
-}
-
-.asideList > li.aside-is-active {
-    border-bottom: 1px solid #d6d6d6;
-}
-
-.asideList > li > ul {
-    margin: 26px 0 44px;
-}
-
-.asideList > li > ul > li {
-    padding-bottom: 22px; /* padding instead of margin to prevent unexpected "bounce" caused during slideDown */
-}
-
 /* ---------------------------------------------------------------------
  Hero Carousel
 ------------------------------------------------------------------------ */
@@ -976,7 +928,7 @@ dark blue: #01729c;
 	height: 500px;
 }
 
-.hero-carousel-bd a { text-transform: uppercase; }
+.hero-carousel-bd a { text-transform: uppercase; font-style: normal; }
 .hero-carousel-bd a:hover { background: #fff; }
 
 .blue .hero-carousel-bd { background: #00aeef; }
@@ -1040,7 +992,6 @@ dark blue: #01729c;
     border: 1px solid #cbd488;
     color: #ffffff;
     cursor: pointer;
-    font-family: ;
     font-size: 13px;
     text-align: left;
 }
