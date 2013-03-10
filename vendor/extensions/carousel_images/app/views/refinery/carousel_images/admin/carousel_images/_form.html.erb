@@ -1,0 +1,83 @@
+<style type="text/css">
+  .swatch {  width: 25px; height:25px; margin: 2px; border:2px solid #f0f0f0; float:left;}
+  .swatch.active { border: 2px solid #000; }
+</style>
+
+<%= form_for [refinery, :carousel_images_admin, @carousel_image] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @carousel_image,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :title -%>
+    <%= f.text_field :title, :class => 'larger widest'  -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label 'Page Link' -%>
+    <%#= f.number_field :page_id  -%>
+    <%= f.collection_select :page_id, ::Refinery::Page.where(:show_in_menu => true).all, :id, :title  -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :color %>
+    <%#= f.text_field :color %>
+    <% Refinery::CarouselImages.colors.each do |color| %>
+      <% selected = color[0].eql?(@carousel_image.color) ? 'swatch active' : 'swatch' %>
+      <div class="<%= selected %>" data-value="<%= color[0] %>" style="background-color: <%= color[1] %>;"></div>
+    <% end %>
+    <%= f.hidden_field :color %>
+  </div>
+  <div style="clear:both;"></div>
+
+  <div class='field'>
+    <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
+      <ul id='page_parts'>
+        <% [:copy].each_with_index do |part, part_index| %>
+          <li class='ui-state-default<%= ' ui-state-active' if part_index == 0 %>'>
+            <%= link_to t("#{part}", :scope => "activerecord.attributes.refinery/carousel_images/carousel_image", :default => part.to_s.titleize), "##{part}" %>
+          </li>
+        <% end %>
+      </ul>
+      <div id='page_part_editors'>
+        <% [:copy].each do |part| %>
+          <div class='page_part' id='<%= part %>'>
+            <%= f.text_area part, :rows => 20, :class => 'wymeditor widest' -%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+
+  <div class='field'>
+    <%= f.label :picture -%>
+    <%= render '/refinery/admin/image_picker',
+               :f => f,
+               :field => :picture_id,
+               :image => @carousel_image.picture,
+               :toggle_image_display => false %>
+
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.carousel_images.admin.carousel_images.carousel_image'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @carousel_image.title) %>
+<% end -%>
+
+<% content_for :javascripts do %>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+
+    $(function(){
+      $('.swatch').on('click', function(){
+        $('.swatch').removeClass('active');
+        $(this).addClass('active');
+        $('input[name="carousel_image[color]"]').val($(this).attr('data-value'));
+      });
+    });
+  </script>
+<% end %>

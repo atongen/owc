@@ -1,0 +1,30 @@
+nb:
+  refinery:
+    plugins:
+      carousel_images:
+        title: Carousel Images
+    carousel_images:
+      admin:
+        carousel_images:
+          actions:
+            create_new: Lag en ny Carousel Image
+            reorder: Endre rekkefølgen på Carousel Images
+            reorder_done: Ferdig å endre rekkefølgen Carousel Images
+          records:
+            title: Carousel Images
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Carousel Images enda. Klikk på "Lag en ny Carousel Image" for å legge til din første carousel image.
+          carousel_image:
+            view_live_html: Vis hvordan denne carousel image ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne carousel image
+            delete: Fjern denne carousel image permanent
+      carousel_images:
+        show:
+          other: Andre Carousel Images
+  activerecord:
+    attributes:
+      'refinery/carousel_images/carousel_image':
+        title: Title
+        page_id: Page
+        copy: Copy
+        picture: Picture
