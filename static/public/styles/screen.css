@@ -135,7 +135,7 @@ body {
 }
 
 a {
-    color: #93a445;
+    color: #00aeef;
     text-decoration: none;
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
@@ -170,6 +170,7 @@ small {
     position: absolute;
     left: -9999px;
 }
+
 
 /* ---------------------------------------------------------------------
  Wrapper
@@ -367,6 +368,18 @@ height: auto !important;
     *zoom: 1; /* new bfc for IE7 */
 }
 
+.media-bd > h3 {
+    font-weight: bold;
+}
+
+.media-bd > h4 {
+    margin-bottom: 10px;
+}
+
+.media-bd > a {
+    font-style: italic;
+}
+
 /* ---------------------------------------------------------------------
  Horizontal List
 ------------------------------------------------------------------------ */
@@ -485,6 +498,10 @@ height: auto !important;
     text-align: center;
 }
 
+.hdg_bold {
+    font-weight: bold;
+}
+
 .hdg_1 { font-size: 72px; }
 .hdg_2 { font-size: 32px; }
 .hdg_3 { font-size: 24px; }
@@ -492,19 +509,19 @@ height: auto !important;
 .hdg_5 { font-size: 14px; }
 .hdg_6 { font-size: 10px; }
 
-.pageHdg {
+.sectionHdg {
     position: relative;
     margin-bottom: 24px;
     color: #919191;
     text-align: center;
 }
 
-.pageHdg > * {
+.sectionHdg > * {
     background: #f4f3f2;
     padding: 0 25px;
 }
 
-.pageHdg > *:before {
+.sectionHdg > *:before {
     content: '';
     display: block;
     border-bottom: 1px solid #919191;
@@ -516,9 +533,55 @@ height: auto !important;
     z-index: -1;
 }
 
-.pageHdg > *:after {
+.sectionHdg > *:after {
     right: 0;
     left: auto;
+}
+
+.pageHdg {
+    padding-top: 38px;
+    height: 112px;
+    text-align: center;
+}
+
+.pageHdg-hd {
+    margin-bottom: 8px;
+    font: 34px/1 'Varela Round', Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+/* colors
+
+purple: #a854a1;
+dark purple: #4b1a88;
+green: #b7d433;
+dark green: #0a913b;
+gold: #ffc749;
+dark gold: #e86f15;
+blue: #00aeef;
+dark blue: #01729c;
+
+*/
+
+.page .pageHdg-hd {
+    color: #00aeef;
+}
+
+.page-purple .pageHdg-hd {
+    color: #a854a1;
+}
+
+.page-green .pageHdg-hd {
+    color: #b7d433;
+}
+
+.page-orange .pageHdg-hd {
+    color: #ffc749;
+}
+
+.pageHdg-sub {
+    font-size: 18px;
+    color: 58504d;
 }
 
 /* ---------------------------------------------------------------------
@@ -760,19 +823,6 @@ a.lastItem + .navList-sub a {
     color: #01729c;
 }
 
-/* colors
-
-purple: #a854a1;
-dark purple: #4b1a88;
-green: #b7d433;
-dark green: #0a913b;
-gold: #ffc749;
-dark gold: #e86f15;
-blue: #00aeef;
-dark blue: #01729c;
-
-*/
-
 .purple .navList-sub a { background: #a854a1; }
 .purple .navList-sub a:hover { color: #4b1a88; }
 .green .navList-sub a { background: #b7d433; }
@@ -798,6 +848,10 @@ dark blue: #01729c;
     color: #ffffff;
     text-transform: uppercase;
     text-align: center;
+}
+
+.donate-btn:hover {
+    background: #bc2027;
 }
 
 /* Contact Us
