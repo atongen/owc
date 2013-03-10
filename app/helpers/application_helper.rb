@@ -22,6 +22,10 @@ module ApplicationHelper
     end
   end
 
+  def carousel_images
+    Refinery::CarouselImages::CarouselImage.order(:position).all
+  end
+
   # change this to contains
   def get_page_color pageUrl
     if pageUrl.include? "pregnant"
@@ -39,7 +43,5 @@ module ApplicationHelper
     else
       return 'purple'
     end
-  def carousel_images
-    Refinery::CarouselImages::CarouselImage.order(:position).all
   end
 end
