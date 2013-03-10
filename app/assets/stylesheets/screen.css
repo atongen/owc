@@ -1209,19 +1209,31 @@ a.lastItem + .navList-sub a {
 
 .contactUs-form li { margin-bottom: 10px; }
 
-.contactUs-form input[type=text] { padding: 10px 0; }
+.contactUs-form input, textarea { padding: 10px 0 10px 10px; }
 
-.contactUs-form .name { width: 470px; }
+.contactUs-form .name { width: 468px; }
 
-.contactUs-form .address { width: 470px; }
+.contactUs-form .address { width: 468px; }
 
 .contactUs-form .email { width: 468px; }
 
-label.labelName { padding-right: 25px; }
+.contactUs-form .city { margin-right: 10px; }
+
+.contactUs-form .state { width: 65px; margin-right: 10px; }
+
+.contactUs-form .zip { width: 91px; }
+
+.contactUs-form .primaryPhone { width: 130px; margin-right: 10px; }
+
+.contactUs-form .secondaryPhone { width: 130px; }
+
+label.labelName { padding-right: 32px; }
 
 label.labelEmail { padding-right: 31px; }
 
-label.labelCity { padding-right: 37px; }
+label.labelAddress { padding-right: 28px; }
+
+label.labelCity { padding-right: 55px; }
 
 @media all and (min-width: 768px) {
     .grid-col {
