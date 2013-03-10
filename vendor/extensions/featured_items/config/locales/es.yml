@@ -1,0 +1,30 @@
+es:
+  refinery:
+    plugins:
+      featured_items:
+        title: Featured Items
+#        article: masculino/femenino
+    featured_items:
+      admin:
+        featured_items:
+          actions:
+            create_new: Crear nuevo featured item
+            reorder: Reordenar featured items
+            reorder_done: Reordenación de featured items completada
+          records:
+            title: Featured Items
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay featured items todavía. Pulsa en "Crear nuevo Featured Item" para crear tu primer featured item.
+          featured_item:
+            view_live_html: Ver este featured item como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este featured item
+            delete: Borrar este featured item para siempre
+      featured_items:
+        show:
+          other: Otros featured items
+  activerecord:
+    attributes:
+      'refinery/featured_items/featured_item':
+        title: Title
+        model: Model
+        model_id: Model

@@ -1,0 +1,29 @@
+en:
+  refinery:
+    plugins:
+      featured_items:
+        title: Featured Items
+    featured_items:
+      admin:
+        featured_items:
+          actions:
+            create_new: Add New Featured Item
+            reorder: Reorder Featured Items
+            reorder_done: Done Reordering Featured Items
+          records:
+            title: Featured Items
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Featured Items yet. Click "Add New Featured Item" to add your first featured item.
+          featured_item:
+            view_live_html: View this featured item live <br/><em>(opens in a new window)</em>
+            edit: Edit this featured item
+            delete: Remove this featured item forever
+      featured_items:
+        show:
+          other: Other Featured Items
+  activerecord:
+    attributes:
+      'refinery/featured_items/featured_item':
+        title: Title
+        model: Model
+        model_id: Model
