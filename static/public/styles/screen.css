@@ -928,7 +928,7 @@ dark blue: #01729c;
 	height: 500px;
 }
 
-.hero-carousel-bd a { text-transform: uppercase; }
+.hero-carousel-bd a { text-transform: uppercase; font-style: normal; }
 .hero-carousel-bd a:hover { background: #fff; }
 
 .blue .hero-carousel-bd { background: #00aeef; }
