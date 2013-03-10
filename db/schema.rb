@@ -65,6 +65,17 @@ ActiveRecord::Schema.define(:version => 20130310050137) do
   add_index "refinery_blog_posts", ["id"], :name => "index_refinery_blog_posts_on_id"
   add_index "refinery_blog_posts", ["slug"], :name => "index_refinery_blog_posts_on_slug"
 
+  create_table "refinery_carousel_images", :force => true do |t|
+    t.string   "title"
+    t.integer  "page_id"
+    t.text     "copy"
+    t.integer  "picture_id"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "color"
+  end
+
   create_table "refinery_event_images", :force => true do |t|
     t.integer "image_id"
     t.integer "event_id"

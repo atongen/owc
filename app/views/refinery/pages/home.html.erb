@@ -3,11 +3,11 @@
     <h1>Home Page!</h1>
     <p>Find me in app/views/refinery/pages/home.html.erb</p>
     <% if @page.images.present? %>
-    <p>Carousel Images</p>
+    <p>Carousel Images</p>  <%# 660 x 500%>
     <ul>
-    <% @page.images.each do |image| %>
-      <li>
-        <%= image_tag(image.url) %>
+    <% carousel_images.each do |image| %>
+      <li class="<%= image.css_class %>">
+        <%= image_tag(image.picture.url) if image.picture.present? %>
       </li>
     <% end %>
     </ul>

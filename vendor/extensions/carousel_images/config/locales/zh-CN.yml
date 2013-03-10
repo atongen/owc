@@ -1,0 +1,32 @@
+zh-CN:
+  refinery:
+    plugins:
+      carousel_images:
+        title: Carousel Images
+    carousel_images:
+      admin:
+        carousel_images:
+          actions:
+            create_new: 建立新的 Carousel Image
+            reorder: 对 Carousel Images 重新排序
+            reorder_done: 对 Carousel Images 的重新排序结束
+          records:
+            title: Carousel Images
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Carousel Images yet. Click "Add New Carousel Image" to add your first carousel image.
+            no_items_yet: 目前没有 Carousel Images . 点击 "Add New Carousel Image" 创建一个carousel image.
+          carousel_image:
+            view_live_html: 查看 carousel image 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 carousel image
+            delete: 永久删除 carousel image
+      carousel_images:
+        show:
+          other: 其他 Carousel Images
+  activerecord:
+    attributes:
+      'refinery/carousel_images/carousel_image':
+        title: Title
+        page_id: Page
+        copy: Copy
+        picture: Picture

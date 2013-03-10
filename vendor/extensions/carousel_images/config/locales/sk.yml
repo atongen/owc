@@ -1,0 +1,30 @@
+sk:
+  refinery:
+    plugins:
+      carousel_images:
+        title: Carousel Images
+    carousel_images:
+      admin:
+        carousel_images:
+          actions:
+            create_new: Pridať Carousel Image
+            reorder: Preusporiadať Carousel Images
+            reorder_done: Koniec radenia Carousel Images
+          records:
+            title: Carousel Images
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Carousel Images. Kliknite na "Pridať Carousel Image" pre pridanie prvého carousel image.
+          carousel_image:
+            view_live_html: Zobraziť náhľad carousel image<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť carousel image
+            delete: Zmazať carousel image
+      carousel_images:
+        show:
+          other: Daľšie Carousel Images
+  activerecord:
+    attributes:
+      'refinery/carousel_images/carousel_image':
+        title: Title
+        page_id: Page
+        copy: Copy
+        picture: Picture
