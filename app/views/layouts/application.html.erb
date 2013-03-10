@@ -9,7 +9,11 @@
       <%= render '/refinery/header' -%>
       
       <!-- Page Body from Template -->
-        <%= yield %>
+      <div class="site-bd">
+        <div class="wrapper">
+          <%= yield %>
+        </div>
+      </div>
       <!-- end Page Body -->
 
       <%= render '/refinery/footer' -%>
