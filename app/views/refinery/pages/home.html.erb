@@ -12,5 +12,18 @@
     <% end %>
     </ul>
     <% end %>
+
+    <h2>Featured Items</h2>
+    <ul>
+      <% featured_items.each do |item| %>
+        <li>
+            <% if item.present? %>
+              <%= link_to(item[:text], item[:link]) %>
+              <%= item[:summary] %>
+              <%= image_tag(item[:picture].url) if item[:picture].present? %>
+            <% end %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </div>

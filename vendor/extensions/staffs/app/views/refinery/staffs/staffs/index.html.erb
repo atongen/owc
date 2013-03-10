@@ -1,0 +1,13 @@
+<% content_for :body do %>
+  <ul id="staffs">
+    <% @staffs.each do |staff| %>
+      <li>
+        <%= staff.full_name %>
+        <%= staff.title %>
+        <%= staff.email %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>
