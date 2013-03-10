@@ -312,7 +312,7 @@ var HopeApp = (function(app, $){
                 } else if (step === 10 && event.keyCode === 13) {
                     //console.log("start");
                     console.log("contra...")
-                    $('body').append("<embed src='public/easter/contra.mp3' hidden=true autostart=true loop=false>");
+                    $('body').append("<embed src='/assets/contra.mp3' hidden=true autostart=true loop=false>");
                     step++;
                     return;
                 }
@@ -329,7 +329,7 @@ var HopeApp = (function(app, $){
 // remap audios to a buffered collection
         var audio;
         function play() {
-            audio = new Audio("public/easter/contra.mp3");
+            audio = new Audio("/assets/contra.mp3");
             buffer(audio);
             console.log("play");
         }
