@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(:version => 20130310022024) do
   add_index "refinery_blog_posts", ["access_count"], :name => "index_refinery_blog_posts_on_access_count"
   add_index "refinery_blog_posts", ["id"], :name => "index_refinery_blog_posts_on_id"
   add_index "refinery_blog_posts", ["slug"], :name => "index_refinery_blog_posts_on_slug"
+
   create_table "refinery_events", :force => true do |t|
     t.string   "title"
     t.text     "summary"
