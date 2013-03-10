@@ -27,6 +27,18 @@ module ApplicationHelper
     Refinery::CarouselImages::CarouselImage.order(:position).all
   end
 
+  def facebook_url
+    Refinery::Setting.find_or_set(:facebook_url, nil)
+  end
+
+  def twitter_url
+    Refinery::Setting.find_or_set(:twitter_url, nil)
+  end
+
+  def youtube_url
+    Refinery::Setting.find_or_set(:youtube_url, nil)
+  end
+
   # change this to contains
   def get_page_color pageUrl
     if pageUrl.include? "pregnant"
