@@ -1,13 +1,59 @@
 <% content_for :body do %>
-  <ul id="staffs">
-    <% @staffs.each do |staff| %>
-      <li>
-        <%= staff.full_name %>
-        <%= staff.title %>
-        <%= staff.email %>
-      </li>
-    <% end %>
-  </ul>
+<div class="site-bd">
+        <div class="wrapper">
+            <div class="grid">
+                <div class="pageHdg">
+                    <h2 class="pageHdg-hd">About Us</h2>
+                    <h3 class="pageHd-sub">
+                      <% if @staffs.first.staff_type == 'Staff' %>
+                      Our Staff
+                      <% else %>
+                      Board Members
+                      <% end %>
+                    </h3>
+                </div>
+            </div>
+            <div class="grid">
+                <% @staffs.each_slice(2) do |parts| %>
+                  <div class="grid-col grid-col_size6of12">
+                      <div class="gap gap_2">
+                          <div class="media">
+                              <div class="media-img">
+                                  <%= image_fu(parts[0].picture, '220x250') %>
+                              </div>
+                              <div class="media-bd">
+                                  <h3><%= parts[0].full_name %></h3>
+                                  <h4><%= parts[0].position %></h4>
+                                  <%= mail_to parts[0].email %>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+
+                    <% if parts[1] != nil %>
+                    <div class="grid-col grid-col_size6of12">
+                      <div class="gap gap_2">
+                          <div class="media">
+                              <div class="media-img">
+                                  <%= image_fu(parts[1].picture, '220x250') %>
+                              </div>
+                              <div class="media-bd">
+                                  <h3><%= parts[1].full_name %></h3>
+                                  <h4><%= parts[1].position %></h4>
+                                  <%= mail_to parts[1].email %>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                    <% end %>
+                </div>
+                <% end %> 
+            </div>
+            <!-- /grid -->
+        </div>
+        <!-- /wrapper -->
+    </div>
+    <!-- /site-bd -->
 <% end %>
 
 <%= render '/refinery/content_page' %>
