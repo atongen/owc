@@ -1,18 +1,18 @@
-<% if @page.content_for(:first_3_col_left).to_s.present? %>
+<% if @page.content_for(:left_3_col).to_s.present? %>
   <div class="grid">
     <div class="grid-col grid-col_size4of12">
       <div class="feature">
-        <%= raw @page.content_for(:first_3_col_left) %>
+        <%= raw @page.content_for(:left_3_col) %>
       </div>
     </div>
     <div class="grid-col grid-col_size4of12">
       <div class="feature">
-        <%= raw @page.content_for(:first_3_col_middle) %>
+        <%= raw @page.content_for(:middle_3_col) %>
       </div>
     </div>
     <div class="grid-col grid-col_size4of12">
       <div class="feature">
-        <%= raw @page.content_for(:first_3_col_right) %>
+        <%= raw @page.content_for(:right_3_col) %>
       </div>
     </div>
   </div>
