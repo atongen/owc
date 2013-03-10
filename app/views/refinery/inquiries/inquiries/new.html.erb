@@ -1,91 +1,113 @@
 <% content_for :body do %>
-  <div class='inquiries'>
-    <%= form_for [refinery, :inquiries, @inquiry] do |f| %>
+  <div class="grid">
+      <h3 class="hdg hdg_4">Send A Message</h3>
+  </div>
+    <%= form_for [refinery, :inquiries, @inquiry ], :html => { :class => "contactUs-form" } do |f| %>
       <%= render :partial => "/refinery/admin/error_messages",
                  :locals => {
                    :object => @inquiry,
                    :include_object_name => true
                  } %>
-      <p>What type of information can we provide for you? *</p>
-      <div class="field">
-        <%= f.label :pregnancy_support, :class => 'placeholder-fallback' %>
-        <%= f.check_box :info_pregnancy_support, :class => 'text' %>
-        
-        <%= f.label :adopting_a_child, :class => 'placeholder-fallback' %>
-        <%= f.check_box :info_adopt_child, :class => 'text' %>
-        
-        <%= f.label :volunteering, :class => 'placeholder-fallback' %>
-        <%= f.check_box :info_volunteering, :class => 'text' %>
-        
-        <%= f.label :other, :class => 'placeholder-fallback' %>
-        <%= f.check_box :info_other, :class => 'text' %>
+      <div class="grid">
+        <div class="grid-col grid-col_size4of12">
+          <p>What type of information can we provide for you? <sup>*</sup></p>
+          <ul>
+            <li><%= f.check_box :info_pregnancy_support %>
+            <%= f.label :pregnancy_support %></li>
+            
+            <li><%= f.check_box :info_adopt_child %>
+            <%= f.label :adopting_a_child %></li>
+            
+            <li><%= f.check_box :info_volunteering %>
+            <%= f.label :volunteering %></li>
+            
+            <li><%= f.check_box :info_other %>
+            <%= f.label :other %></li>
+            
+            <li><%= f.label :if_other_please_describe %>
+            <%= f.text_area :info_other_message, :cols => 30, :rows => 10, :placeholder => 'Other Information' %></li>
+          </ul>
+        </div>
+        <div class="grid-col grid-col_size8of12">
+          <ul>
+            <li><%= f.required_label :name, :class => 'labelName' %>
+            <%= f.text_field :name, :class => 'name', :required => 'required', :placeholder => t('name', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') %></li>
+      
+            <li><%= f.label :address %>
+            <%= f.text_field :contact_street, :class => 'address', :placeholder => 'Street' %></li>
+            
+            <li>
+              <%= f.label :city, :class => 'labelCity' %>
+              <%= f.text_field :contact_city, :placeholder => 'City' %>
+              <%= f.label :state %>
+              <%= f.text_field :contact_state, :placeholder => 'State' %>
+              <%= f.label :zip %>
+              <%= f.text_field :contact_zip, :placeholder => 'Zip' %>
+            </li>
+            <li>
+              <%= f.required_label :primary_phone %>
+              <%= f.text_field :phone, :required => 'required', :placeholder => 'Primary Phone' %>
+              <%= f.label :secondary_phone %>
+              <%= f.text_field :contact_secondary_phone, :placeholder => 'Secondary Phone' %>
+            </li>
+            <li>
+              <%= f.required_label :email, :class => 'labelEmail' %>
+              <%= f.email_field :email, :class => 'email', :required => 'required', :placeholder => t('email', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') %>
+            </li>
+            <li>
+              <%= f.required_label :message %>
+              <%= f.text_area :message, :cols => 65, :rows => 10, :required => 'required', :placeholder => t('message', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') %>
+            </li>
+          </ul>
+        </div>
       </div>
-        
-      <p>If Other, please describe:</p>
-      <div class='field message_field'>
-        <%= f.text_area :info_other_message, :rows => 6, :placeholder => 'Other Information' %>
+      <div class="grid">
+        <div class="grid-col grid-col_size12of12">
+          <div class="divider">
+              
+          </div>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="grid-col grid-col_size4of12">
+          <div class="gap gap_3">
+              <p>Where did you hear about<br /> HOPE Adoption &amp; Family Services?<sup>*</sup></p>
+            </div>
+          </div>
+          <div class="grid-col grid-col_size8of12">
+            <div class="gap gap_3">
+              <ul class="hList">
+                <li><%= f.check_box :exit_question_referral, :class => 'text' %>
+                <%= f.label :friend_or_family %></li>
+                
+                <li><%= f.check_box :exit_question_advertisement %>
+                <%= f.label :advertisement %></li>
+                
+                <li><%= f.check_box :exit_question_web %>
+                <%= f.label :web, :class => 'placeholder-fallback' %></li>
+            
+                <li><%= f.check_box :exit_question_other %>
+                <%= f.label :other %></li>
+                
+                <li><%= f.label :if_other_please_describe %>
+                <%= f.text_field :exit_question_other_message %></li>
+              </ul>
+            </div>
+          </div>
+      </div>
+      <div class="grid">
+          <div class="grid-col grid-col_size8of12 grid-col_prefix4of12">
+              <div class="gap gap_3">
+                <%= f.submit t('.send'), :class => "btn sans-serif" %>
+                  <!--<button type="submit" class="btn sans-serif">Submit Form</button>-->
+              </div>
+          </div>
       </div>
       
-      <div class="field">
-        <%= f.required_label :name, :class => 'placeholder-fallback' %>
-        <%= f.text_field :name, :class => 'text', :required => 'required', :placeholder => t('name', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') %>
-      </div>
-      <p>Address:</p>
-      <div class="field">
-        <%= f.label :street, :class => 'placeholder-fallback' %>
-        <%= f.text_field :contact_street, :class => 'text', :placeholder => 'Street' %>
-      </div>
-      <div class="field">
-        <%= f.label :city, :class => 'placeholder-fallback' %>
-        <%= f.text_field :contact_city, :class => 'text', :placeholder => 'City' %>
-      </div>
-      <div class="field">
-        <%= f.label :state, :class => 'placeholder-fallback' %>
-        <%= f.text_field :contact_state, :class => 'text', :placeholder => 'State' %>
-      </div>
-      <div class="field">
-        <%= f.label :zip, :class => 'placeholder-fallback' %>
-        <%= f.text_field :contact_zip, :class => 'text', :placeholder => 'Zip' %>
-      </div>
-      <div class="field">
-        <%= f.required_label :primary_phone, :class => 'placeholder-fallback' %>
-        <%= f.text_field :phone, :class => 'text phone', :required => 'required', :placeholder => 'Primary Phone' %>
-      </div>
-      <div class="field">
-        <%= f.label :secondary_phone, :class => 'placeholder-fallback' %>
-        <%= f.text_field :contact_secondary_phone, :class => 'text phone', :placeholder => 'Secondary Phone' %>
-      </div>
-      <div class="field">
-        <%= f.required_label :email, :class => 'placeholder-fallback' %>
-        <%= f.email_field :email, :class => 'text email', :required => 'required', :placeholder => t('email', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') %>
-      </div>
-      <div class='field message_field'>
-        <%= f.required_label :message, :class => 'placeholder-fallback' %>
-        <%= f.text_area :message, :rows => 8, :required => 'required', :placeholder => t('message', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') %>
-      </div>
-      <p>How did you hear about us? *</p>
-      <div class='field'>
-        <%= f.label :web, :class => 'placeholder-fallback' %>
-        <%= f.check_box :exit_question_web, :class => 'text' %>
-        
-        <%= f.label :referral, :class => 'placeholder-fallback' %>
-        <%= f.check_box :exit_question_referral, :class => 'text' %>
-        
-        <%= f.label :advertisement, :class => 'placeholder-fallback' %>
-        <%= f.check_box :exit_question_advertisement, :class => 'text' %>
-        
-        <%= f.label :other, :class => 'placeholder-fallback' %>
-        <%= f.check_box :exit_question_other, :class => 'text' %>
-      </div>
-      <p>If Other, please describe:</p>
-      <div class='field message_field'>
-        <%= f.text_field :exit_question_other_message %>
-      </div>
       <div class="actions">
-        <%= f.submit t('.send') %>
-        <%= link_to t('.privacy_policy'), "/pages/privacy-policy", :id => "privacy_link" if Refinery::Inquiries.show_contact_privacy_link %>
+        
       </div>
     <% end %>
-  </div>
+
 <% end %>
 <%= render :partial => "/refinery/content_page" %>
