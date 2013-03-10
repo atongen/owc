@@ -24,7 +24,7 @@
           <%= link_to(item[:text], item[:link]) %>
           <%= item[:summary] %>
           <%= item[:type] %>
-          <%= image_fu(item[:picture], '306x229#c') if item[:picture].present? %>
+          <%= image_fu(item[:picture], '306x229!') if item[:picture].present? %>
         <% end %>
     </li>
   <% end %>
