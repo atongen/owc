@@ -2,13 +2,17 @@ Refinery::Core::Engine.routes.append do
 
   # Frontend routes
   namespace :staffs do
-    resources :staffs, :path => '', :only => [:index, :show]
+    resources :staffs, :path => '', :only => [:index] do
+      collection do
+        get :board
+      end
+    end
   end
 
   # Admin routes
   namespace :staffs, :path => '' do
     namespace :admin, :path => 'refinery' do
-      resources :staffs, :except => :show do
+      resources :staffs do
         collection do
           post :update_positions
         end

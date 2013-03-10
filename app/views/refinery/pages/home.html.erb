@@ -1,19 +1,24 @@
 <div class="site-bd">
   <div class="wrapper">
-    <h1>Home Page!</h1>
-    <p>Find me in app/views/refinery/pages/home.html.erb</p>
-    <% if @page.images.present? %>
-    <p>Carousel Images</p>  <%# 660 x 500%>
-    <ul>
-    <% carousel_images.each do |image| %>
-      <li class="<%= image.css_class %>">
-        <%= image_tag(image.picture.url) if image.picture.present? %>
-      </li>
-    <% end %>
-    </ul>
-    <% end %>
+    <div class="hero-carousel">
+      <ul class="slides"> <%# 660 x 500%>
+        <% carousel_images.each_with_index do |image,index| %>
+          <li class="<%= image.css_class %><%= index == 0 ? ' active' : ''%>">
+            <div class="hero-carousel-bd">
+              <h2 class="sans-serif"><%= image.title %></h2>
+              <%= raw image.copy %>
+              <%= link_to('Learn More', image.page.link_url, :class => 'sans-serif') %>
+            </div>
+            <% if image.picture.present? %>
+              <div class="hero-carousel-img">
+                <%= image_tag(image.picture.url) %>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
 
-    <h2>Featured Items</h2>
     <ul>
       <% featured_items.each do |item| %>
         <li>

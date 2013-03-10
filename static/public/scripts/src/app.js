@@ -4,10 +4,7 @@ var HopeApp = (function(app, $){
 	 * Initialize Hope App
 	 */
 	function init() {
-	
-	    console.log('ALIVE!');	
-	    
-	    console.log(app.heroCarousel);
+
 	    app.heroCarousel.init();
         app.galleryCarousel.init();
 		return app;
