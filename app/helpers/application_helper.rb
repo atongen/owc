@@ -57,4 +57,8 @@ module ApplicationHelper
       return 'purple'
     end
   end
+
+  def site_section_class
+    @page.link_url.to_s.split("/").select(&:present?).first
+  end
 end
