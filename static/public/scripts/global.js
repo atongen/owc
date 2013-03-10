@@ -56,7 +56,8 @@ var HopeApp = (function(app, $){
 		function init() {
 	
 			$carousel = $('.hero-carousel');
-			$slides = $('.slides li', '.hero-carousel');
+			$slides = $('.slides li');
+			console.log($slides);
 			$pagination = $carousel.find('.pagination');
 			// build pagination
 			
@@ -81,7 +82,7 @@ var HopeApp = (function(app, $){
 		
 		function stopTimer() {
 		
-		}
+		}  
 	
 		function nextSlide(){
 			var targetSlideIndex = currentSlideIndex + 1;
@@ -132,7 +133,6 @@ var HopeApp = (function(app, $){
         function Gallery(view) {
             var self = this;
             self.width = view.width();
-<<<<<<< HEAD
             self.navigation = view.find(".navigation");
             self.imageContainer = view.find(".images")
             self.images = view.find(".image");
@@ -143,13 +143,6 @@ var HopeApp = (function(app, $){
 
             self.previous.fadeOut(0);
             self.next.fadeOut(0);
-=======
-            self.imageContainer = view.find(".images")
-            self.images = view.find(".image");
-            self.index = 0;
-
-            console.log(self.images);
->>>>>>> 047ef53a97636d4bb10e776adc6cadf3b02078a2
 
             self.gotoIndex = function(index, animated, direction) {
                 if (index < 0)
@@ -177,21 +170,14 @@ var HopeApp = (function(app, $){
                 self.gotoIndex(self.index-1, true, "previous");
             }
 
-<<<<<<< HEAD
             self.navigation.click(function(event) {
                 event.preventDefault();
                 if (self.button === self.previous)
-=======
-            view.find(".navigation").click(function(event) {
-                event.preventDefault();
-                if (event.offsetX < self.width/2)
->>>>>>> 047ef53a97636d4bb10e776adc6cadf3b02078a2
                     self.gotoPreviousImage(true);
                 else
                     self.gotoNextImage(true);
             });
 
-<<<<<<< HEAD
             self.setRollover = function(value) {
                 var rollover;
                 if (value !== 0)
@@ -221,8 +207,6 @@ var HopeApp = (function(app, $){
                 self.setRollover(0);
             });
 
-=======
->>>>>>> 047ef53a97636d4bb10e776adc6cadf3b02078a2
             self.gotoIndex(0, false);
         }
 

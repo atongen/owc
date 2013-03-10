@@ -12,7 +12,8 @@ var HopeApp = (function(app, $){
 		function init() {
 	
 			$carousel = $('.hero-carousel');
-			$slides = $('.slides li', '.hero-carousel');
+			$slides = $('.slides li');
+			console.log($slides);
 			$pagination = $carousel.find('.pagination');
 			// build pagination
 			
@@ -37,7 +38,7 @@ var HopeApp = (function(app, $){
 		
 		function stopTimer() {
 		
-		}
+		}  
 	
 		function nextSlide(){
 			var targetSlideIndex = currentSlideIndex + 1;
