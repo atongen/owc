@@ -8,7 +8,7 @@ opts = %w{
   enable_starttls_auto
 }.each_with_object({}) do |k,opts|
   key = "SMTP_#{k.upcase}"
-  opts[key.to_sym] = ENV[key] if ENV[key].present?
+  opts[k.to_sym] = ENV[key] if ENV[key].present?
 end
 
 if opts.present?
