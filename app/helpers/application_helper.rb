@@ -16,7 +16,8 @@ module ApplicationHelper
           :text => item.callout_text,
           :picture => data.picture,
           :title => data.title,
-          :link => dynamic_link_for(data)
+          :link => dynamic_link_for(data),
+          :type => data.class.name.demodulize.underscore.humanize.titlecase
         }
       end
     end
@@ -24,6 +25,18 @@ module ApplicationHelper
 
   def carousel_images
     Refinery::CarouselImages::CarouselImage.order(:position).all
+  end
+
+  def facebook_url
+    Refinery::Setting.find_or_set(:facebook_url, nil)
+  end
+
+  def twitter_url
+    Refinery::Setting.find_or_set(:twitter_url, nil)
+  end
+
+  def youtube_url
+    Refinery::Setting.find_or_set(:youtube_url, nil)
   end
 
   # change this to contains
@@ -35,11 +48,11 @@ module ApplicationHelper
     elsif pageUrl.include? "support"
       return 'orange'
     elsif pageUrl.include? "about_us"
-      return ''
-    elsif pageUrl.include? "get_involved"
-      return ''
+      return 'dark green'
+    elsif pageUrl.include? "get-involved"
+      return 'gold'
     elsif pageUrl.include? "events"
-      return ''
+      return 'blue'
     else
       return 'purple'
     end

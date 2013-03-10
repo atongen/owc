@@ -75,6 +75,8 @@ GEM
       multi_json (~> 1.0)
       rack
     erubis (2.7.0)
+    exception_notification (2.6.0)
+      actionmailer (>= 3.0.4)
     execjs (1.4.0)
       multi_json (~> 1.0)
     figaro (0.6.2)
@@ -240,6 +242,7 @@ DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   capistrano
   coffee-rails (~> 3.2.1)
+  exception_notification
   figaro
   jquery-rails (~> 2.0.0)
   mysql2
