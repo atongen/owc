@@ -18,8 +18,8 @@ module Refinery
 
       default_scope :order => 'created_at DESC'
 
-      attr_accessible :name, :phone, :message, :email, :secondary_phone, :info_place_baby, :info_adopt_child, :info_other,
-                      :info_other_message, :contact_street, :contact_city, :contact_state, :contact_state, :contact_zip
+      attr_accessible :name, :phone, :message, :email, :contact_secondary_phone, :info_place_baby, :info_adopt_child, :info_other,
+                      :info_other_message, :contact_street, :contact_city, :contact_state, :contact_state, :contact_zip,
 
       def self.latest(number = 7, include_spam = false)
         include_spam ? limit(number) : ham.limit(number)

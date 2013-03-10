@@ -10,15 +10,14 @@
       <div class="field">
         <%= f.label :placing_my_baby, :class => 'placeholder-fallback' %>
         <%= f.check_box :info_place_baby, :class => 'text' %>
-      </div>
-      <div class="field">
+        
         <%= f.label :adopting_a_child, :class => 'placeholder-fallback' %>
         <%= f.check_box :info_adopt_child, :class => 'text' %>
-      </div>
-      <div class="field">
+        
         <%= f.label :other, :class => 'placeholder-fallback' %>
         <%= f.check_box :info_other, :class => 'text' %>
       </div>
+        
       <p>If Other, please describe:</p>
       <div class='field message_field'>
         <%= f.text_area :info_other_message, :rows => 6 %>
