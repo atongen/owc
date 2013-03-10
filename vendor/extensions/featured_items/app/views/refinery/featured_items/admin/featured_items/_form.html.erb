@@ -1,13 +1,4 @@
 <%= form_for [refinery, :featured_items_admin, @featured_item] do |f| -%>
-  <%
-    models = [
-      ['None', ''],
-      ['Events', 'Events'],
-      ['Waiting Family', 'WaitingFamily'],
-      ['Waiting Kid', 'WaitingKid'],
-    ]
-  %>
-
   <%= render '/refinery/admin/error_messages',
               :object => @featured_item,
               :include_object_name => true %>
@@ -19,8 +10,13 @@
   </div>
 
   <div class='field'>
+    <%= f.label :callout_text %>
+    <%= f.text_field :callout_text, :class => 'larger wide' %>
+  </div>
+
+  <div class='field'>
     <%= f.label 'Content Type' -%>
-    <%= f.select :model, models, {}, {:class => 'model-selection'} %>
+    <%= f.select :model, model_choices, {}, {:class => 'model-selection'} %>
   </div>
 
   <div class='field'>

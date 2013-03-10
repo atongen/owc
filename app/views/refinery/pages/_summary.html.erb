@@ -1,7 +1,10 @@
 <% if @page.content_for(:summary).to_s.present? %>
   <div class="grid">
-    <div class="grid-col grid-col_size12of12">
-      <%= raw @page.content_for(:summary) %>
+    <div class="sectionHdg">
+        <h2 class="hdg hdg_inline">Page Name</h2>
+    </div>
+    <div class="bigCopy">
+        <%= raw @page.content_for(:summary) %>
     </div>
   </div>
 <% end %>
