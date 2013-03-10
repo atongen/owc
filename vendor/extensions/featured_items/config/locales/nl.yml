@@ -1,0 +1,29 @@
+nl:
+  refinery:
+    plugins:
+      featured_items:
+        title: Featured Items
+    featured_items:
+      admin:
+        featured_items:
+          actions:
+            create_new: Maak een nieuwe Featured Item
+            reorder: Wijzig de volgorde van de Featured Items
+            reorder_done: Klaar met het wijzingen van de volgorde van de Featured Items
+          records:
+            title: Featured Items
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Featured Items. Druk op 'Maak een nieuwe Featured Item' om de eerste aan te maken.
+          featured_item:
+            view_live_html: Bekijk deze featured item op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze featured item
+            delete: Verwijder deze featured item voor eeuwig
+      featured_items:
+        show:
+          other: Andere Featured Items
+  activerecord:
+    attributes:
+      'refinery/featured_items/featured_item':
+        title: Title
+        model: Model
+        model_id: Model

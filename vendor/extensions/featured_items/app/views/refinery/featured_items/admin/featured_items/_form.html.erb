@@ -1,0 +1,77 @@
+<%= form_for [refinery, :featured_items_admin, @featured_item] do |f| -%>
+  <%
+    models = [
+      ['None', ''],
+      ['Events', 'Events'],
+      ['Waiting Family', 'WaitingFamily'],
+      ['Waiting Kid', 'WaitingKid'],
+    ]
+  %>
+
+  <%= render '/refinery/admin/error_messages',
+              :object => @featured_item,
+              :include_object_name => true %>
+
+
+  <div class='field'>
+    <%#= f.label :title -%>
+    <%= f.label @featured_item.title, :class => 'larger widest' -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label 'Content Type' -%>
+    <%= f.select :model, models, {}, {:class => 'model-selection'} %>
+  </div>
+
+  <div class='field'>
+    <%= f.label 'Data Item' %>
+    <%= f.select :model_id, [], {}, {:class => 'model-items'} %>
+    <input type='hidden' name='selected' value='<%= @featured_item.model_id %>'>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :hide_delete => true,
+             :delete_title => t('delete', :scope => 'refinery.featured_items.admin.featured_items.featured_item'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @featured_item.title) %>
+<% end -%>
+
+<script type='text/javascript'>
+  var Admin = Admin || {};
+
+  $(function(){
+    Admin.FeaturedItems.init();
+  });
+
+  Admin.FeaturedItems = {
+    init: function() {
+      var me = this;
+      if($('.model-selection').length > 0) {
+        $('.model-selection').on('change', function() {
+          $('.model-items').empty();
+          $('.model-items').append('<option value="0">None</option>');
+          if($.trim($(this).val()).length > 0) {
+            me.getItems($(this).val());
+          }
+        }).change();
+      }
+    },
+
+    getItems: function(model, id) {
+      $.ajax({
+        type: 'GET',
+        url: '/refinery/featured_items/model_items.json',
+        data: {'model': model},
+        success: function(data) {
+          if(data.success) {
+            $(data.items).each(function(index, item) {
+              $('.model-items').append('<option value="' + item.id + '">' + item.title + '</option>');
+            });
+            var model_id = $('input[type=hidden][name=selected]').val();
+            $('.model-items').val(model_id);
+          }
+        }
+      });
+    }
+  };
+</script>
