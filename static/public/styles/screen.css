@@ -638,7 +638,6 @@ img {
 .site-bd {
     overflow: hidden;
     *zoom: 1; /* clearfix for lte IE7 */
-    padding-bottom: 310px;
 }
 
 .site-ft {

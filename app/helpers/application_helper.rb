@@ -47,7 +47,7 @@ module ApplicationHelper
       return 'green'
     elsif pageUrl.include? "support"
       return 'orange'
-    elsif pageUrl.include? "about_us"
+    elsif pageUrl.include? "about-us"
       return 'dark green'
     elsif pageUrl.include? "get-involved"
       return 'gold'
@@ -56,5 +56,9 @@ module ApplicationHelper
     else
       return 'purple'
     end
+  end
+
+  def site_section_class
+    @page.link_url.to_s.split("/").select(&:present?).first
   end
 end
