@@ -153,6 +153,10 @@ i {
     font-style: italic;
 }
 
+strong, b {
+    font-weight: bold;
+}
+
 button, input, select, textarea {
     font: normal 14px/1.28571429 ;
 }
@@ -449,6 +453,24 @@ height: auto !important;
 
 .vList {
     margin-top: 8px;
+}
+
+.vList_bulleted {
+    
+}
+
+.vList_bulleted > li {
+    padding-left: 26px;
+    margin-bottom: 10px;
+}
+
+.vList_bulleted > li:before {
+    content: '\2022';
+    font-size: 40px;
+    color: #00aeef;
+    line-height: 18px;
+    position: absolute;
+    left: 0;
 }
 
 .vList_footer > li {
