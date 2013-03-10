@@ -148,9 +148,9 @@ ActiveRecord::Schema.define(:version => 20130310050137) do
     t.string   "email"
     t.string   "phone"
     t.text     "message"
-    t.boolean  "spam",                    :default => false
-    t.datetime "created_at",                                 :null => false
-    t.datetime "updated_at",                                 :null => false
+    t.boolean  "spam",                        :default => false
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
     t.boolean  "info_place_baby"
     t.boolean  "info_adopt_child"
     t.boolean  "info_other"
@@ -160,6 +160,13 @@ ActiveRecord::Schema.define(:version => 20130310050137) do
     t.string   "contact_zip"
     t.string   "contact_secondary_phone"
     t.string   "contact_state"
+    t.boolean  "info_pregnancy_support"
+    t.boolean  "info_volunteering"
+    t.boolean  "exit_question_web"
+    t.boolean  "exit_question_referral"
+    t.boolean  "exit_question_advertisement"
+    t.boolean  "exit_question_other"
+    t.string   "exit_question_other_message"
   end
 
   add_index "refinery_inquiries_inquiries", ["id"], :name => "index_refinery_inquiries_inquiries_on_id"
