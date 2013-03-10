@@ -137,11 +137,11 @@ body {
 a {
     color: #93a445;
     text-decoration: none;
-    -webkit-transition: all .2s;
-    -moz-transition: all .2s;
-    -ms-transition: all .2s;
-    -o-transition: all .2s;
-    transition: all .2s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
 }
 
 button, input, select, textarea {
@@ -156,6 +156,12 @@ img {
 small {
     font-size: inherit;
 }
+
+/* ---------------------------------------------------------------------
+ Fonts
+------------------------------------------------------------------------ */
+
+.sans-serif { font-family: 'Varela Round', sans-serif; }
 
 /* ---------------------------------------------------------------------
  Utility Classes
@@ -870,6 +876,45 @@ dark blue: #01729c;
 .asideList > li > ul > li {
     padding-bottom: 22px; /* padding instead of margin to prevent unexpected "bounce" caused during slideDown */
 }
+
+/* ---------------------------------------------------------------------
+ Hero Carousel
+------------------------------------------------------------------------ */
+
+/* colors
+
+purple: #a854a1;
+dark purple: #4b1a88;
+green: #b7d433;
+dark green: #0a913b;
+gold: #ffc749;
+dark gold: #e86f15;
+blue: #00aeef;
+dark blue: #01729c;
+
+*/
+
+.hero-carousel .grid-col { height: 100%; }
+.hero-carousel-bd { padding: 20% 10% 0 10%; height: 100%; }
+.hero-carousel-bd a { color: #fff; }
+.hero-carousel-bd h2 { font-size: 38px; line-height: 1.2em }
+.hero-carousel-bd p { font-style: italic; line-height: 1.4em; }
+
+li.blue { background: #00aeef; }
+.blue .hero-carousel-bd a { background: #01729c; }
+.blue .hero-carousel-bd a:hover { background: white; color: #01729c; }
+
+
+.blue .hero-carousel-bd { background: #00aeef; color: #fff; }
+
+.blue p a { background: #a854a1; }
+
+.purple .navList-sub a { background: #a854a1; }
+.purple .navList-sub a:hover { color: #4b1a88; }
+.green .navList-sub a { background: #b7d433; }
+.green .navList-sub a:hover { color: #0a913b; }
+.orange .navList-sub a { background: #ffc749; }
+.orange .navList-sub a:hover { color: #e86f15; }
 
 /* ---------------------------------------------------------------------
  Buttons
