@@ -85,8 +85,10 @@ var HopeApp = (function(app, $){
 			$carousel.find('.pagination').append(paginationMarkup);			
 			$pagination.find('li').first().addClass('active');
 	
-			$pagination.find('a').click(function(){
+			$pagination.find('a').click(function(event){
+				event.preventDefault();
 				var targetSlideIndex = $(this).parent().index();
+				if(targetSlideIndex == currentSlideIndex) return;
 				changeSlide(targetSlideIndex);
 			});
 	
@@ -264,6 +266,12 @@ var HopeApp = (function(app, $){
 var HopeApp = (function(app, $){
     var EasterEgg = function () {
 
+        var mk = $(new Image());
+        mk.load().attr('src', "public/easter/toasty.png")
+            .css("position", "fixed")
+            .css("bottom", "0px")
+            .css("right", "-298px");
+
         var step = 0;
         function init() {
             $('body').keydown(function(event) {
@@ -313,7 +321,40 @@ var HopeApp = (function(app, $){
                     //console.log("start");
                     console.log("contra...")
                     $('body').append("<embed src='public/easter/contra.mp3' hidden=true autostart=true loop=false>");
+                    step = 0;
+                    return;
+                }
+
+                if (step === 0 && event.keyCode === 65) {
+                    //console.log("a");
                     step++;
+                    return;
+                } else if (step === 1 && event.keyCode === 66) {
+                    //console.log("b");
+                    step++;
+                    return;
+                } else if (step === 2 && event.keyCode === 65) {
+                    //console.log("a");
+                    step++;
+                    return;
+                } else if (step === 3 && event.keyCode === 67) {
+                    //console.log("c");
+                    step++;
+                    return;
+                } else if (step === 4 && event.keyCode === 65) {
+                    //console.log("a");
+                    step++;
+                    return;
+                } else if (step === 5 && event.keyCode === 66) {
+                    //console.log("b");
+                    step++;
+                    return;
+                } else if (step === 6 && event.keyCode === 66) {
+                    //console.log("b");
+                    console.log("test your might...")
+                    mk.appendTo($('body')).animate({right: 0}, 100).delay(700).animate({right: "-298px"}, 100, function(){mk.remove()});
+                    //$('body').append("<embed src='public/easter/contra.mp3' hidden=true autostart=true loop=false>");
+                    step = 0;
                     return;
                 }
 
@@ -321,34 +362,6 @@ var HopeApp = (function(app, $){
                 //console.log("wrong.");
             });
             return app;
-        }
-
-        var collection=[];// final collection of sounds to play
-        var loadedIndex=0;// horrible way of forcing a load of audio sounds
-
-// remap audios to a buffered collection
-        var audio;
-        function play() {
-            audio = new Audio("public/easter/contra.mp3");
-            buffer(audio);
-            console.log("play");
-        }
-
-// did I mention it's a horrible way to buffer?
-        function buffer(audio) {
-            if(audio.readyState==4)return playLooped();
-            setTimeout(function(){buffer(audio)},100);
-        }
-
-// check if we're leady to dj this
-        function loaded() {
-            loadedIndex++;
-            if(collection.length==loadedIndex)playLooped();
-        }
-
-// play and loop after finished
-        function playLooped() {
-            audio.play();
         }
 
         return {
