@@ -1,0 +1,30 @@
+nl:
+  refinery:
+    plugins:
+      carousel_images:
+        title: Carousel Images
+    carousel_images:
+      admin:
+        carousel_images:
+          actions:
+            create_new: Maak een nieuwe Carousel Image
+            reorder: Wijzig de volgorde van de Carousel Images
+            reorder_done: Klaar met het wijzingen van de volgorde van de Carousel Images
+          records:
+            title: Carousel Images
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Carousel Images. Druk op 'Maak een nieuwe Carousel Image' om de eerste aan te maken.
+          carousel_image:
+            view_live_html: Bekijk deze carousel image op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze carousel image
+            delete: Verwijder deze carousel image voor eeuwig
+      carousel_images:
+        show:
+          other: Andere Carousel Images
+  activerecord:
+    attributes:
+      'refinery/carousel_images/carousel_image':
+        title: Title
+        page_id: Page
+        copy: Copy
+        picture: Picture

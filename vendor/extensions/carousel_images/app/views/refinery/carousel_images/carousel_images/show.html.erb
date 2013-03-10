@@ -1,0 +1,45 @@
+<% content_for :body_content_title do %>
+  <%= @carousel_image.title %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Title</h1>
+    <p>
+      <%=raw @carousel_image.title %>
+    </p>
+  </section>
+  <section>
+    <h1>Page</h1>
+    <p>
+      <%=raw @carousel_image.page_id %>
+    </p>
+  </section>
+  <section>
+    <h1>Copy</h1>
+    <p>
+      <%=raw @carousel_image.copy %>
+    </p>
+  </section>
+  <section>
+    <h1>Picture</h1>
+    <p>
+      <%= image_fu @carousel_image.picture, nil %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="carousel_images">
+      <% @carousel_images.each do |carousel_image| %>
+        <li>
+          <%= link_to carousel_image.title, refinery.carousel_images_carousel_image_path(carousel_image) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

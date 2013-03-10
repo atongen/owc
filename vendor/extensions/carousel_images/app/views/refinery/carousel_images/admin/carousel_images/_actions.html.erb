@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::CarouselImages::Admin::CarouselImagesController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.carousel_images_admin_carousel_images_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_carousel_images_admin_carousel_image_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::CarouselImages::Admin::CarouselImagesController.sortable? && ::Refinery::CarouselImages::CarouselImage.any? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Carousel Images"),
+                 refinery.carousel_images_admin_carousel_images_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Carousel Images"),
+                 refinery.carousel_images_admin_carousel_images_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

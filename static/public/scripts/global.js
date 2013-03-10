@@ -12,10 +12,7 @@ var HopeApp = (function(app, $){
 	 * Initialize Hope App
 	 */
 	function init() {
-	
-	    console.log('ALIVE!');	
-	    
-	    console.log(app.heroCarousel);
+
 	    app.heroCarousel.init();
         app.galleryCarousel.init();
 		return app;
@@ -46,11 +43,12 @@ var HopeApp = (function(app, $){
 
 	var HeroCarousel = function () {
 
-		var autoRotateTimout,
-			autoRotateDelay = 2000,
+		var autoRotateTimeout,
+			autoRotateDelay = 5000,
 			currentSlideIndex = 0,
-			slideChangeSpeed = 1000,
+			slideChangeSpeed = 750,
 			totalSlides = 0,
+			isOver = false,
 			$carousel,
 			$slides,
 			$pagination;
@@ -58,9 +56,22 @@ var HopeApp = (function(app, $){
 		function init() {
 	
 			$carousel = $('.hero-carousel');
+			
+			$carousel.mouseenter(function(){
+				isOver = true;
+				stopTimer();
+			});
+			
+			$carousel.mouseleave(function(){
+				isOver = false;
+				beginTimer();
+			});
+			
 			$slides = $('.slides');
 			totalSlides = $slides.find('li').length;
 			$pagination = $carousel.find('.pagination');
+			
+		
 			// build pagination
 			
 			var paginationMarkup = '';
@@ -71,6 +82,11 @@ var HopeApp = (function(app, $){
 			
 			$carousel.find('.pagination').append(paginationMarkup);			
 			$pagination.find('li').first().addClass('active');
+	
+			$pagination.find('a').click(function(){
+				var targetSlideIndex = $(this).parent().index();
+				changeSlide(targetSlideIndex);
+			});
 	
 			beginTimer();
 	
@@ -83,7 +99,7 @@ var HopeApp = (function(app, $){
 		}
 		
 		function stopTimer() {
-		
+			clearTimeout(autoRotateTimeout);
 		}  
 	
 		function nextSlide(){
@@ -94,26 +110,35 @@ var HopeApp = (function(app, $){
 			changeSlide(targetSlideIndex);
 		}
 		
-		function previousSlide(){
-			currentSlideIndex
-		}
 		
 		function changeSlide(targetSlideIndex){
+			
+			
+			var fromLeft = false;
+			
+			if(targetSlideIndex < currentSlideIndex) fromLeft = true;
 			
 			var $currentSlide = $slides.find('li.active');
 			var $targetSlide = $slides.find('li').eq(targetSlideIndex);
 			$currentSlide.removeClass('active').addClass('exiting');
 			var slideWidth = $carousel.width();
-			$targetSlide.css({ left: slideWidth }).addClass('active').animate({ left: 0 }, slideChangeSpeed, function(){
-				$slides.find('li').removeClass('exiting');
-			});
+			
+			if(!fromLeft){
+				$targetSlide.css({ left: slideWidth }).addClass('active').animate({ left: 0 }, slideChangeSpeed, function(){
+					$slides.find('li').removeClass('exiting');
+				});
+			} else {
+				$targetSlide.css({ left: -slideWidth }).addClass('active').animate({ left: 0 }, slideChangeSpeed, function(){
+					$slides.find('li').removeClass('exiting');
+				});
+			}
 			currentSlideIndex = targetSlideIndex;
 			
 			// update pagination
 			$pagination.find('li').removeClass('active');
 			$pagination.find('li').eq(targetSlideIndex).addClass('active');
 			
-			beginTimer();
+			if(!isOver) beginTimer();
 		}
 	
 		return {
