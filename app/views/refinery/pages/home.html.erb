@@ -1,12 +1,16 @@
-<h1>Home Page!</h1>
-<p>Find me in app/views/refinery/pages/home.html.erb</p>
-<% if @page.images.present? %>
-<p>Carousel Images</p>
-<ul>
-<% @page.images.each do |image| %>
-  <li>
-    <%= image_tag(image.url) %>
-  </li>
-<% end %>
-</ul>
-<% end %>
+<div class="site-bd">
+  <div class="wrapper">
+    <h1>Home Page!</h1>
+    <p>Find me in app/views/refinery/pages/home.html.erb</p>
+    <% if @page.images.present? %>
+    <p>Carousel Images</p>
+    <ul>
+    <% @page.images.each do |image| %>
+      <li>
+        <%= image_tag(image.url) %>
+      </li>
+    <% end %>
+    </ul>
+    <% end %>
+  </div>
+</div>
