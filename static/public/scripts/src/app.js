@@ -10,6 +10,7 @@ var HopeApp = (function(app, $){
 	    console.log(app.heroCarousel);
 	    app.heroCarousel.init();
         app.galleryCarousel.init();
+        app.easterEgg.init();
 		return app;
 	}
 	
