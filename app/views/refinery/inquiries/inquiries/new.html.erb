@@ -23,7 +23,7 @@
         
       <p>If Other, please describe:</p>
       <div class='field message_field'>
-        <%= f.text_area :info_other_message, :rows => 6 %>
+        <%= f.text_area :info_other_message, :rows => 6, :placeholder => 'Other Information' %>
       </div>
       
       <div class="field">
@@ -63,7 +63,7 @@
         <%= f.required_label :message, :class => 'placeholder-fallback' %>
         <%= f.text_area :message, :rows => 8, :required => 'required', :placeholder => t('message', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') %>
       </div>
-      <p>How did you hear about us?</p>
+      <p>How did you hear about us? *</p>
       <div class='field'>
         <%= f.label :web, :class => 'placeholder-fallback' %>
         <%= f.check_box :exit_question_web, :class => 'text' %>

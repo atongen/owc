@@ -174,61 +174,71 @@
             <div class="grid">
                 <h3 class="hdg hdg_4">Send A Message</h3>
             </div>
-            <div class="grid">
-                <div class="grid-col grid-col_size4of12">
-                    <p>What type of information can we provide for you? <sup>*</sup></p>
-                    <ul>
-                        <li><input type="checkbox" /> <label>Pregnancy Support</label></li>
-                        <li><input type="checkbox" /> <label>Adopting a child</label></li>
-                        <li><input type="checkbox" /> <label>Volunteering</label></li>
-                        <li><input type="checkbox" /> <label>other</label></li>
-                        <li><label>If Other Please Describe:</label>
-                            <textarea></textarea>
-                    </ul>
-                </div>
-                <div class="grid-col grid-col_size8of12">
-                    <ul>
-                        <li><label>Name:<sup>*</sup></label><input type="text" /></li>
-                        <li><label>Address:<sup>*</sup></label><input type="text" /></li>
-                        <li>
-                            <label>City:<sup>*</sup></label><input type="text" />
-                            <label>State:</label><input type="text" />
-                            <label>Zip:</label><input type="text" />
-                        </li>
-                        <li>
-                            <label>Primary Phone:<sup>*</sup></label><input type="text" />
-                            <label>Secondary Phone:<sup>*</sup></label><input type="text" />
-                        </li>
-                        <li><label>Email:<sup>*</sup></label><input type="text" /></li>
-                        <li><label>Message:<sup>*</sup></label><textarea></textarea></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="grid">
-                <div class="grid-col grid-col_size12of12">
-                    <div class="divider">
-                        
+            <form class="contactUs-form">
+                <div class="grid">
+                    <div class="grid-col grid-col_size4of12">
+                        <p>What type of information can we provide for you? <sup>*</sup></p>
+                        <ul>
+                            <li><input type="checkbox" /> <label>Pregnancy Support</label></li>
+                            <li><input type="checkbox" /> <label>Adopting a child</label></li>
+                            <li><input type="checkbox" /> <label>Volunteering</label></li>
+                            <li><input type="checkbox" /> <label>other</label></li>
+                            <li><label>If Other Please Describe:</label>
+                                <textarea cols="30" rows="10"></textarea>
+                        </ul>
+                    </div>
+                    <div class="grid-col grid-col_size8of12">
+                        <ul>
+                            <li><label class="labelName">Name:<sup>*</sup></label><input class="name" type="text" /></li>
+                            <li><label>Address:<sup>*</sup></label><input class="address" type="text" /></li>
+                            <li>
+                                <label class="labelCity">City:<sup>*</sup></label><input type="text" />
+                                <label>State:</label><input type="text" />
+                                <label>Zip:</label><input type="text" />
+                            </li>
+                            <li>
+                                <label>Primary Phone:<sup>*</sup></label><input type="text" />
+                                <label>Secondary Phone:<sup>*</sup></label><input type="text" />
+                            </li>
+                            <li><label class="labelEmail">Email:<sup>*</sup></label><input class="email" type="text" /></li>
+                            <li><label>Message:<sup>*</sup></label><textarea cols="65" rows="10"></textarea></li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-            <div class="grid">
-                <div class="grid-col grid-col_size12of12">
-                    <p>Where did you hear about HOPE Adoption &amp; Family Services?<sup>*</sup></p>
-                    <ul class="hList">
-                        <li><input type="checkbox" /> <label>Friend or Family</label></li>
-                        <li><input type="checkbox" /> <label>Print Ad</label></li>
-                        <li><input type="checkbox" /> <label>TV</label></li>
-                        <li><input type="checkbox" /> <label>Web</label></li>
-                        <li><input type="checkbox" /> <label>Other</label></li>
+                <div class="grid">
+                    <div class="grid-col grid-col_size12of12">
+                        <div class="divider">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="grid-col grid-col_size4of12">
+                        <div class="gap gap_3">
+                            <p>Where did you hear about<br /> HOPE Adoption &amp; Family Services?<sup>*</sup></p>
+                        </div>
+                    </div>
+                    <div class="grid-col grid-col_size8of12">
+                        <div class="gap gap_3">
+                            <ul class="hList">
+                                <li><input type="checkbox" /> <label>Friend or Family</label></li>
+                                <li><input type="checkbox" /> <label>Print Ad</label></li>
+                                <li><input type="checkbox" /> <label>TV</label></li>
+                                <li><input type="checkbox" /> <label>Web</label></li>
+                                <li><input type="checkbox" /> <label>Other</label></li>
 
-                    </ul>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="grid">
-                <div class="grid-col grid-col_size8of12 grid-col_prefix4of12">
-                    <input type="submit" name="Submit Form" />
+                <div class="grid">
+                    <div class="grid-col grid-col_size8of12 grid-col_prefix4of12">
+                        <div class="gap gap_3">
+                            <button type="submit" class="btn sans-serif">Submit Form</button>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
         <!-- /wrapper -->
     </div>

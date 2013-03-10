@@ -1,7 +1,7 @@
 <div class="site-ft">
         <div class="wrapper">
             <div class="donate">
-                <a class="donate-btn" href="">donate</a>
+                <a class="donate-btn" href="/get-involved/donate">donate</a>
             </div>
             <div class="site-ft-box">
                 <div class="grid">
@@ -35,9 +35,9 @@
                     </div>
                     <div class="grid-col grid-col_size2of12">
                         <ul class="hList hList_social">
-                            <li><a href="">Facebook</a></li>
-                            <li><a class="twitter" href="">Twitter</a></li>
-                            <li><a class="youtube" href="">Youtube</a></li>
+                            <% if facebook_url.present? %><li><a href="<%= facebook_url %>">Facebook</a></li><% end %>
+                            <% if twitter_url.present? %><li><a class="twitter" href="<%= twitter_url %>">Twitter</a></li><% end %>
+                            <% if youtube_url.present? %><li><a class="youtube" href="<%= youtube_url %>">Youtube</a></li><% end %>
                         </ul>
                     </div>
                 </div>

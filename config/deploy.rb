@@ -48,6 +48,16 @@ namespace :owc do
     run "#{try_sudo} chown #{application}:#{application} #{latest_release}/config/environment.rb"
     run "#{try_sudo} chown #{application}:#{application} #{latest_release}/config.ru"
   end
+
+  desc 'Fix perms'
+  task :fix_perms, :roles => :app do
+    %w{ assets cache dragonfly index }.each do |dir|
+      run "[ -d \"#{latest_release}/tmp/#{dir}\" ] || #{try_sudo} mkdir -p \"#{latest_release}/tmp/#{dir}\""
+      run "#{try_sudo} chown -R #{application}:#{user} \"#{latest_release}/tmp/#{dir}\""
+      run "#{try_sudo} find \"#{latest_release}/tmp/#{dir}\" -type d -exec chmod 775 {} \\;"
+      run "#{try_sudo} find \"#{latest_release}/tmp/#{dir}\" -type f -exec chmod 664 {} \\;"
+    end
+  end
 end
 
 # passenger override
@@ -62,5 +72,6 @@ end
 # hooks
 before "deploy:assets:precompile", "owc:create_symlink"
 before "deploy:assets:precompile", "owc:app_own"
+before "deploy:assets:precompile", "owc:fix_perms"
 after  "deploy:update",            "deploy:migrate"
 after  "deploy:update",            "deploy:cleanup"

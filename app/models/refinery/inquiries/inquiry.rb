@@ -9,10 +9,13 @@ module Refinery
                    #:secondary_phone, :info_place_baby, :info_adopt_child, :info_other, :info_other_message, :contact_street, :contact_city, :contact_state, :contact_state, :contact_zip
                    :extra_spam_words => %w()
 
-      validates_presence_of :name, :message, :phone
+      validates_presence_of :name, :message
       validates :email, :format=> { :with =>  /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
-      validates :contact_zip, :format=> { :with => /^\d{5}(?:[-\s]\d{4})?$/}
-      #validate exitQuestionValidation.any? ##validate that at least one exit_question checkbox is checked
+      validates :phone, :format=> { :with => //}
+      validate :information_selection
+      validate :other_information_selection
+      validate :exit_question_selection
+      validate :exit_question_other_selection
 
       acts_as_indexed :fields => [:name, :email, :message, :phone, :phone, :info_other_message,
                                   :contact_street, :contact_city, :contact_state, :contact_zip,
@@ -28,8 +31,20 @@ module Refinery
         include_spam ? limit(number) : ham.limit(number)
       end
       
-      def exit_question_validation
-        [exit_question_web, exit_question_referral, exit_question_advertisement, exit_question_other]
+      def information_selection
+        errors.add(:information_request, 'type must be selected.') unless self.info_pregnancy_support? | self.info_adopt_child? | self.info_volunteering? | self.info_other?
+      end
+      
+      def other_information_selection
+        errors.add(:other_information, 'field must be completed.') unless self.info_other_message?
+      end
+      
+      def exit_question_selection
+        errors.add(:how, 'did you hear about us section must be completed.') unless self.exit_question_web? | self.exit_question_referral? | self.exit_question_advertisement? | self.exit_question_other?
+      end
+      
+      def exit_question_other_selection
+        errors.add(:how, 'did you hear about us \"Other\" section must be completed.') unless self.exit_question_other_message?
       end
       
       def requested_info_fields
