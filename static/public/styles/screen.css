@@ -946,6 +946,22 @@ dark gold: #e86f15;
 blue: #00aeef;
 dark blue: #01729c;
 
+
+.blue { color: #00aeef; }
+.dark-blue { color: #01729c; }
+
+.purple { color: a854a1; }
+.dark-purple { color: #4c2d85; }
+
+.green { color: #b7d433; }
+.dark-green { color: #0c9146; }
+
+.yellow { color: #ffc749; }
+.dark-yellow { color: #e77025; }
+
+.red { color: #f15623; } 
+.dark-red { color: #bc2027; }
+
 */
 
 .hero-carousel { 
@@ -955,10 +971,12 @@ dark blue: #01729c;
 	color: #fff;
 }
 
-
-
 .slides li {
 	position: absolute;
+	display: none;
+}
+
+.slides li.active {
 	display: block;
 }
 
@@ -967,6 +985,18 @@ dark blue: #01729c;
 	height: 400px;
 	width: 240px;
 }
+
+.hero-carousel-bd h2 { font-size: 34px; line-height: 1.2em; margin-bottom: 20px; }
+.hero-carousel-bd p { font-style: italic; line-height: 1.4em; margin-bottom: 30px; }
+.hero-carousel-bd a { color: #fff; padding: 10px 20px; }
+
+.no-image .hero-carousel-bd { 
+	padding: 50px 60px;
+	width: 840px
+}
+
+.no-image .hero-carousel-bd h2 { font-size: 64px; line-height: 1.2em; margin-bottom: 20px; }
+.hero-carousel-bd p { font-size: 21px; margin-bottom: 40px; }
 
 .hero-carousel-img {
 	position: absolute;
@@ -977,14 +1007,25 @@ dark blue: #01729c;
 }
 
 .hero-carousel-bd a { text-transform: uppercase; }
+.hero-carousel-bd a:hover { background: #fff; }
 
 .blue .hero-carousel-bd { background: #00aeef; }
 .blue .hero-carousel-bd a { background: #01729c; }
-.blue .hero-carousel-bd a:hover { background: white; color: #01729c; }
+.blue .hero-carousel-bd a:hover { color: #01729c; background: #fff; }
 
-.hero-carousel-bd h2 { font-size: 34px; line-height: 1.2em; margin-bottom: 20px; }
-.hero-carousel-bd p { font-style: italic; line-height: 1.4em; margin-bottom: 30px; }
-.hero-carousel-bd a { color: #fff; padding: 10px 20px; }
+.green .hero-carousel-bd { background: #b7d433; }
+.green .hero-carousel-bd a { background: #0a913b; }
+.green .hero-carousel-bd a:hover { color: #0a913b; background: #fff; }
+
+.purple .hero-carousel-bd { background: #a854a1; }
+.purple .hero-carousel-bd a { background: #4c2d85; }
+.purple .hero-carousel-bd a:hover { color: #4c2d85; background: #fff; }
+
+.yellow .hero-carousel-bd { background: #ffc749; }
+.yellow .hero-carousel-bd a { background: #e77025; }
+.yellow .hero-carousel-bd a:hover { color: #e77025; background: #fff; }
+
+
 
 .hero-carousel .pagination-wrapper {
 	position: absolute;
@@ -1000,48 +1041,13 @@ dark blue: #01729c;
 .hero-carousel .pagination li { 
 	display: inline-block; 
 	font-size: 34px;
+	margin: 0 4px;
 }
 
 .hero-carousel .pagination a { color: #fff; }
-.hero-carousel .pagination .active a { color: #00aeef; }
-.hero-carousel .pagination a:hover { color: #00aeef; }
+.hero-carousel .pagination .active a { color: #01729c; }
+.hero-carousel .pagination a:hover { color: #01729c; }
 
-.hero-carousel .pagination li.active { color: #00aeef; }
-
-/*
-
-.hero-carousel .grid-col { height: 100%; }
-
-.hero-carousel ul { position: relative; }
-
-.hero-carousel-bd { 
-	padding: 20% 10% 0 10%; 
-	height: 100%; 
-}
-.hero-carousel-bd h2 { font-size: 34px; line-height: 1.2em; margin-bottom: 20px; }
-.hero-carousel-bd p { font-style: italic; line-height: 1.4em; margin-bottom: 30px; }
-.hero-carousel-bd a { color: #fff; padding: 10px 20px; }
-
-.hero-carousel-img { margin-left: -20px; overflow: hidden; width: 100%; height: 100%; }
-
-
-li.blue { background: #00aeef; }
-.blue .hero-carousel-bd a { background: #01729c; }
-.blue .hero-carousel-bd a:hover { background: white; color: #01729c; }
-
-
-.blue .hero-carousel-bd { background: #00aeef; color: #fff; }
-
-.blue p a { background: #a854a1; }
-
-.purple .navList-sub a { background: #a854a1; }
-.purple .navList-sub a:hover { color: #4b1a88; }
-.green .navList-sub a { background: #b7d433; }
-.green .navList-sub a:hover { color: #0a913b; }
-.orange .navList-sub a { background: #ffc749; }
-.orange .navList-sub a:hover { color: #e86f15; }
-
-*/
 
 /* ---------------------------------------------------------------------
  Buttons
