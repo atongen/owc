@@ -47,7 +47,7 @@ module ApplicationHelper
       return 'green'
     elsif pageUrl.include? "support"
       return 'orange'
-    elsif pageUrl.include? "about_us"
+    elsif pageUrl.include? "about-us"
       return 'dark green'
     elsif pageUrl.include? "get-involved"
       return 'gold'
