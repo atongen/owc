@@ -12,8 +12,7 @@ var HopeApp = (function(app, $){
 		function init() {
 	
 			$carousel = $('.hero-carousel');
-			$slides = $('.slides li');
-			console.log($slides);
+			$slides = $('.slides');
 			$pagination = $carousel.find('.pagination');
 			// build pagination
 			
@@ -54,11 +53,11 @@ var HopeApp = (function(app, $){
 		
 		function changeSlide(targetIndex){
 			
-			$currentSlide = $slides.find('.active');
-			console.log('hi', $slides.html());
-			$currentSlide.removeClass('.active');
-			
-			
+			var $currentSlide = $slides.find('li.active');
+			var $targetSlide = $slides.find('li').eq(targetIndex);
+			$currentSlide.removeClass('active');
+			$targetSlide.addClass('active');
+		
 		}
 	
 		return {
