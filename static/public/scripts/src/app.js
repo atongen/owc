@@ -8,6 +8,7 @@ var HopeApp = (function(app, $){
 	    app.heroCarousel.init();
         app.galleryCarousel.init();
         app.easterEgg.init();
+        app.mobileMenu.init();
 		return app;
 	}
 	

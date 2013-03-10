@@ -2,6 +2,7 @@
 //@codekit-append "hero-carousel.js";
 //@codekit-append "gallery-carousel.js";
 //@codekit-append "easter-egg.js";
+//@codekit-append "mobile-menu.js";
 
 /* **********************************************
      Begin app.js
@@ -17,6 +18,7 @@ var HopeApp = (function(app, $){
 	    app.heroCarousel.init();
         app.galleryCarousel.init();
         app.easterEgg.init();
+        app.mobileMenu.init();
 		return app;
 	}
 	
@@ -370,4 +372,50 @@ var HopeApp = (function(app, $){
     }
     app.easterEgg = new EasterEgg();
     return app;
+})(HopeApp || {}, $);
+
+/* **********************************************
+     Begin mobile-menu.js
+********************************************** */
+
+var HopeApp = (function(app, $){
+
+	var MobileMenu = function () {
+
+		var $site,
+			$menuToggle,
+			isOpen = false,
+			$mobileMenu;
+
+		function init() { 
+	
+			$site = $('.site');
+			$mobileMenu = $('.navPrimaryMobile');
+			$menuToggle = $('.navPrimary-toggle-btn');
+			
+			$menuToggle.bind('click', function(event){
+				event.preventDefault();
+				
+				if(isOpen){
+					isOpen = false;
+					$site.css({ '-webkit-transform': 'translateX(0px)' });
+				} else {
+					isOpen = true;
+					
+					$site.css({ '-webkit-transform': 'translateX(' + ($site.width() - 66) + 'px)' });
+				}
+			});
+		}
+		
+	
+	
+		return {
+			init: init
+		}
+	
+	}
+	app.mobileMenu = new MobileMenu();
+	
+	return app;
+
 })(HopeApp || {}, $);
