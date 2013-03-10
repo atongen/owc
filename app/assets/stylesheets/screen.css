@@ -565,7 +565,6 @@ img {
  Copy
 ------------------------------------------------------------------------ */
 .copy {
-    color: ;
 }
 
 .copy_center {
@@ -602,11 +601,7 @@ img {
 }
 
 .site-hd {
-    padding-top: ;
-    height: ;
-    background: ;
     position: relative;
-    font-family: ;
     *zoom: 1; /* clearfix for lte IE7 */
 }
 
@@ -645,7 +640,6 @@ img {
     right: 0;
     overflow: hidden;
     *zoom: 1; /* clearfix for lte IE7 */
-    padding: ;
     height: 310px;
     background: #58504d;
 }
