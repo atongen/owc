@@ -376,7 +376,7 @@ img {
     width: 42px;
     height: 41px;
     text-indent: -999em;
-    background: url(../images/sprite-social-icons.png) no-repeat 0 0;
+    background: url(/assets/sprite-social-icons.png) no-repeat 0 0;
 }
 
 .hList_social > li > a.twitter { background-position: -49px 0; }
@@ -1150,7 +1150,7 @@ a.lastItem + .navList-sub a {
 .gallery-carousel .button {
     overflow: hidden;
     background-repeat: none;
-    background-image: url('../images/gallery-arrows.png');
+    background-image: url('/assets/gallery-arrows.png');
     width: 45px;
     height: 45px;
     position: absolute;
