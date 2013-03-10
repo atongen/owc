@@ -1,12 +1,29 @@
-<h1>Home Page!</h1>
-<p>Find me in app/views/refinery/pages/home.html.erb</p>
-<% if @page.images.present? %>
-<p>Carousel Images</p>
-<ul>
-<% @page.images.each do |image| %>
-  <li>
-    <%= image_tag(image.url) %>
-  </li>
-<% end %>
-</ul>
-<% end %>
+<div class="site-bd">
+  <div class="wrapper">
+    <h1>Home Page!</h1>
+    <p>Find me in app/views/refinery/pages/home.html.erb</p>
+    <% if @page.images.present? %>
+    <p>Carousel Images</p>
+    <ul>
+    <% @page.images.each do |image| %>
+      <li>
+        <%= image_tag(image.url) %>
+      </li>
+    <% end %>
+    </ul>
+    <% end %>
+
+    <h2>Featured Items</h2>
+    <ul>
+      <% featured_items.each do |item| %>
+        <li>
+            <% if item.present? %>
+              <%= link_to(item[:text], item[:link]) %>
+              <%= item[:summary] %>
+              <%= image_tag(item[:picture].url) if item[:picture].present? %>
+            <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

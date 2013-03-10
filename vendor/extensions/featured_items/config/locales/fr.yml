@@ -1,0 +1,29 @@
+fr:
+  refinery:
+    plugins:
+      featured_items:
+        title: Featured Items
+    featured_items:
+      admin:
+        featured_items:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Featured Item
+            reorder: Réordonner les Featured Items
+            reorder_done: Fin de réordonnancement des Featured Items
+          records:
+            title: Featured Items
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Featured Item. Cliquer sur "Créer un(e) nouve(au/l/lle) Featured Item" pour créer votre premi(er/ère) featured item.'
+          featured_item:
+            view_live_html: Voir ce(t/tte) featured item <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) featured item
+            delete: Supprimer définitivement ce(t/tte) featured item
+      featured_items:
+        show:
+          other: Autres Featured Items
+  activerecord:
+    attributes:
+      'refinery/featured_items/featured_item':
+        title: Title
+        model: Model
+        model_id: Model

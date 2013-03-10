@@ -1,0 +1,39 @@
+<% content_for :body_content_title do %>
+  <%= @featured_item.title %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Title</h1>
+    <p>
+      <%=raw @featured_item.title %>
+    </p>
+  </section>
+  <section>
+    <h1>Model</h1>
+    <p>
+      <%=raw @featured_item.model %>
+    </p>
+  </section>
+  <section>
+    <h1>Model</h1>
+    <p>
+      <%=raw @featured_item.model_id %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="featured_items">
+      <% @featured_items.each do |featured_item| %>
+        <li>
+          <%= link_to featured_item.title, refinery.featured_items_featured_item_path(featured_item) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

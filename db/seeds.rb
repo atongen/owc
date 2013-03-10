@@ -25,3 +25,9 @@ Refinery::WaitingKids::Engine.load_seed
 
 # Added by Refinery CMS Events extension
 Refinery::Events::Engine.load_seed
+
+# Added by Refinery CMS Featured Items extension
+Refinery::FeaturedItems::Engine.load_seed
+
+# Added by Refinery CMS Staffs extension
+Refinery::Staffs::Engine.load_seed

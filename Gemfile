@@ -49,3 +49,5 @@ gem 'refinerycms-waiting_families', :path => 'vendor/extensions'
 gem 'refinerycms-waiting_kids', :path => 'vendor/extensions'
 
 gem 'refinerycms-events', :path => 'vendor/extensions'
+gem 'refinerycms-featured_items', :path => 'vendor/extensions'
+gem 'refinerycms-staffs', :path => 'vendor/extensions'

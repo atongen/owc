@@ -1,0 +1,23 @@
+<head>
+  <!-- META DATA -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="MSSmartTagsPreventParsing" content="true" />
+  <meta http-equiv="imagetoolbar" content="no" />
+
+  <!--[if IE]><meta http-equiv="cleartype" content="on" /><![endif]-->
+  <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
+  <title><%= browser_title(yield(:title)) %></title>
+  
+  <%= raw %(<meta name="description" content="#{@meta.meta_description}" />) if @meta.meta_description.present? -%>
+  <%= raw %(<link rel="canonical" content="#{@canonical}" />) if @canonical.present? -%>
+  <%= csrf_meta_tags if Refinery::Core.authenticity_token_on_frontend -%>
+  <%= yield :meta %>
+
+  <%= stylesheet_link_tag "application" %>
+  <%= yield :stylesheets %>
+
+  <%= render '/refinery/google_analytics' %>
+
+  <%= javascript_include_tag 'modernizr-min' %>
+</head>

@@ -1,7 +1,15 @@
-<h1 id='logo'>
-  <%= link_to Refinery::Core.site_name, refinery.root_path %>
-</h1>
-<%= render(:partial => "/refinery/menu", :locals => {
-             :dom_id => 'menu',
-             :css => 'menu'
-           }) %>
+<div class="site-hd">
+    <div class="wrapper">
+        <div class="grid">
+            <div class="site-hd-logo">
+                <a href=""><img src="http://placehold.it/100x100&text=logo" /></a>
+            </div>
+        </div>
+        <%= render(:partial => "/refinery/menu") %>
+        <div class="donate">
+            <a href="">donate</a>
+        </div>
+    </div>
+    <!-- /wrapper -->
+</div>
+<!-- /site-hd -->

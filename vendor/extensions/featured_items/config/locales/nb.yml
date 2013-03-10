@@ -1,0 +1,29 @@
+nb:
+  refinery:
+    plugins:
+      featured_items:
+        title: Featured Items
+    featured_items:
+      admin:
+        featured_items:
+          actions:
+            create_new: Lag en ny Featured Item
+            reorder: Endre rekkefølgen på Featured Items
+            reorder_done: Ferdig å endre rekkefølgen Featured Items
+          records:
+            title: Featured Items
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Featured Items enda. Klikk på "Lag en ny Featured Item" for å legge til din første featured item.
+          featured_item:
+            view_live_html: Vis hvordan denne featured item ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne featured item
+            delete: Fjern denne featured item permanent
+      featured_items:
+        show:
+          other: Andre Featured Items
+  activerecord:
+    attributes:
+      'refinery/featured_items/featured_item':
+        title: Title
+        model: Model
+        model_id: Model

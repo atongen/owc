@@ -5,16 +5,18 @@
   <body class="<%= @page.link_url.to_s.split("/").select(&:present?).first %>">
     <%= site_bar -%>
     <%= render '/refinery/ie6check' if request.env['HTTP_USER_AGENT'] =~ /MSIE/ -%>
-    <div id="page_container">
-      <header id="header">
-        <%= render '/refinery/header' -%>
-      </header>
-      <section id="page">
-        <%= yield %>
-      </section>
-      <footer>
-        <%= render '/refinery/footer' -%>
-      </footer>
+    <div class="site">
+      <%= render '/refinery/header' -%>
+      
+      <!-- Page Body from Template -->
+      <div class="site-bd">
+        <div class="wrapper">
+          <%= yield %>
+        </div>
+      </div>
+      <!-- end Page Body -->
+
+      <%= render '/refinery/footer' -%>
     </div>
     <%= render '/refinery/javascripts' %>
   </body>
