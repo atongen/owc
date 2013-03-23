@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130323160800) do
+ActiveRecord::Schema.define(:version => 20130323184621) do
 
   create_table "refinery_blog_categories", :force => true do |t|
     t.string   "title"
@@ -278,6 +278,8 @@ ActiveRecord::Schema.define(:version => 20130323160800) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "staff_type"
+    t.string   "summary"
+    t.string   "body"
   end
 
   create_table "refinery_user_plugins", :force => true do |t|
