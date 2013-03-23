@@ -104,3 +104,5 @@ vendor/extensions/**/spec/dummy
 # Ignore IDE project files
 *.sublime*
 *.komodoproject
+
+/bak
