@@ -88,6 +88,12 @@ module ApplicationHelper
   end
 
   def site_section_class
-    @page.link_url.to_s.split("/").select(&:present?).first
+    section = url_for(@page.url).to_s.split("/").select(&:present?).first || 'about-us'
+    case section
+    when 'waiting_kids';     'adopting'
+    when 'waiting_families'; 'pregnant'
+    when 'staff', 'staffs';  'about-us'
+    else; section
+    end
   end
 end

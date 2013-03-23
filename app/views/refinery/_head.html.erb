@@ -11,6 +11,7 @@
   
   <%= raw %(<meta name="description" content="#{@meta.meta_description}" />) if @meta.meta_description.present? -%>
   <%= raw %(<link rel="canonical" content="#{@canonical}" />) if @canonical.present? -%>
+  <link type="text/plain" rel="author" href="/humans.txt" />
   <%= csrf_meta_tags if Refinery::Core.authenticity_token_on_frontend -%>
   <%= yield :meta %>
 

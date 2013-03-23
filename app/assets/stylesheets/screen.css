@@ -545,8 +545,8 @@ img {
     text-transform: uppercase;
 }
 
-.about_us .pageHdg-hd,
-.get_involved .pageHdg-hd,
+.about_us .pageHdg-hd, .about-us .pageHdg-hd,
+.get_involved .pageHdg-hd, .get-involved .pageHdg-hd,
 .events .pageHdg-hd {
     color: #00aeef;
 }
