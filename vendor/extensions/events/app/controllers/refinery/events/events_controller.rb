@@ -2,7 +2,6 @@ module Refinery
   module Events
     class EventsController < ::ApplicationController
 
-      # upcoming events
       def index
         @events = Event.order('position ASC')
         # you can use meta fields from your model instead (e.g. browser_title)
@@ -15,12 +14,14 @@ module Refinery
         @events = Event.where("date(start_date) >= ?", Date.today)
         @page = ::Refinery::Page.where(:link_url => "/events/upcoming").first
         present(@page)
+        render :action => :index
       end
 
       def past
         @events = Event.where("date(start_date) < ?", Date.today)
         @page = ::Refinery::Page.where(:link_url => "/events/past").first
         present(@page)
+        render :action => :index
       end
 
     end
