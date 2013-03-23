@@ -282,11 +282,18 @@ img {
 
 .event-caption {
     padding: 18px 0;
-    background: #00aeef;
     font: 20px/1 'Varela Round', Helvetica, Arial, sans-serif;
     color: #ffffff;
     text-transform: uppercase;
     text-align: center;
+}
+
+.event-caption.blue {
+    background: #00aeef;
+}
+
+.event-caption.green {
+    background: #b7d433;
 }
 
 .event-bd {

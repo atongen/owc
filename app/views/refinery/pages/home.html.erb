@@ -20,7 +20,7 @@
 <!-- body content -->
 <div class="grid">
   <div class="sectionHdg">
-    <h2 class="hdg hdg_inline">ABOUT US</h2>
+    <h2 class="hdg hdg_inline">About Us</h2>
   </div>
   <div class="bigCopy copy_center">
     <%= raw @page.content_for :body %>
@@ -29,6 +29,9 @@
 
 <!-- feature items -->
 <div class="grid">
+  <div class="sectionHdg">
+    <h2 class="hdg hdg_inline">Features</h2>
+  </div>
   <% featured_items.each do |item| %>
   <div class="grid-col grid-col_size4of12">
     <div class="event">
