@@ -3,7 +3,23 @@
 <% end %>
 
 <% content_for :body do %>
-  <%= image_fu @waiting_family.picture, nil %>
+  <div class="grid">
+    <div class="grid-col grid-col_size12of12">
+        <div class="gallery-carousel">
+            <ul class="images">
+                <% @waiting_family.all_images.each do |image| %>
+                  <li class="image"><img src="<%= image.thumbnail("960x390").url %>"/></li>
+                <% end %>
+            </ul>
+            <a href="javascript:void(0);" class="navigation">
+                <div class="buttons">
+                    <div class="button previous"></div>
+                    <div class="button next"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+  </div>
 
   <div class="grid">
     <div class="grid-col grid-col_size6of12">

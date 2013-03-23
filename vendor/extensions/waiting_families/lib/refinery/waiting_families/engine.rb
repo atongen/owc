@@ -14,11 +14,14 @@ module Refinery
           plugin.activity = {
             :class_name => :'refinery/waiting_families/waiting_family'
           }
-          
         end
       end
 
       config.after_initialize do
+        Refinery::WaitingFamilies::Tab.register do |tab|
+          tab.name = "images"
+          tab.partial = "/refinery/admin/waiting_families/tabs/images"
+        end
         Refinery.register_extension(Refinery::WaitingFamilies)
       end
     end
