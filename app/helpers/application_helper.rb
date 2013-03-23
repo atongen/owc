@@ -18,7 +18,7 @@ module ApplicationHelper
           :title => data.title,
           :link => dynamic_link_for(data),
           :type => data.class.name.demodulize.underscore.humanize.titlecase,
-          :summary => data.try(:summary)
+          :summary => item.callout_summary
         }
       end
     end

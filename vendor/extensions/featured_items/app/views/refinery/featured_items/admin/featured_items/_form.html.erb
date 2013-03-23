@@ -15,6 +15,11 @@
   </div>
 
   <div class='field'>
+    <%= f.label :callout_summary %>
+    <%= f.text_field :callout_summary, :class => 'larger wide' %>
+  </div>
+
+  <div class='field'>
     <%= f.label 'Content Type' -%>
     <%= f.select :model, model_choices, {}, {:class => 'model-selection'} %>
   </div>
