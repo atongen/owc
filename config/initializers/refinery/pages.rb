@@ -6,7 +6,7 @@ Refinery::Pages.configure do |config|
   # end
 
   # Configure global page default parts
-  config.default_parts = ["Summary", "Left 3 Col", "Middle 3 Col", "Right 3 Col", "First Full Width", "Second Full Width", "Third Full Width", "Left 2 Col", "Right 2 Col"]
+  config.default_parts = ["Summary"] + (1..6).flat_map { |r| (1..3).map { |c| "r#{r}c#{c}" } }
 
   # Configure whether to allow adding new page parts
   # config.new_page_parts = false
@@ -41,7 +41,7 @@ Refinery::Pages.configure do |config|
 
   # config.layout_template_whitelist = ["application"]
 
-  config.view_template_whitelist = ["home", "template1", "template2", "template3"]
+  config.view_template_whitelist = ["home", "show"]
 
   # config.use_layout_templates = true
 
