@@ -90,9 +90,9 @@ module ApplicationHelper
   def site_section_class
     section = url_for(@page.url).to_s.split("/").select(&:present?).first || 'about-us'
     case section
-    when 'waiting_kids';     'adopting'
-    when 'waiting_families'; 'pregnant'
-    when 'staff', 'staffs';  'about-us'
+    when 'waiting_kids';               'adopting'
+    when 'waiting_families';           'pregnant'
+    when 'staff', 'staffs', 'contact'; 'about-us'
     else; section
     end
   end
