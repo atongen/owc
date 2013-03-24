@@ -72,6 +72,6 @@ end
 # hooks
 before "deploy:assets:precompile", "owc:create_symlink"
 before "deploy:assets:precompile", "owc:app_own"
-before "deploy:assets:precompile", "owc:fix_perms"
+after  "deploy:assets:precompile", "owc:fix_perms"
 after  "deploy:update",            "deploy:migrate"
 after  "deploy:update",            "deploy:cleanup"
