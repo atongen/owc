@@ -6,11 +6,11 @@ PART_MAP = {
   "First Full Width"  => "r1c1",
   "Left 2 Col"        => "r2c1",
   "Right 2 Col"       => "r2c2",
-  "Second Full Width" => "r3",
+  "Second Full Width" => "r3c1",
   "Left 3 Col"        => "r4c1",
   "Middle 3 Col"      => "r4c2",
   "Right 3 Col"       => "r4c3",
-  "Third Full Width"  => "r5"
+  "Third Full Width"  => "r5c1"
 }
 
 Refinery::Page.all.each do |page|
