@@ -1,7 +1,7 @@
 Refinery::Core::Engine.routes.append do
 
   # Frontend routes
-  namespace :staffs do
+  namespace :staffs, :path => 'staff' do
     resources :staffs, :path => '', :only => [:index] do
       collection do
         get :board

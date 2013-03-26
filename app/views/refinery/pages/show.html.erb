@@ -1,0 +1,10 @@
+<% (1..6).each do |row| %>
+  <% parts = (1..3).map { |column| @page.content_for(:"r#{row}c#{column}") }.compact.select { |p| content = p.to_s.strip; content.present? && content != "<p></p>" } %>
+  <% if parts.length == 1 %>
+    <%= render :partial => 'col1', :locals => { :parts => parts } %>
+  <% elsif parts.length == 2 %>
+    <%= render :partial => 'col2', :locals => { :parts => parts } %>
+  <% elsif parts.length == 3 %>
+    <%= render :partial => 'col3', :locals => { :parts => parts } %>
+  <% end %>
+<% end %>

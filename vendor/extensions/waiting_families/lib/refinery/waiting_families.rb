@@ -5,6 +5,7 @@ module Refinery
 
   module WaitingFamilies
     require 'refinery/waiting_families/engine'
+    require 'refinery/waiting_families/tab'
 
     class << self
       attr_writer :root

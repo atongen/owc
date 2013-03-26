@@ -14,12 +14,21 @@ module ApplicationHelper
       if data.present?
         {
           :text => item.callout_text,
-          :picture => data.picture,
+          :picture => featured_item_picture(data),
           :title => data.title,
           :link => dynamic_link_for(data),
-          :type => data.class.name.demodulize.underscore.humanize.titlecase
+          :type => data.class.name.demodulize.underscore.humanize.titlecase,
+          :summary => item.callout_summary
         }
       end
+    end
+  end
+
+  def featured_item_picture(featured_item)
+    if featured_item.respond_to?(:picture)
+      featured_item.picture
+    elsif featured_item.respond_to?(:images)
+      featured_item.images.first
     end
   end
 
@@ -47,18 +56,48 @@ module ApplicationHelper
       return 'green'
     elsif pageUrl.include? "support"
       return 'orange'
-    elsif pageUrl.include? "about-us"
-      return 'dark green'
-    elsif pageUrl.include? "get-involved"
-      return 'gold'
-    elsif pageUrl.include? "events"
-      return 'blue'
     else
-      return 'purple'
+      'blue'
+    end
+  end
+
+  def get_callout_class(callout_type)
+    case callout_type.downcase
+    when 'waiting family'
+      'green'
+    when 'waiting kid'
+      'green'
+    when 'event'
+      'blue'
+    else
+      'blue'
+    end
+  end
+
+  def get_callout_name(callout_type)
+    case callout_type.downcase
+    when 'waiting family'
+      'ADOPTING'
+    when 'waiting kid'
+      'ADOPTING'
+    when 'event'
+      'EVENT'
+    else
+      'ADOPTING'
     end
   end
 
   def site_section_class
-    @page.link_url.to_s.split("/").select(&:present?).first
+    if url = @page.try(:url)
+      section = url_for(url).to_s.split('/').select(&:present?).first || 'about-us'
+      case section
+      when 'waiting_kids';               'adopting'
+      when 'waiting_families';           'pregnant'
+      when 'staff', 'staffs', 'contact'; 'about-us'
+      else; section
+      end
+    else
+      'about-us'
+    end
   end
 end

@@ -282,11 +282,18 @@ img {
 
 .event-caption {
     padding: 18px 0;
-    background: #00aeef;
     font: 20px/1 'Varela Round', Helvetica, Arial, sans-serif;
     color: #ffffff;
     text-transform: uppercase;
     text-align: center;
+}
+
+.event-caption.blue {
+    background: #00aeef;
+}
+
+.event-caption.green {
+    background: #b7d433;
 }
 
 .event-bd {
@@ -376,7 +383,7 @@ img {
     width: 42px;
     height: 41px;
     text-indent: -999em;
-    background: url(../images/sprite-social-icons.png) no-repeat 0 0;
+    background: url(/assets/sprite-social-icons.png) no-repeat 0 0;
 }
 
 .hList_social > li > a.twitter { background-position: -49px 0; }
@@ -538,8 +545,8 @@ img {
     text-transform: uppercase;
 }
 
-.about_us .pageHdg-hd,
-.get_involved .pageHdg-hd,
+.about_us .pageHdg-hd, .about-us .pageHdg-hd,
+.get_involved .pageHdg-hd, .get-involved .pageHdg-hd,
 .events .pageHdg-hd {
     color: #00aeef;
 }
@@ -1150,7 +1157,7 @@ a.lastItem + .navList-sub a {
 .gallery-carousel .button {
     overflow: hidden;
     background-repeat: none;
-    background-image: url('../images/gallery-arrows.png');
+    background-image: url('/assets/gallery-arrows.png');
     width: 45px;
     height: 45px;
     position: absolute;

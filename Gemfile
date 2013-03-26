@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '~> 3.2.12'
-# gem 'pg'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -35,7 +34,8 @@ gem 'capistrano'
 gem 'exception_notification', :require => 'exception_notifier'
 
 group :development, :test do
-  gem 'mysql2'
+  #gem 'mysql2'
+  gem 'pg'
 end
 
 group :production do

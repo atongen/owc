@@ -1,0 +1,18 @@
+/* TEAM */
+  Site Admin: Laura Murray
+  Site Admin: Nancy Lyner
+  Project Manager: Brad Amundson
+  Back-End Developer: Andrew Tongen
+  Back-End Developer: Christopher Wade
+  Back-End Developer: Ryan Drost
+  Back-End Developer: Michael Tighe
+  Front-End Developer: Matt Duffin
+  Interactive Developer: Peter Schultz
+  Interactive Developer: Wilson Lewis
+  Designer: Grant Wilson
+  Designer: Missy Austin
+
+/* SITE */
+  Language: English
+  Doctype: HTML5
+  IDE: Vim, Sublime Text, KomodoEdit, Photoshop

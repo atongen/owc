@@ -10,14 +10,23 @@ module FeaturedItemsHelper
   end
 
   def namespaced_model(model)
-    return nil if model.blank?
-    "Refinery::#{model.pluralize}::#{model}".constantize rescue nil
+    case model
+    when "Event"
+      ::Refinery::Events::Event
+    when "WaitingFamily"
+      ::Refinery::WaitingFamilies::WaitingFamily
+    when "WaitingKid"
+      ::Refinery::WaitingKids::WaitingKid
+    else
+      puts "Invalid model: #{model}"
+      nil
+    end
   end
 
   def model_choices
     [
       ['None', ''],
-      ['Events', 'Events'],
+      ['Events', 'Event'],
       ['Waiting Family', 'WaitingFamily'],
       ['Waiting Kid', 'WaitingKid'],
     ]

@@ -17,15 +17,35 @@
   </ul>
 </div>
 
-<ul>
+<!-- body content -->
+<div class="grid">
+  <div class="sectionHdg">
+    <h2 class="hdg hdg_inline">About Us</h2>
+  </div>
+  <div class="bigCopy copy_center">
+    <%= raw @page.content_for :body %>
+  </div>
+</div>
+
+<!-- feature items -->
+<div class="grid">
+  <div class="sectionHdg">
+    <h2 class="hdg hdg_inline">Features</h2>
+  </div>
   <% featured_items.each do |item| %>
-    <li>
-        <% if item.present? %>
-          <%= link_to(item[:text], item[:link]) %>
-          <%= item[:summary] %>
-          <%= item[:type] %>
-          <%= image_fu(item[:image], '306x229#c') if item[:picture].present? %>
-        <% end %>
-    </li>
+  <div class="grid-col grid-col_size4of12">
+    <div class="event">
+      <div class="event-img">
+        <%= link_to(image_tag(item[:picture].thumbnail("306x229#c").url), item[:link]) %>
+      </div>
+      <div class="event-caption <%= get_callout_class(item[:type]) %>">
+        <h3><%= get_callout_name item[:type] %></h3>
+      </div>
+      <div class="event-bd">
+        <h3><%= link_to(item[:text], item[:link]) %></h3>
+        <%= raw(item[:summary]) %>
+      </div>
+    </div>
+  </div>
   <% end %>
-</ul>
+</div>

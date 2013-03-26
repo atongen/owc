@@ -23,8 +23,6 @@ if database == ""
   exit 1
 end
 
-outfile = File.join(dir, "#{Time.now.strftime('%Y%m%d%H%M%S')}-#{database}.dump")
-
 params = {
 
   "host" => "--host",
@@ -40,7 +38,13 @@ else
   cmd_env = ""
 end
 
-cmd = "#{cmd_env}#{PG_DUMP} -v -wO -Fc --no-acl --no-owner #{params} #{database} > \"#{outfile}\""
+if ENV['DUMP_TYPE'] == 'sql'
+  outfile = File.join(dir, "#{Time.now.strftime('%Y%m%d%H%M%S')}-#{database}.sql.gz")
+  cmd = "#{cmd_env}#{PG_DUMP} -v -wO -Fp --no-acl --no-owner #{params} #{database} | gzip -c > \"#{outfile}\""
+else
+  outfile = File.join(dir, "#{Time.now.strftime('%Y%m%d%H%M%S')}-#{database}.dump")
+  cmd = "#{cmd_env}#{PG_DUMP} -v -wO -Fc --no-acl --no-owner #{params} #{database} > \"#{outfile}\""
+end
 
 %x{ #{cmd} }
 puts outfile

@@ -12,17 +12,17 @@
                     </div>
                     <div class="grid-col grid-col_size3of12">
                         <ul class="vList vList_footer">
-                            <li><a href="">Get Involved</a></li>
-                            <li><a href="">Site Map</a></li>
-                            <li><a href="">Privacy Policy</a></li>
+                            <li><%= link_to "Get Involved", "/get-involved" %></li>
+                            <!-- <li><%= link_to "Site Map", "/sitemap.xml" %></li> -->
+                            <li><%= link_to "Privacy Policy", "/pages/privacy-policy", :id => "privacy_link" if Refinery::Inquiries.show_contact_privacy_link %></li>
                             <li><a href="">Terms</a></li>
                         </ul>
                     </div>
                     <div class="grid-col grid-col_size6of12">
                         <ul class="vList vList_footer">
-                            <li><a href="">Contact</a></li>
-                            <li><a href="">Hague Accreditation</a></li>
-                            <li><a href="">Our Newsletter</a></li>
+                            <li><%= link_to "Contact", "/contact" %></li>
+                            <li><a href="http://www.coanet.org/programs/hague-accreditation-and-approval/public-comment/" target="_blank">Hague Accreditation</a></li>
+                            <li><%= link_to "Our Newsletter", "/about-us/newsletter-archive" %></li>
                         </ul>
                     </div>
                 </div>
@@ -30,14 +30,14 @@
                 <div class="grid">
                     <div class="grid-col grid-col_prefix3of12 grid-col_size7of12">
                         <div class="legalese">
-                            <p>Copyright © 2012 HOPE Adoption &amp; Family Services International, Inc.</p>
+                            <p>Copyright &copy; 2012 HOPE Adoption &amp; Family Services International, Inc.</p>
                         </div>
                     </div>
                     <div class="grid-col grid-col_size2of12">
                         <ul class="hList hList_social">
-                            <% if facebook_url.present? %><li><a href="<%= facebook_url %>">Facebook</a></li><% end %>
-                            <% if twitter_url.present? %><li><a class="twitter" href="<%= twitter_url %>">Twitter</a></li><% end %>
-                            <% if youtube_url.present? %><li><a class="youtube" href="<%= youtube_url %>">Youtube</a></li><% end %>
+                            <% if facebook_url.present? %><li><a href="<%= facebook_url %>" target="_blank">Facebook</a></li><% end %>
+                            <% if twitter_url.present? %><li><a class="twitter" href="<%= twitter_url %>" target="_blank">Twitter</a></li><% end %>
+                            <% if youtube_url.present? %><li><a class="youtube" href="<%= youtube_url %>" target="_blank">Youtube</a></li><% end %>
                         </ul>
                     </div>
                 </div>
