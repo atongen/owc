@@ -24,13 +24,13 @@
   <section>
     <h1>Start Date</h1>
     <p>
-      <%=raw @event.start_date %>
+      <%= event.start_date.to_time.strftime('%B %e at %l:%M %p') %>
     </p>
   </section>
   <section>
     <h1>End Date</h1>
     <p>
-      <%=raw @event.end_date %>
+      <%= event.start_date.to_time.strftime('%B %e at %l:%M %p') %>
     </p>
   </section>
   <section>
