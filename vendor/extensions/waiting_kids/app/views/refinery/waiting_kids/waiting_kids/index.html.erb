@@ -18,48 +18,23 @@
       <p class="bigCopy">Meet some of the children HOPE is working with right now:</p>
   </div>
 
-    <%  @waiting_kids.each_slice(3) do |kids| %>
-  <div class="grid">
-      <div class="grid-col grid-col_size4of12">
-          <div class="event">
-              <div class="event-img">
-                  <%= link_to image_fu(kids[0].picture, '200x200'), refinery.waiting_kids_waiting_kid_path(kids[0]) %>
-              </div>
-              <div class="event-bd">
-                  <%= raw kids[0].summary %>
-              </div>
-          </div>
-      </div>
-
-      <% if kids[1] != nil %>
-      <div class="grid-col grid-col_size4of12">
-          <div class="event">
-              <div class="event-img">
-                  <%= link_to image_fu(kids[1].picture, '200x200'), refinery.waiting_kids_waiting_kid_path(kids[1]) %>
-              </div>
-              <div class="event-bd">
-                  <%= raw kids[1].summary %>
-              </div>
-          </div>
-      </div>
+  <%  @waiting_kids.each_slice(3) do |kids| %>
+    <div class="grid">
+      <% kids.each do |kid| %>
+        <div class="grid-col grid-col_size4of12">
+            <div class="event">
+                <div class="event-img">
+                    <%= link_to image_fu(kid.picture, '200x200'), refinery.waiting_kids_waiting_kid_path(kid) %>
+                </div>
+                <div class="event-bd event-bd_highlight">
+                    <h3><%= link_to kid.title, refinery.waiting_kids_waiting_kid_path(kid) %></h3>
+                    <%= raw kid.summary %>
+                </div>
+            </div>
+        </div>
       <% end %>
-
-      <% if kids[2] != nil %>
-      <div class="grid-col grid-col_size4of12">
-          <div class="event">
-              <div class="event-img">
-                  <%= link_to image_fu(kids[2].picture, '200x200'), refinery.waiting_kids_waiting_kid_path(kids[2]) %>
-              </div>
-              <div class="event-bd">
-                  <%= raw kids[2].summary %>
-              </div>
-          </div>
-      </div>
-      
-  </div>
-      <% end %>
-<% end %>
-
+    </div>
+    <% end %>
 <% end %>
 
 <%= render '/refinery/content_page' %>
