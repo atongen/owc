@@ -646,13 +646,12 @@ img {
 .site-ft {
     overflow: hidden;
     *zoom: 1; /* clearfix for lte IE7 */
-    height: 350px;
-    padding-left: 10px;
+    height: 476px;
     background: #58504d;
 }
 
 .site-ft-box {
-    padding: 42px 0;
+    padding: 42px 0 0 10px;
 }
 
 .site-ft-logo { display: none; }
@@ -892,7 +891,7 @@ a.lastItem + .navList-sub a {
 .navPrimaryMobile .navList-sub {
     position: relative;
    	color: #fff;
-    width: 100%;
+/*    width: 100%;*/
     left: 0;
 }
 
@@ -960,6 +959,8 @@ a.lastItem + .navList-sub a {
     top: 0;
     width: 30%;
 }
+
+.site-ft .donate { width: 100%; }
 
 .donate-btn {
     display: block;
@@ -1302,6 +1303,9 @@ label.labelCity { padding-right: 37px; }
 
     .site-ft {
         height: 310px;
+    }
+
+    .site-ft-box {
         padding-left: 0;
     }
 
@@ -1330,7 +1334,8 @@ label.labelCity { padding-right: 37px; }
         display: inline;
     }
 
-    .donate {
+    .donate,
+    .site-ft .donate {
         width: auto;
     }
 
@@ -1349,6 +1354,10 @@ label.labelCity { padding-right: 37px; }
 
     .event {
         padding: 0 0 25px 0;
+    }
+
+    .hague {
+        margin-left: -10px;
     }
 }
 /* end desktop breakpoint */
