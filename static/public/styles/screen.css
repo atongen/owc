@@ -193,7 +193,6 @@ small {
     position: relative;
     display: block;
     margin: 0 auto;
-    
     width: 100%;
 }
 
@@ -202,7 +201,7 @@ small {
 ------------------------------------------------------------------------ */
 .grid {
     margin-bottom: 10px;
-    *zoom: 1; /* clearfix for lte IE7 */
+    *zoom: 1;
 }
 
 .grid:before,
@@ -213,6 +212,12 @@ small {
 
 .grid:after {
     clear: both;
+}
+
+.grid-col {
+    position: relative;
+/*    width: 95.74468%;
+    margin: 0 2.12766%;*/
 }
 
 /* ---------------------------------------------------------------------
@@ -258,7 +263,7 @@ img {
     height: auto !important;
 }
 .event {
-    padding-bottom: 25px;
+    padding: 0 10px 25px;
     overflow: hidden;
     *zoom: 1; /* clearfix for lte IE7 */
 }
@@ -612,7 +617,7 @@ img {
 }
 
 .site-hd-logo {
-    padding-top: 31px;
+    padding-top: 71px;
     height: 184px;
     position: relative;
 }
@@ -641,12 +646,12 @@ img {
 .site-ft {
     overflow: hidden;
     *zoom: 1; /* clearfix for lte IE7 */
-    height: 310px;
+    height: 476px;
     background: #58504d;
 }
 
 .site-ft-box {
-    padding: 42px 0;
+    padding: 42px 0 0 10px;
 }
 
 .site-ft-logo { display: none; }
@@ -679,7 +684,7 @@ img {
 ------------------------------------------- */
 
 .navPrimaryMobile {
-	display: blcok;
+	display: block;
     margin-bottom: 10px;
     position: absolute;
     z-index: 0;
@@ -687,6 +692,7 @@ img {
     height: 100%;
     width: 100%;
     padding: 10px;
+    /*padding: 10px;*/
 }
 
 /* Nav List
@@ -886,7 +892,7 @@ a.lastItem + .navList-sub a {
 .navPrimaryMobile .navList-sub {
     position: relative;
    	color: #fff;
-    width: 100%;
+/*    width: 100%;*/
     left: 0;
 }
 
@@ -954,6 +960,8 @@ a.lastItem + .navList-sub a {
     top: 0;
     width: 30%;
 }
+
+.site-ft .donate { width: 100%; }
 
 .donate-btn {
     display: block;
@@ -1212,6 +1220,7 @@ label.labelCity { padding-right: 37px; }
 @media all and (min-width: 768px) {
 
     .wrapper {
+
         width: 960px;
     }
 
@@ -1289,11 +1298,56 @@ label.labelCity { padding-right: 37px; }
     .grid-col_pull9of12 { left: -76.59574%; }
     .grid-col_pull10of12 { left: -85.10638%; }
     .grid-col_pull11of12 { left: -93.61702%; }
+    
+    .vList_footer {
+        margin-right: 0;
+    }
+
+    .site-hd-logo {
+        padding-top: 31px;
+    }
+
+    .site-ft {
+        height: 310px;
+    }
+
+    .site-ft-box {
+        padding-left: 0;
+    }
 
     .site-ft-logo { display: block; }
 
     .navPrimary {
         display: block;
+    }
+
+    .vList_footer {
+        margin-right: 0;
+    }
+
+    .contactUs {
+        width: auto;
+        right: 190px;
+        top: 5px;
+        padding: 0;
+    }
+    .contactUs-btn {
+        font: 14px/1 'Varela Round', Helvetica, Arial, sans-serif;
+        color: #00aeef;
+        background: none;
+        padding: 0px;
+        width: auto;
+        display: inline;
+    }
+
+    .donate,
+    .site-ft .donate {
+        width: auto;
+    }
+
+    .donate-btn {
+        width: 140px;
+        padding: 11px 0;
     }
 
     .navPrimaryMobile {
@@ -1304,38 +1358,12 @@ label.labelCity { padding-right: 37px; }
         display: none;
     }
 
-    .donate {
-        width: auto;
+    .event {
+        padding: 0 0 25px 0;
     }
 
-    .donate-btn {
-        width: 140px;
-        padding: 11px 0;
-    }
-
-    .contactUs {
-        width: auto;
-        right: 190px;
-        top: 5px;
-        padding: 0;
-    }
-
-    .contactUs-btn {
-        font: 14px/1 'Varela Round', Helvetica, Arial, sans-serif;
-        color: #00aeef;
-        background: none;
-        padding: 0px;
-        width: auto;
-        display: inline;
-    }
-
-    
-    .vList_footer {
-        margin-right: 0;
+    .hague {
+        margin-left: -10px;
     }
 }
-
-.grid-col {
-    position: relative;
-    float: left;
-}
+/* end desktop breakpoint */

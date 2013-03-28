@@ -34,7 +34,7 @@ gem 'capistrano'
 gem 'exception_notification', :require => 'exception_notifier'
 
 group :development, :test do
-  #gem 'mysql2'
+  gem 'mysql2'
   gem 'pg'
 end
 

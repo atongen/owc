@@ -10,7 +10,8 @@
     <div class="grid">
       <div class="<%= css %>">
         <ul class="navList hList">
-        <%= render :partial => '/refinery/menu_branch', :collection => roots,
+          <%= render :partial => '/refinery/menu_branch',
+                   :collection => roots,
                    :locals => {
                      :hide_children => hide_children,
                      :sibling_count => (roots.length - 1),

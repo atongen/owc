@@ -21,7 +21,7 @@ module ApplicationHelper
           :summary => item.callout_summary
         }
       end
-    end
+    end.compact
   end
 
   def featured_item_picture(featured_item)
@@ -88,12 +88,16 @@ module ApplicationHelper
   end
 
   def site_section_class
-    section = url_for(@page.url).to_s.split("/").select(&:present?).first || 'about-us'
-    case section
-    when 'waiting_kids';     'adopting'
-    when 'waiting_families'; 'pregnant'
-    when 'staff', 'staffs';  'about-us'
-    else; section
+    if url = @page.try(:url)
+      section = url_for(url).to_s.split('/').select(&:present?).first || 'about-us'
+      case section
+      when 'waiting_kids';               'adopting'
+      when 'waiting_families';           'pregnant'
+      when 'staff', 'staffs', 'contact'; 'about-us'
+      else; section
+      end
+    else
+      'about-us'
     end
   end
 end

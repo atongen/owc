@@ -426,6 +426,7 @@ var HopeApp = (function(app, $){
 		function init() { 
 	
 			$site = $('.site');
+            console.log('page load ',$site.width())
 			$mobileMenu = $('.navPrimaryMobile');
 			$menuToggle = $('.navPrimary-toggle-btn');
 			
@@ -435,10 +436,13 @@ var HopeApp = (function(app, $){
 				if(isOpen){
 					isOpen = false;
 					$site.css({ '-webkit-transform': 'translateX(0px)' });
+                    console.log('nav de-activated ',$site.width())
 				} else {
 					isOpen = true;
-					
-					$site.css({ '-webkit-transform': 'translateX(' + ($site.width() - 66) + 'px)' });
+					console.log('nav activated ',$site.width())
+					// $site.css({ '-webkit-transform': 'translateX(' + ($site.width() - 66) + 'px)' });
+                    $site.css({ '-webkit-transform': 'translateX(' + ($site.width() - 66) + 'px)' });
+
 				}
 			});
 		}

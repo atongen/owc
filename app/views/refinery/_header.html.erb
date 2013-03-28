@@ -8,7 +8,7 @@
         <%= render(:partial => "/refinery/menu", :locals => {:css => "navPrimary"}) %>
         <!-- /grid -->
         <div class="contactUs">
-            <a class="contactUs-btn" href="/about-us/contact-us">Contact Us</a>
+            <%= link_to "Contact Us", "/contact", {:class => 'contactUs-btn'} %>
         </div>
         <div class="donate">
             <a class="donate-btn" href="/get-involved/donate">donate</a>
