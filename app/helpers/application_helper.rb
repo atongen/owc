@@ -21,7 +21,7 @@ module ApplicationHelper
           :summary => item.callout_summary
         }
       end
-    end
+    end.compact
   end
 
   def featured_item_picture(featured_item)

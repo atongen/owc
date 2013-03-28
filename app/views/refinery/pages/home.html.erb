@@ -36,14 +36,18 @@
   <div class="grid-col grid-col_size4of12">
     <div class="event">
       <div class="event-img">
+        <% if item[:picture].present? %>
         <%= link_to(image_tag(item[:picture].thumbnail("306x229#c").url), item[:link]) %>
+        <% end %>
       </div>
       <div class="event-caption <%= get_callout_class(item[:type]) %>">
         <h3><%= get_callout_name item[:type] %></h3>
       </div>
       <div class="event-bd">
         <h3><%= link_to(item[:text], item[:link]) %></h3>
+        <% if item[:summary].present? %>
         <%= raw(item[:summary]) %>
+        <% end %>
       </div>
     </div>
   </div>
