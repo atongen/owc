@@ -1,9 +1,4 @@
-//@codekit-append "app.js";
-//@codekit-append "global-nav.js";
-//@codekit-append "hero-carousel.js";
-//@codekit-append "gallery-carousel.js";
-//@codekit-append "easter-egg.js";
-//@codekit-append "mobile-menu.js";
+
 
 
 /* **********************************************
@@ -56,7 +51,7 @@ var HopeApp = (function(app, $){
         var selection;
 
         function init() {
-            buttons = $(".navList").children().find("a").each(function(key, value) {
+            buttons = $(".navList").children().children("a").each(function(key, value) {
                 $(value).click(didClickButton);
             });
 
