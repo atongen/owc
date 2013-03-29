@@ -7,19 +7,17 @@
     hide_children = Refinery::Core.menu_hide_children if hide_children.nil?
 -%>
 <!-- /grid -->
-    <div class="grid">
-      <div class="<%= css %>">
-        <ul class="navList hList">
-          <%= render :partial => '/refinery/menu_branch',
-                   :collection => roots,
-                   :locals => {
-                     :hide_children => hide_children,
-                     :sibling_count => (roots.length - 1),
-                     :menu_levels => local_assigns[:menu_levels],
-                     :apply_css => true #if you don't care about class='first' class='last' or class='selected' set apply_css to false for speed.
-                   } -%>
-      </ul>
-    </div>
+  <div class="<%= css %>">
+    <ul class="navList hList">
+      <%= render :partial => '/refinery/menu_branch',
+               :collection => roots,
+               :locals => {
+                 :hide_children => hide_children,
+                 :sibling_count => (roots.length - 1),
+                 :menu_levels => local_assigns[:menu_levels],
+                 :apply_css => true #if you don't care about class='first' class='last' or class='selected' set apply_css to false for speed.
+               } -%>
+    </ul>
   </div>
   <% if css != "navPrimaryMobile" && @page.title != nil && @page.title.downcase != 'home' %>
   <div class="grid">
