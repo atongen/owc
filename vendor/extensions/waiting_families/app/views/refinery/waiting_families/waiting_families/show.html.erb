@@ -8,7 +8,7 @@
         <div class="gallery-carousel">
             <ul class="images">
                 <% @waiting_family.all_images.each do |image| %>
-                  <li class="image"><img src="<%= image.thumbnail("960x390").url %>"/></li>
+                  <li class="image"><img src="<%= image.thumbnail("640x390").url %>"/></li>
                 <% end %>
             </ul>
             <a href="javascript:void(0);" class="navigation">
