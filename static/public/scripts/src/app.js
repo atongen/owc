@@ -11,7 +11,8 @@ var HopeApp = (function(app, $){
         app.mobileMenu.init();
 
         if ('ontouchstart' in document.documentElement)
-            app.globalNav.init();
+        	if ($(window).width() > 640)
+            		app.globalNav.init();
 
 		return app;
 	}
