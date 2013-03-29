@@ -19,8 +19,9 @@ module Refinery
       end
 
       def past
-        @events = Event.where("date(start_date) < ? and date(start_date) is not null and date(end_date) is not null and body is not null", Date.today)
-        @events = @events.select { |n| !n.body.blank? && n.event_images.count > 0 }
+        #@events = Event.where("date(start_date) < ? and date(start_date) is not null and date(end_date) is not null and body is not null", Date.today)
+        #@events = @events.select { |n| !n.body.blank? && n.event_images.count > 0 }
+        @events = Event.where("date(start_date) is not null and date(start_date) < ?", Date.today)
         @page = ::Refinery::Page.where(:link_url => "/events/past").first
         present(@page)
         render :action => :index
