@@ -51,16 +51,24 @@ var HopeApp = (function(app, $){
         var selection;
 
         function init() {
-            buttons = $(".navList").children().children("a").each(function(key, value) {
-                $(value).click(didClickButton);
+
+            var parentItem = $(".navPrimary > .navList").children();
+
+
+            buttons = parentItem.children("a").each(function(key, value) {
+                $(value).on('click', didClickButton);
             });
 
             return app;
         }
 
         function didClickButton(event) {
+
             event.preventDefault();
-            $(event.currentTarget).parent().trigger("mouseover");
+            var topLevelLink = $(event.currentTarget).parent();
+
+            topLevelLink.trigger("mouseover");
+
         }
 
         return {
@@ -197,7 +205,6 @@ var HopeApp = (function(app, $){
 var HopeApp = (function(app, $){
     var GalleryCarousel = function () {
         function init() {
-            console.log('Gallery');
             $(".gallery-carousel").each(function(index, view) {
                 new app.galleryCarousel.Gallery($(view));
             });
@@ -353,7 +360,6 @@ var HopeApp = (function(app, $){
                     return;
                 } else if (step === 10 && event.keyCode === 13) {
                     //console.log("start");
-                    console.log("contra...")
                     $('body').append("<embed src='public/easter/contra.mp3' hidden=true autostart=true loop=false>");
                     step = 0;
                     return;
@@ -385,7 +391,6 @@ var HopeApp = (function(app, $){
                     return;
                 } else if (step === 6 && event.keyCode === 66) {
                     //console.log("b");
-                    console.log("test your might...")
                     mk.appendTo($('body')).animate({right: 0}, 100).delay(700).animate({right: "-298px"}, 100, function(){mk.remove()});
                     //$('body').append("<embed src='public/easter/contra.mp3' hidden=true autostart=true loop=false>");
                     step = 0;
@@ -422,7 +427,6 @@ var HopeApp = (function(app, $){
 		function init() { 
 	
 			$site = $('.site');
-            console.log('page load ',$site.width())
 			$mobileMenu = $('.navPrimaryMobile');
 			$menuToggle = $('.navPrimary-toggle-btn');
 			
@@ -432,10 +436,8 @@ var HopeApp = (function(app, $){
 				if(isOpen){
 					isOpen = false;
 					$site.css({ '-webkit-transform': 'translateX(0px)' });
-                    console.log('nav de-activated ',$site.width())
 				} else {
 					isOpen = true;
-					console.log('nav activated ',$site.width())
 					// $site.css({ '-webkit-transform': 'translateX(' + ($site.width() - 66) + 'px)' });
                     $site.css({ '-webkit-transform': 'translateX(' + ($site.width() - 66) + 'px)' });
 
