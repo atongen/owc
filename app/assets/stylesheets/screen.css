@@ -1239,6 +1239,26 @@ label.labelAddress { padding-right: 28px; }
 
 label.labelCity { padding-right: 55px; }
 
+/* content pages */
+
+/* 1-column row for content page */
+.content-col1-cell1 {
+  font-size: 30px;
+  line-height: 1.3;
+}
+
+/* 2-column row cells for content page */
+.content-col2-cell1, .content-col2-cell2 {
+
+}
+
+/* 3-column row cells for content page */
+.content-col3-cell1, .content-col3-cell3, .content-col3-cell3 {
+
+}
+
+
+
 
 @media all and (min-width: 768px) {
 

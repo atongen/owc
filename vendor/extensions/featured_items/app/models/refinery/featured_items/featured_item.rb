@@ -10,13 +10,11 @@ module Refinery
       validates :title, :presence => true, :uniqueness => true
 
       validates :callout_text,
-        :presence => true,
         :length => {
           :maximum => 255
         }
 
       validates :callout_summary,
-        :presence => true,
         :length => {
           :maximum => 255
         }
