@@ -4,7 +4,7 @@ var HopeApp = (function(app, $){
         var selection;
 
         function init() {
-            buttons = $(".navList").children().find("a").each(function(key, value) {
+            buttons = $(".navList").children().children("a").each(function(key, value) {
                 $(value).click(didClickButton);
             });
 
