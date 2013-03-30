@@ -865,6 +865,7 @@ a.lastItem + .navList-sub a {
     padding: 0;
 }
 
+.navList > li.hover > .navList-sub,
 .navList > li:hover > .navList-sub,
 .navList > li:focus > .navList-sub {
     left: auto;
@@ -1412,3 +1413,6 @@ label.labelCity { padding-right: 55px; }
     }
 }
 /* end desktop breakpoint */
+
+
+
