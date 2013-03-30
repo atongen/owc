@@ -651,7 +651,7 @@ img {
 }
 
 .site-bd {
-    padding-bottom: 100px;
+    padding: 0 10px 100px;
     overflow: hidden;
     *zoom: 1; /* clearfix for lte IE7 */
 }
@@ -1257,9 +1257,6 @@ label.labelCity { padding-right: 55px; }
 
 }
 
-
-
-
 @media all and (min-width: 768px) {
 
     .wrapper {
@@ -1356,6 +1353,11 @@ label.labelCity { padding-right: 55px; }
 
     .site-ft-box {
         padding-left: 0;
+    }
+
+    .site-bd {
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .site-ft-logo { display: block; }
