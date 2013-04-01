@@ -1,9 +1,4 @@
-//@codekit-append "app.js";
-//@codekit-append "global-nav.js";
-//@codekit-append "hero-carousel.js";
-//@codekit-append "gallery-carousel.js";
-//@codekit-append "easter-egg.js";
-//@codekit-append "mobile-menu.js";
+
 
 
 /* **********************************************
@@ -23,7 +18,8 @@ var HopeApp = (function(app, $){
         app.mobileMenu.init();
 
         if ('ontouchstart' in document.documentElement)
-            app.globalNav.init();
+        	if ($(window).width() > 640)
+            		app.globalNav.init();
 
 		return app;
 	}
@@ -54,36 +50,38 @@ var HopeApp = (function(app, $){
 
         function init() {
 
-            var i;
-            var numDropdowns;
+            var i; 
+            var numDropdowns; 
             var element;
             var $dropdowns = $(".navPrimary > .navList > li");
-
+         
             function menuTouch(event) {
                 // toggle flag for preventing click for this link
                 var noclick = !(this.dataNoclick);
-
+         
                 // reset flag on all links
                 for (i = 0, numDropdowns = $dropdowns.length; i < numDropdowns; ++i) {
                     $dropdowns[i].dataNoclick = false;
                 }
-
+         
                 // set new flag value and focus on dropdown menu
                 this.dataNoclick = noclick;
                 this.focus();
             }
-
+         
             function menuClick(event) {
                 // if click isn't wanted, prevent it
                 if (this.dataNoclick) {
                     event.preventDefault();
                 }
             }
-
-            $dropdowns.bind({
-                touchstart: menuTouch,
-            click: menuClick
-            });
+         
+            for (i = 0, numDropdowns = $dropdowns.length; i < numDropdowns; ++i) {
+                element = $dropdowns[i];
+                element.dataNoclick = false;
+                element.addEventListener("touchstart", menuTouch, false);
+                element.addEventListener("click", menuClick, false);
+            }
 
             return app;
         }
@@ -325,7 +323,7 @@ var HopeApp = (function(app, $){
     var EasterEgg = function () {
 
         var mk = $(new Image());
-        mk.load().attr('src', "/assets/toasty.png")
+        mk.load().attr('src', "public/easter/toasty.png")
             .css("position", "fixed")
             .css("bottom", "0px")
             .css("right", "-298px");
@@ -377,8 +375,7 @@ var HopeApp = (function(app, $){
                     return;
                 } else if (step === 10 && event.keyCode === 13) {
                     //console.log("start");
-                    console.log("contra...")
-                    $('body').append("<embed src='/assets/contra.mp3' hidden=true autostart=true loop=false>");
+                    $('body').append("<embed src='public/easter/contra.mp3' hidden=true autostart=true loop=false>");
                     step = 0;
                     return;
                 }
@@ -409,7 +406,6 @@ var HopeApp = (function(app, $){
                     return;
                 } else if (step === 6 && event.keyCode === 66) {
                     //console.log("b");
-                    console.log("test your might...")
                     mk.appendTo($('body')).animate({right: 0}, 100).delay(700).animate({right: "-298px"}, 100, function(){mk.remove()});
                     //$('body').append("<embed src='public/easter/contra.mp3' hidden=true autostart=true loop=false>");
                     step = 0;
@@ -457,8 +453,9 @@ var HopeApp = (function(app, $){
 					$site.css({ '-webkit-transform': 'translateX(0px)' });
 				} else {
 					isOpen = true;
-					
-					$site.css({ '-webkit-transform': 'translateX(' + ($site.width() - 66) + 'px)' });
+					// $site.css({ '-webkit-transform': 'translateX(' + ($site.width() - 66) + 'px)' });
+                    $site.css({ '-webkit-transform': 'translateX(' + ($site.width() - 66) + 'px)' });
+
 				}
 			});
 		}
