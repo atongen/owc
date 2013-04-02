@@ -1258,6 +1258,11 @@ label.labelCity { padding-right: 55px; }
 
 }
 
+/* wysiwyg content pages */
+.wysiwyg em {
+  font-style: italic;
+}
+
 @media all and (min-width: 768px) {
 
     .wrapper {
