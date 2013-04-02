@@ -3,26 +3,13 @@
 <% end %>
 
 <% content_for :body do %>
-  <section>
-    <h1>Title</h1>
-    <p>
-      <%=raw @waiting_kid.title %>
-    </p>
+  <section class="event-bd_highlight">
+    <h3><%=raw @waiting_kid.title %></h3>
   </section>
   <section>
-    <h1>Summary</h1>
-    <p>
-      <%=raw @waiting_kid.summary %>
-    </p>
+    <%=raw @waiting_kid.body %>
   </section>
   <section>
-    <h1>Body</h1>
-    <p>
-      <%=raw @waiting_kid.body %>
-    </p>
-  </section>
-  <section>
-    <h1>Picture</h1>
     <p>
       <%= image_fu @waiting_kid.picture, nil %>
     </p>
