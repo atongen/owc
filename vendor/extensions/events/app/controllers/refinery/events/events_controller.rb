@@ -10,6 +10,15 @@ module Refinery
         present(@page)
       end
 
+      def show
+        @event = Event.find(params[:id])
+        if @event.start_date >= Date.today
+          redirect_to "/events/upcoming"
+        else
+          redirect_to "/events/past"
+        end
+      end
+
       def upcoming
         @events = Event.where("date(start_date) >= ? and date(start_date) is not null and date(end_date) is not null", Date.today)
        # @events = @events.select { |n| !n.body.blank? && n.event_images.count > 0 }
