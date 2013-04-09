@@ -1,22 +1,5 @@
 <% content_for :body do %>
-  <div class="grid">
-      <p class="bigCopy">There are currently 355 children under State guardianship in immediate need of families.
-      </p>
-      <div class="grid-col grid-col_size6of12">
-          <div class="gap gap_3">
-              <p>HOPE works with the Minnesota Public Private Adoption Initiative (PPAI), a state funded program, and the Wendy’s Wonderful Kids Program to bring Minnesota children in the foster care system into permanent families.</p>
-              <p>All of these Minnesota Waiting Children have special needs, whether behavioral, emotional or physical. These children are over the age of 6. Many are a part of sibling groups and most are children of color.</p>
-          </div>
-      </div>
-      <div class="grid-col grid-col_size6of12">
-          <h4 class="hdg hdg_4">Costs</h4>
-          <p>Parents who adopt through the Minnesota PPAI program pay little to no fees. Both Minnesota and Wisconsin families are eligible. Learn more by filling out this <a href="">Online Request form</a> or attending a PPAI Orientation meeting <a href="">Training Link</a>.</p>
-          <p><a href="">PPAI brochure</a></p>
-      </div>
-  </div>
-  <div class="grid">
-      <p class="bigCopy">Meet some of the children HOPE is working with right now:</p>
-  </div>
+  <%= render :file => 'refinery/pages/show' %>
 
   <%  @waiting_kids.each_slice(3) do |kids| %>
     <div class="grid">
