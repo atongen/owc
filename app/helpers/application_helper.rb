@@ -64,7 +64,7 @@ module ApplicationHelper
   def get_callout_class(callout_type)
     case callout_type.downcase
     when 'waiting family'
-      'green'
+      'purple'
     when 'waiting kid'
       'green'
     when 'event'
@@ -77,7 +77,7 @@ module ApplicationHelper
   def get_callout_name(callout_type)
     case callout_type.downcase
     when 'waiting family'
-      'ADOPTION'
+      'PREGNANCY'
     when 'waiting kid'
       'ADOPTION'
     when 'event'

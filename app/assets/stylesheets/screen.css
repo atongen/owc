@@ -297,6 +297,10 @@ img {
     background: #b7d433;
 }
 
+.event-caption.purple {
+    background: #a854a1;
+}
+
 .event-bd {
     padding-top: 28px;
 }
