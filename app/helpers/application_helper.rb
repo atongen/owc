@@ -48,14 +48,14 @@ module ApplicationHelper
     Refinery::Setting.find_or_set(:youtube_url, nil)
   end
 
-  # change this to contains
-  def get_page_color pageUrl
-    if pageUrl.include? "pregnant"
-      return 'purple'
-    elsif pageUrl.include? "adopting"
-      return 'green'
-    elsif pageUrl.include? "support"
-      return 'orange'
+  def get_page_color page_url
+    case page_url.to_s.downcase
+    when /pregnan/
+      'purple'
+    when /adopti/
+      'green'
+    when /support/
+      'orange'
     else
       'blue'
     end
@@ -77,13 +77,13 @@ module ApplicationHelper
   def get_callout_name(callout_type)
     case callout_type.downcase
     when 'waiting family'
-      'ADOPTING'
+      'ADOPTION'
     when 'waiting kid'
-      'ADOPTING'
+      'ADOPTION'
     when 'event'
       'EVENT'
     else
-      'ADOPTING'
+      'ADOPTION'
     end
   end
 

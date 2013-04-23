@@ -10,7 +10,8 @@ set :application, "owc"
 set :scm, "git"
 set :repository, "git://github.com/atongen/owc.git"
 
-set :deploy_via, :remote_cache
+set :deploy_via, :copy
+set :copy_strategy, :export
 set :keep_releases, 5
 set :user, "deploy"
 
