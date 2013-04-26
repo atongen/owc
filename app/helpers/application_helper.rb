@@ -75,6 +75,7 @@ module ApplicationHelper
   end
 
   def get_callout_name(callout_type)
+    return ''
     case callout_type.downcase
     when 'waiting family'
       'PREGNANCY'
