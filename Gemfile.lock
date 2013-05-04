@@ -177,9 +177,6 @@ GEM
       will_paginate (~> 3.0.2)
     refinerycms-dashboard (2.0.9)
       refinerycms-core (= 2.0.9)
-    refinerycms-i18n (2.0.2)
-      refinerycms-core (~> 2.0.0)
-      routing-filter (>= 0.2.3)
     refinerycms-images (2.0.9)
       dragonfly (~> 0.9.8)
       rack-cache (>= 0.5.3)
@@ -203,8 +200,6 @@ GEM
       refinerycms-core (~> 2.0.4)
     refinerycms-settings (2.0.2)
       refinerycms-core (~> 2.0.1)
-    routing-filter (0.3.1)
-      actionpack
     sass (3.2.7)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -253,7 +248,6 @@ DEPENDENCIES
   refinerycms-carousel_images!
   refinerycms-events!
   refinerycms-featured_items!
-  refinerycms-i18n (~> 2.0.0)
   refinerycms-inquiries (~> 2.0.0)
   refinerycms-page-images (~> 2.0.0)
   refinerycms-search (~> 2.0.0)

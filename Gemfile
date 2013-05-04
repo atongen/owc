@@ -24,6 +24,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the app server
 gem 'unicorn'
+#gem 'passenger'
 
 # Deploy with Capistrano
 gem 'capistrano'
@@ -46,7 +47,7 @@ end
 gem 'refinerycms', '~> 2.0.0'
 
 # Specify additional Refinery CMS Extensions here (all optional):
-gem 'refinerycms-i18n', '~> 2.0.0'
+#gem 'refinerycms-i18n', '~> 2.0.0'
 gem 'refinerycms-blog', '~> 2.0.0'
 gem 'refinerycms-inquiries', '~> 2.0.0'
 gem 'refinerycms-search', '~> 2.0.0'

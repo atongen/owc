@@ -12,4 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require gallery-carousel.js
+//= require global-nav.js
+//= require hero-carousel.js
+//= require mobile-menu.js
+//= require app.js
