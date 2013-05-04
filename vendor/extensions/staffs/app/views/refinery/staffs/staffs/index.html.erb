@@ -15,7 +15,7 @@
                   <p><%= part.summary %></p>
                 <% end %>
                 <% if !part.board? && part.email.present? %>
-                  <p><%= mail_to part.email %></p>
+                  <p><%= mail_to part.email, 'Email', :title => part.email %></p>
                 <% end %>
               </div>
             </div>
