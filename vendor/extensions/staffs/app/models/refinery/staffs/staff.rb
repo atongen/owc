@@ -11,6 +11,8 @@ module Refinery
 
       belongs_to :picture, :class_name => '::Refinery::Image'
 
+      default_scope(order(:position))
+
       [:full_name, :title, :email, :summary].each do |attr|
         validates attr, :length => { :maximum => 255 }
       end
