@@ -65,5 +65,12 @@ module Owc
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    mail_defaults = {}
+    mail_defaults[:host] = ENV['HOST']      if ENV['HOST'].present?
+    mail_defaults[:from] = ENV['MAIL_FROM'] if ENV['MAIL_FROM'].present?
+    if mail_defaults.present?
+      config.action_mailer.default_url_options = mail_defaults
+    end
   end
 end
