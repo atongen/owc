@@ -5,7 +5,7 @@
         <div class="grid-col grid-col_size4of12">
           <div class="event">
             <div class="event-img">
-              <%= link_to image_tag(family.picture.thumbnail('306x229#c').url), refinery.waiting_families_waiting_family_path(family) %>
+              <%= link_to image_tag(family.picture.try(:thumbnail, '306x229#c').try(:url)), refinery.waiting_families_waiting_family_path(family) %>
             </div>
             <div class="event-bd event-bd_highlight">
               <h3><%= link_to family.title, refinery.waiting_families_waiting_family_path(family) %></h3>
